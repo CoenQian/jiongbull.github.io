@@ -1,0 +1,738 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Android屏幕适配 | JiongBull&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="JiongBull">
+    
+
+    
+    <meta name="description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+
+统计分析2014Q1活跃Android设备统计
+参数表格:
+
+
+
+机型
+分辨率
+像素密度
+屏幕宽度
+
+
+
+
+三星Galaxy Note2
+720 * 1280
+xhdpi
+360dp
+
+
+三星Galaxy S3
+720 * 1280
+xhdpi
+360dp
+
+
+小米手机2S
+720 * 1280
+x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android屏幕适配">
+<meta property="og:url" content="http://jiongbull.com/2015/05/11/Android屏幕适配/index.html">
+<meta property="og:site_name" content="JiongBull's Blog">
+<meta property="og:description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+
+统计分析2014Q1活跃Android设备统计
+参数表格:
+
+
+
+机型
+分辨率
+像素密度
+屏幕宽度
+
+
+
+
+三星Galaxy Note2
+720 * 1280
+xhdpi
+360dp
+
+
+三星Galaxy S3
+720 * 1280
+xhdpi
+360dp
+
+
+小米手机2S
+720 * 1280
+x">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/2014Top20.png">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/android_trend.png">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/donate.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android屏幕适配">
+<meta name="twitter:description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+
+统计分析2014Q1活跃Android设备统计
+参数表格:
+
+
+
+机型
+分辨率
+像素密度
+屏幕宽度
+
+
+
+
+三星Galaxy Note2
+720 * 1280
+xhdpi
+360dp
+
+
+三星Galaxy S3
+720 * 1280
+xhdpi
+360dp
+
+
+小米手机2S
+720 * 1280
+x">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="JiongBull&#39;s Blog" title="JiongBull&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="JiongBull&#39;s Blog">JiongBull&#39;s Blog</a></h1>
+				<h2 class="blog-motto">人生若只如初见 何事秋风悲画扇</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:jiongbull.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/05/11/Android屏幕适配/" title="Android屏幕适配" itemprop="url">Android屏幕适配</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="JiongBull" target="_blank" itemprop="author">JiongBull</a>
+		
+  <p class="article-time">
+    <time datetime="2015-05-11T05:21:51.000Z" itemprop="datePublished"> 发表于 2015-05-11</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#统计分析"><span class="toc-number">1.</span> <span class="toc-text">统计分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2014Q1活跃Android设备统计"><span class="toc-number">1.1.</span> <span class="toc-text">2014Q1活跃Android设备统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2014Android操作系统趋势"><span class="toc-number">1.2.</span> <span class="toc-text">2014Android操作系统趋势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方案"><span class="toc-number">2.</span> <span class="toc-text">方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#声明客户端支持的最小操作系统版本"><span class="toc-number">2.1.</span> <span class="toc-text">声明客户端支持的最小操作系统版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#声明屏幕方向为竖屏"><span class="toc-number">2.2.</span> <span class="toc-text">声明屏幕方向为竖屏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布局"><span class="toc-number">2.3.</span> <span class="toc-text">布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尺寸"><span class="toc-number">2.4.</span> <span class="toc-text">尺寸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片"><span class="toc-number">2.5.</span> <span class="toc-text">图片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">3.</span> <span class="toc-text">分享</span></a></li></ol>
+		
+		</div>
+		
+		<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
+<h2 id="统计分析">统计分析</h2><h3 id="2014Q1活跃Android设备统计">2014Q1活跃Android设备统计</h3><p><img src="http://7xize8.com1.z0.glb.clouddn.com/2014Top20.png" alt="2014Q1活跃Android设备Top20"></p>
+<p>参数表格:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">机型</th>
+<th style="text-align:center">分辨率</th>
+<th style="text-align:center">像素密度</th>
+<th style="text-align:center">屏幕宽度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">三星Galaxy Note2</td>
+<td style="text-align:center">720 * 1280</td>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td style="text-align:center">三星Galaxy S3</td>
+<td style="text-align:center">720 * 1280</td>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td style="text-align:center">小米手机2S</td>
+<td style="text-align:center">720 * 1280</td>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td style="text-align:center">三星Galaxy S4</td>
+<td style="text-align:center">1080 * 1920</td>
+<td style="text-align:center">xxhdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td style="text-align:center">三星Galaxy S2</td>
+<td style="text-align:center">480 * 800</td>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">320dp</td>
+</tr>
+<tr>
+<td style="text-align:center">三星Galaxy Note</td>
+<td style="text-align:center">800 * 1280</td>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">400dp</td>
+</tr>
+<tr>
+<td style="text-align:center">三星Galaxy Note3</td>
+<td style="text-align:center">1080 * 1920</td>
+<td style="text-align:center">xxhdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td style="text-align:center">红米手机</td>
+<td style="text-align:center">720 * 1280</td>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td style="text-align:center">小米手机1S</td>
+<td style="text-align:center">720 * 1280</td>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td style="text-align:center">三星Galaxy Ace</td>
+<td style="text-align:center">480 * 800</td>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">320dp</td>
+</tr>
+<tr>
+<td style="text-align:center">小米手机M2</td>
+<td style="text-align:center">720 * 1280</td>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td style="text-align:center">小米手机M3</td>
+<td style="text-align:center">1080 * 1920</td>
+<td style="text-align:center">xxhdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td style="text-align:center">小米手机M1</td>
+<td style="text-align:center">480 * 854</td>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">320dp</td>
+</tr>
+<tr>
+<td style="text-align:center">小米手机2A</td>
+<td style="text-align:center">720 * 1280</td>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td style="text-align:center">三星GT-S7568</td>
+<td style="text-align:center">480 * 800</td>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">320dp</td>
+</tr>
+<tr>
+<td style="text-align:center">华为G520</td>
+<td style="text-align:center">480 * 854</td>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">320dp</td>
+</tr>
+<tr>
+<td style="text-align:center">三星Galaxy Mega 5.8</td>
+<td style="text-align:center">540 * 960</td>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td style="text-align:center">三星GT-S7562</td>
+<td style="text-align:center">480 * 800</td>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">320dp</td>
+</tr>
+<tr>
+<td style="text-align:center">OPPO R821t</td>
+<td style="text-align:center">480 * 800</td>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">320dp</td>
+</tr>
+<tr>
+<td style="text-align:center">华为C8815</td>
+<td style="text-align:center">540 * 960</td>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">360dp</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>结论</strong>：绝大部分机型的屏幕宽度是320dp和360dp。</p>
+</blockquote>
+<h3 id="2014Android操作系统趋势">2014Android操作系统趋势</h3><p><img src="http://7xize8.com1.z0.glb.clouddn.com/android_trend.png" alt="2014Android操作系统趋势"></p>
+<blockquote>
+<p><strong>结论</strong>：4.0版本以上的操作系统占据了90%以上的市场份额。</p>
+</blockquote>
+<h2 id="方案">方案</h2><h3 id="声明客户端支持的最小操作系统版本">声明客户端支持的最小操作系统版本</h3><ul>
+<li>过滤掉老旧版本操作系统，帮助我们减少针对时机型适配带来的工作量</li>
+<li>可以使用Android 3.2（API等级13）版本提供的新特征利用屏幕的宽度对不同的屏幕做适配</li>
+</ul>
+<blockquote>
+<p><code>&lt;uses-sdk android:minSdkVersion=&quot;15&quot;/&gt;</code></p>
+</blockquote>
+<h3 id="声明屏幕方向为竖屏">声明屏幕方向为竖屏</h3><p>避免用户横屏时页面布局错乱。</p>
+<blockquote>
+<p><code>android:screenOrientation=&quot;portrait&quot;</code></p>
+</blockquote>
+<h3 id="布局">布局</h3><p>针对手机设备，使用一套布局资源，布局中里用到的尺寸、颜色、文本等资源使用引用值。</p>
+<blockquote>
+<p><code>res/layout/name.xml</code></p>
+</blockquote>
+<h3 id="尺寸">尺寸</h3><p>参考统计分析里的参数表格，values-w320dp目录内属性适配屏幕宽度为320dp的机型，values-w360dp目录内的属性适配屏幕宽度为360dp的机型。</p>
+<blockquote>
+<p><code>res/values-w320dp/dimens.xml</code><br><code>res/values-w360dp/dimens.xml</code></p>
+</blockquote>
+<h3 id="图片">图片</h3><ul>
+<li>如果可以避免使用位图那就不要使用位图，这样可以节省空间资源，提高应用的性能</li>
+<li>可以使用XML绘图代替位图，比如圆角矩形，使用XML绘制的色图比位图节省空间资源，而且可以自动适配</li>
+<li>使用9-patch，9-patch可以缩放，我们可以使用很小的9-patch填充很大的UI控件，节省空间资源，提高应用的性能</li>
+<li>尽量减少XML的布局层次，减少布局层次可以减少系统解析代码所做的工作，让界面的渲染速度变快</li>
+<li>使用merge而不是include，使用merge可以达到减少布局层次的效果</li>
+<li>尽量使用RelativeLayout，使用RelativeLayout相比使用多个LinearLayout来说可以减少布局的层次</li>
+<li>每种切图都需要下面表格中的展示的三种规格</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">像素密度</th>
+<th style="text-align:center">系数</th>
+<th style="text-align:center">Logo分辨率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">1.5</td>
+<td style="text-align:center">72 * 72</td>
+</tr>
+<tr>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">2.0</td>
+<td style="text-align:center">96 * 96</td>
+</tr>
+<tr>
+<td style="text-align:center">xxhdpi</td>
+<td style="text-align:center">3.0</td>
+<td style="text-align:center">144 * 144</td>
+</tr>
+</tbody>
+</table>
+<h2 id="分享">分享</h2><p>这篇文章如果对你有帮助，请通过下面的分享链接让更多人受益。<br>更多支持，请扫描下面的二维码，你懂的！</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/donate.png" alt="分享与捐赠"></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android/">Android</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://jiongbull.com/2015/05/11/Android屏幕适配/" data-title="Android屏幕适配 | JiongBull&#39;s Blog" data-tsina="1792183427" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/05/11/Android布局规范/" title="Android布局规范">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Android布局规范</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/05/08/Android代码规范/"  title="Android代码规范">
+ <strong>下一篇：</strong><br/> 
+ <span>Android代码规范
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/05/11/Android屏幕适配/" data-title="Android屏幕适配" data-url="http://jiongbull.com/2015/05/11/Android屏幕适配/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#统计分析"><span class="toc-number">1.</span> <span class="toc-text">统计分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2014Q1活跃Android设备统计"><span class="toc-number">1.1.</span> <span class="toc-text">2014Q1活跃Android设备统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2014Android操作系统趋势"><span class="toc-number">1.2.</span> <span class="toc-text">2014Android操作系统趋势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方案"><span class="toc-number">2.</span> <span class="toc-text">方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#声明客户端支持的最小操作系统版本"><span class="toc-number">2.1.</span> <span class="toc-text">声明客户端支持的最小操作系统版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#声明屏幕方向为竖屏"><span class="toc-number">2.2.</span> <span class="toc-text">声明屏幕方向为竖屏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布局"><span class="toc-number">2.3.</span> <span class="toc-text">布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尺寸"><span class="toc-number">2.4.</span> <span class="toc-text">尺寸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片"><span class="toc-number">2.5.</span> <span class="toc-text">图片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">3.</span> <span class="toc-text">分享</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Android/" title="Android">Android<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Android/" title="Android">Android<sup>3</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1792183427&verifier=cabe8439&dpc=1"></iframe>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://developer.android.com" target="_blank" title="Android Developer">Android Developer</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m JiongBull in Peanut Run. <br/>
+			Welcome to my blog.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/JiongBull" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/JiongBull" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:jiongbull717@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="JiongBull">JiongBull</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"JiongBull"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F04085bf1893ac7a48de0dc50e7ed2573' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
