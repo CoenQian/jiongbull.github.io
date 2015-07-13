@@ -1,10 +1,10 @@
 
- <!DOCTYPE HTML>
+  <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>categories | JiongBull&#39;s Blog</title>
+    <title>标签 : 布局规范 | JiongBull&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="JiongBull">
@@ -13,12 +13,12 @@
     
     <meta name="description" content="Android Java">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://jiongbull.com/categories/index.html">
+<meta property="og:title" content="JiongBull's Blog">
+<meta property="og:url" content="http://jiongbull.com/tags/布局规范/index.html">
 <meta property="og:site_name" content="JiongBull's Blog">
 <meta property="og:description" content="Android Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="JiongBull's Blog">
 <meta name="twitter:description" content="Android Java">
 
     
@@ -71,17 +71,31 @@
 </div>
       </header>
       <div id="container">
-          
+        
+
 <div class="archive-title" >
-<h2 class="category-icon">分类</h2>
-
-<a data-src="/categories/Android/" href="#Android" title="Android">Android<sup>4</sup></a>
-
+  <h2 class="tag-icon">布局规范</h2>
+  
 </div>
-<div id="main" class="archive-part">
-<div class="all-list-box"></div>
-</div>
+<div id="main" class="archive-part clearfix">
+  <div id="archive-page">
 
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2015/05/11/Android布局规范/" title="Android布局规范" itemprop="url">
+  
+
+    <time datetime="2015-05-11T06:52:36.000Z" itemprop="datePublished">2015-05-11</time>
+
+
+    <h1 itemprop="name">Android布局规范</h1>
+
+  </a>
+</section>
+
+
+  </div>
+</div>
 
       </div>
       <footer><div id="footer" >
@@ -195,24 +209,6 @@ $(document).ready(function(){
 
 
 
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var list    = $('.archive-title a'),
-      box     = $('.all-list-box'),
-      first   = $('.archive-title a:first-of-type');
-      box.load(first.attr('data-src').toString()+' #archive-page');
-      first.addClass('current');
-  list.each(function(){
-    $(this).click(function(){
-      var listSrc=$(this).attr('data-src').toString()+' #archive-page';
-      box.load(listSrc);
-      list.removeClass('current');
-      $(this).addClass('current');
-     });  
-    });
-  }); 
-</script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
