@@ -95,6 +95,77 @@
         <blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
+<p>jlog是一款针对Android开发者的日志工具。</p>
+<p><a href="https://github.com/orhanobut" target="_blank" rel="external">orhanobut</a>的<a href="https://github.com/orhanobut/logger" target="_blank" rel="external">logger</a>，<a href="https://github.com/ZhaoKaiQiang" target="_blank" rel="external">ZhaoKaiQiang</a>的<a href="https://github.com/ZhaoKaiQiang/KLog" target="_blank" rel="external">KLog</a>和<a href="https://github.com/JakeWharton" target="_blank" rel="external">JakeWharton</a>的<a href="https://github.com/JakeWharton/timber" target="_blank" rel="external">timber</a>给了我灵感和参考，感谢他们的开源精神。</p>
+<p>再结合一些工作上的经验，就撸出了这个库。</p>
+<p>希望你会喜欢它。( ^_^ )</p>
+<h2 id="特点">特点</h2><ul>
+<li>兼容android logcat，<code>VERBOSE</code>、<code>DEBUG</code>、<code>INFO</code>、<code>WARN</code>、<code>ERROR</code>和<code>WTF</code>全都有，一个都不能少</li>
+<li>在<code>JSON</code>模式下，jlog会把json内容格式化，便于理解</li>
+<li>jlog提供了调用者的类、方法和行号信息，甚至可以从控制台直接跳转到源文件</li>
+<li>简化了logcat，jlog使用调用者的类名作TAG（当然也支持自定义TAG）</li>
+<li>突破了logcat的4000字长度限制</li>
+<li>jlog可以把日志输出到指定的目录和文件中</li>
+<li>你可以决定哪些级别的日志写入文件中</li>
+<li>在日志文件的顶部，jlog提供了很多有用的运行环境相关的信息，比如<code>操作系统信息</code>、<code>设备信息</code>和<code>应用信息</code></li>
+<li>jlog针对写入文件的日志做了格式化，同时提供了足够的信息方便分析，例如<code>时间</code>、<code>日志等级</code>和<code>调用位置</code></li>
+<li>混淆后也能工作正常（获取调用位置）</li>
+<li>支持配置日志文件编码，例如<code>UTF-8</code>，<code>GBK</code></li>
+<li>支持设置日志文件的时间格式</li>
+<li>支持设置日志文件的时区（便于调试其他时区的设备）</li>
+<li>日志按照时间切片写入到不同的文件中，默认是24小时，文件名诸如<code>2016-01-19.log</code>，你也可以指定<code>前缀</code>和<code>时间切片</code>，比如<code>用户标识_2016-01-19_2021.log</code></li>
+</ul>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_sample.gif" alt="jlog sample"></p>
+<h2 id="依赖">依赖</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.jiongbull:jlog:1.0.2'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置">配置</h2><h3 id="初始化">初始化</h3><p>建议在你的application的<code>onCreate()</code>方法里初始化jlog的全局配置，设置一次终身受用。</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">RootApp</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Application</span> &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    public void onCreate() &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate();</span><br><span class="line">        <span class="type">JLog</span>.init(<span class="keyword">this</span>)</span><br><span class="line">            .setDebug(<span class="type">BuildConfig</span>.<span class="type">DEBUG</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所有的配置都保存在<code>JLog</code>类里。你可以通过<code>getSettings()</code>来获取配置，它会返回一个<code>Settings</code>对象。修改<code>Settings</code>对象后再用<code>setSettings()</code>设置，下次使用时就会生效了。</p>
+<p>记得把下面的代码添加到你的混淆文件中（例如：<code>proguard-rules.pro</code>）。</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">keepattributes <span class="constant">SourceFile</span>, <span class="constant">LineNumberTable</span></span><br><span class="line"></span>-<span class="ruby">keep <span class="class"><span class="keyword">class</span> <span class="title">com</span>.<span class="title">jiongbull</span>.<span class="title">jlog</span>.** &#123; *;</span> &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="init(context)">init(context)</h3><p>建议使用application context。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="setDebug(boolean)">setDebug(boolean)</h3><p>默认是true，日志会输出到控制台中。在发布版本的时候请把这个变量设置为false。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .setDebug(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .setDebug(BuildConfig.DEBUG);</span><br></pre></td></tr></table></figure>
+<h3 id="writeToFile(boolean)">writeToFile(boolean)</h3><p>日志开关，如果是true，日志会输出到文件中，默认是false。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="setLogLevelsForFile(List)">setLogLevelsForFile(List<loglevel>)</loglevel></h3><p>这个方法决定了哪些级别的日志可以输出到文件中。默认的日志级别是<code>LogLevel.ERROR</code>和<code>LogLevel.WTF</code>。</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List<span class="variable">&lt;LogLevel&gt;</span> <span class="keyword">log</span>Levels = new ArrayList<span class="variable">&lt;&gt;</span>();</span><br><span class="line"><span class="keyword">log</span>Levels.add(LogLevel.ERROR);</span><br><span class="line"><span class="keyword">log</span>Levels.add(LogLevel.JSON);</span><br><span class="line">JLog.init(this)</span><br><span class="line">    .writeToFile(true)</span><br><span class="line">    .<span class="built_in">set</span>LogLevelsForFile(<span class="keyword">log</span>Levels);</span><br></pre></td></tr></table></figure>
+<h3 id="setLogDir(String)">setLogDir(String)</h3><p>配置日志保存的目录名称，日志目录是位于sd卡中，默认名称是<code>jlog</code>.</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_def_directory.jpg" alt="default directory"></p>
+<p>可以使用应用的名称作为日志目录名。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name));</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_app_directory.jpg" alt="app directory"></p>
+<p>子目录当然也支持啦，可以使用一些唯一标识作为子目录的名称，比如用户标识。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name) + File.separator + <span class="string">"JiongBull"</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_app_sub_directory.jpg" alt="app sub directory"></p>
+<h3 id="setLogPrefix(String)">setLogPrefix(String)</h3><p>如果不想使用子目录，你或许可以试一试日志文件的<code>前缀</code>功能。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name))</span><br><span class="line">    .setLogPrefix(<span class="string">"JiongBull"</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_prefix_file.jpg" alt="prefix file"></p>
+<h3 id="setLogSegment(LogSegment)">setLogSegment(LogSegment)</h3><p>日志按照时间切片写入到不同的文件中，默认是24小时，文件名诸如<code>2016-01-19.log</code>，如果设置为<code>LogSegment.ONE_HOUR</code>，文件名就会变成诸如<code>2016-01-19_0203.log</code>那样了，表示文件里记录的是2:00到3:00的日志。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name))</span><br><span class="line">    .setLogSegment(LogSegment.ONE_HOUR);</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_time_segment.jpg" alt="time segment"></p>
+<h3 id="setCharset(String)">setCharset(String)</h3><p>配置日志文件的编码格式，默认是<code>UTF-8</code>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name))</span><br><span class="line">    .setCharset(<span class="string">"GBK"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="setTimeFormat(String)">setTimeFormat(String)</h3><p>默认的时间格式是<code>yyyy-MM-dd HH:mm:ss</code>，你可以使用这个方法让日志更容易理解。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name))</span><br><span class="line">    .setTimeFormat(<span class="string">"yyyy年MM月dd日 HH时mm分ss秒"</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_time_format.jpg" alt="time format"></p>
+<h3 id="setZoneOffset(ZoneOffset)">setZoneOffset(ZoneOffset)</h3><p>我们可以指定文件里日志时间的时区，而不受用户位置的影响，这样会更容易定位问题，默认是<code>ZoneOffset.P0800</code>（+0800），表示“北京时间”。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name))</span><br><span class="line">    .setZoneOffset(ZoneOffset.P0800);</span><br></pre></td></tr></table></figure>
+<h2 id="用法">用法</h2><h3 id="JLog-v(String)">JLog.v(String)</h3><p>jlog默认会使用调用者的类名作TAG。</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/default_tag.jpg" alt="default tag"></p>
+<h3 id="JLog-v(TAG,_String)">JLog.v(TAG, String)</h3><p>你也可以自己指定TAG。</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/custom_tag.jpg" alt="custom tag"></p>
+<h3 id="JLog-json(json)">JLog.json(json)</h3><p>jlog会把json内容格式化，便于理解。</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/json.jpg" alt="json"></p>
+<h3 id="混淆">混淆</h3><p>jlog在混淆模式下依旧工作正常。</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/proguard_console.jpg" alt="logs in console"></p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/proguard_file.jpg" alt="logs in file"></p>
+<h3 id="运行环境信息">运行环境信息</h3><p>在日志文件的顶部，jlog提供了很多有用的运行环境相关的信息，比如<code>操作系统信息</code>、<code>设备信息</code>和<code>应用信息</code></p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/environment_en.jpg" alt="environment info en"></p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/environment_zh.jpg" alt="environment info zh"></p>
+<h2 id="License">License</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Copyright JiongBull 2016</span><br><span class="line"></span><br><span class="line">Licensed under the Apache License, Version 2.0 (the "License");</span><br><span class="line">you may not <span class="operator"><span class="keyword">use</span> this file <span class="keyword">except</span> <span class="keyword">in</span> compliance <span class="keyword">with</span> the License.</span><br><span class="line">You may obtain a copy <span class="keyword">of</span> the License <span class="keyword">at</span></span><br><span class="line"></span><br><span class="line">    http://www.apache.org/licenses/LICENSE-<span class="number">2.0</span></span><br><span class="line"></span><br><span class="line">Unless required <span class="keyword">by</span> applicable law <span class="keyword">or</span> agreed <span class="keyword">to</span> <span class="keyword">in</span> writing, software</span><br><span class="line">distributed under the License <span class="keyword">is</span> distributed <span class="keyword">on</span> an <span class="string">"AS IS"</span> BASIS,</span><br><span class="line">WITHOUT WARRANTIES <span class="keyword">OR</span> CONDITIONS <span class="keyword">OF</span> <span class="keyword">ANY</span> KIND, either express <span class="keyword">or</span> implied.</span><br><span class="line">See the License <span class="keyword">for</span> the specific <span class="keyword">language</span> governing permissions <span class="keyword">and</span></span><br><span class="line">limitations under the License.</span></span><br></pre></td></tr></table></figure>
 <h2 id="分享">分享</h2><p>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。<br>更多支持，请扫描下面的二维码进行捐赠。</p>
 <p><img src="http://7xize8.com1.z0.glb.clouddn.com/donate.png" alt="分享与捐赠"></p>
 
@@ -109,9 +180,14 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
+  <a class="article-category-link" href="/categories/Github/">Github</a>
 </div>
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Github/">Github</a><a href="/tags/Log/">Log</a>
+  </div>
 
 </div>
 
@@ -155,7 +231,7 @@
     <div class="article-content">
         
         <blockquote>
-<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
 <h2 id="颜色">颜色</h2><h3 id="调色板">调色板</h3><p><img src="http://7xize8.com1.z0.glb.clouddn.com/material_desion_color_1.png" alt=""></p>
 <p><img src="http://7xize8.com1.z0.glb.clouddn.com/material_desion_color_2.png" alt=""></p>
@@ -178,7 +254,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
+  <a class="article-category-link" href="/categories/Android-Experience/">Android Experience</a>
 </div>
 
 
@@ -229,17 +305,17 @@
     <div class="article-content">
         
         <blockquote>
-<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
 </blockquote>
 <h2 id="单位">单位</h2><h3 id="尺寸">尺寸</h3><p>为了更容易的适配不同尺寸和像素密度的屏幕，我们约定在布局文件中必须使用dp单位的尺寸（由于部分机型可以调整手机字体大小，为了避免影响到布局结构，字号的单位也要求使用dp单位的尺寸）。</p>
 <blockquote>
-<p>我们适配三种像素密度的屏幕（hdpi、xhdpi、xxhdpi），他们的比例系数为1.5 : 2 : 3，那么10dp在这三种屏幕上分别表示10 <em> 1.5 = 15px，10 </em> 2 = 20px，10 * 3 = 30px</p>
+<p>我们适配四种像素密度的屏幕（hdpi、xhdpi、xxhdpi、xxxhdpi），他们的比例系数为1.5 : 2 : 3 : 4，那么10dp在这四种屏幕上分别表示10 <em> 1.5 = 15px，10 </em> 2 = 20px，10 <em> 3 = 30px，10 </em> 4 = 40px。</p>
 </blockquote>
 <h3 id="色彩">色彩</h3><p>色彩使用ARGB模式，用32位表示，例如#AABBCCDD，其中AA表示透明度，BB表示红色，CC表示绿色，DD表示蓝色。</p>
 <blockquote>
 <p><strong>注意</strong>：遵从设计规范，色值需要全部为大写。</p>
 </blockquote>
-<h2 id="图片">图片</h2><h3 id="分辨率">分辨率</h3><p>需要三种规格尺寸的图片，比例系数为1.5 : 2 : 3</p>
+<h2 id="图片">图片</h2><h3 id="分辨率">分辨率</h3><p>需要四种规格尺寸的图片，比例系数为1.5 : 2 : 3 : 4</p>
 <p>例如logo的图片：</p>
 <table>
 <thead>
@@ -269,10 +345,16 @@
 <td style="text-align:center">144px * 144px</td>
 <td style="text-align:center">48dp * 48dp</td>
 </tr>
+<tr>
+<td style="text-align:center">xxxhdpi</td>
+<td style="text-align:center">4.0</td>
+<td style="text-align:center">192px * 192px</td>
+<td style="text-align:center">48dp * 48dp</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>注意</strong>：对于9-patch，也需要三种规格尺寸。</p>
+<p><strong>注意</strong>：对于9-patch，也需要四种规格尺寸。</p>
 </blockquote>
 <h3 id="状态">状态</h3><p>有些图片是有状态的，例如按钮、单选框、复选框等，我们对有状态的图片进行命名时会在图片名称后面后缀对应的状态字符串。</p>
 <table>
@@ -305,7 +387,7 @@
 <h3 id="字号">字号</h3><p>统一的字号标准可以使应用风格更加统一，在不同的设备上做到一致的用户体验。</p>
 <h3 id="尺寸-1">尺寸</h3><p>对于常用的尺寸可以抽取出来，方便快速开发。对于设计师来说，规范化的尺寸可以让设计看起来更加大气一体，开发前可以先与设计师沟通，共同抽取出一些预定义的尺寸。</p>
 <blockquote>
-<p>根据在<a href="http://jiongbull.com/2015/05/11/Android%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/" target="_blank" rel="external">Android屏幕适配</a>一文中指出的，我们适配宽度为320dp和360dp的屏幕。可以先使用360dp的手机或者模拟器进行布局开发，待编译打包时，只需要把values-w360dp里dimens.xml新定义的尺寸拷贝到values-w320dp里，把数值乘以320/360，也就是8/9即可，这样它们占屏幕宽度的比例就一致了。</p>
+<p>根据在<a href="/2015/05/11/Android屏幕适配">Android屏幕适配</a>一文中指出的，我们适配宽度为320dp和360dp的屏幕。可以先使用360dp的手机或者模拟器进行布局开发，待编译打包时，只需要把values-w360dp里dimens.xml新定义的尺寸拷贝到values-w320dp里，把数值乘以320/360，也就是8/9即可，这样它们占屏幕宽度的比例就一致了。</p>
 <p>例如，values-w360dp中定义了宽度为90dp的按钮，那么在values-w320dp中对应的尺寸就是80dp，90 / 360 = 25%且80 / 320 = 25%，它们在各自的屏幕中看起来占屏幕宽度的比例就是一致的了。</p>
 </blockquote>
 <h2 id="分享">分享</h2><p>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。<br>更多支持，请扫描下面的二维码进行捐赠。</p>
@@ -322,7 +404,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
+  <a class="article-category-link" href="/categories/Android-Experience/">Android Experience</a>
 </div>
 
 
@@ -373,7 +455,7 @@
     <div class="article-content">
         
         <blockquote>
-<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
 <h2 id="统计分析">统计分析</h2><h3 id="2014Q1活跃Android设备统计">2014Q1活跃Android设备统计</h3><p><img src="http://7xize8.com1.z0.glb.clouddn.com/2014Top20.png" alt="2014Q1活跃Android设备Top20"></p>
 <p>参数表格:</p>
@@ -540,9 +622,9 @@
 <li>可以使用XML绘图代替位图，比如圆角矩形，使用XML绘制的色图比位图节省空间资源，而且可以自动适配</li>
 <li>使用9-patch，9-patch可以缩放，我们可以使用很小的9-patch填充很大的UI控件，节省空间资源，提高应用的性能</li>
 <li>尽量减少XML的布局层次，减少布局层次可以减少系统解析代码所做的工作，让界面的渲染速度变快</li>
-<li>使用merge而不是include，使用merge可以达到减少布局层次的效果</li>
+<li>可以使用merge的情形就不要使用include，使用merge可以达到减少布局层次的效果</li>
 <li>尽量使用RelativeLayout，使用RelativeLayout相比使用多个LinearLayout来说可以减少布局的层次</li>
-<li>每种切图都需要下面表格中的展示的三种规格</li>
+<li>每种切图都需要下面表格中的展示的四种规格</li>
 </ul>
 <table>
 <thead>
@@ -556,17 +638,22 @@
 <tr>
 <td style="text-align:center">hdpi</td>
 <td style="text-align:center">1.5</td>
-<td style="text-align:center">72 * 72</td>
+<td style="text-align:center">72px * 72px</td>
 </tr>
 <tr>
 <td style="text-align:center">xhdpi</td>
 <td style="text-align:center">2.0</td>
-<td style="text-align:center">96 * 96</td>
+<td style="text-align:center">96px * 96px</td>
 </tr>
 <tr>
 <td style="text-align:center">xxhdpi</td>
 <td style="text-align:center">3.0</td>
-<td style="text-align:center">144 * 144</td>
+<td style="text-align:center">144px * 144px</td>
+</tr>
+<tr>
+<td style="text-align:center">xxxhdpi</td>
+<td style="text-align:center">4.0</td>
+<td style="text-align:center">192px * 192px</td>
 </tr>
 </tbody>
 </table>
@@ -584,7 +671,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
+  <a class="article-category-link" href="/categories/Android-Experience/">Android Experience</a>
 </div>
 
 
@@ -635,19 +722,18 @@
     <div class="article-content">
         
         <blockquote>
-<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
 <ul>
 <li>开始之前请详细阅读并遵守<a href="http://source.android.com/source/code-style.html" target="_blank" rel="external">Android Developer代码规范</a></li>
 <li>不要使用拼音命名</li>
 <li>名称应简洁而富于描述，使用完整单词，避免使用缩写（除非该缩写被更广泛使用，例如URL、HTML）</li>
-<li>代码和注释中不要出现中文标点字符，例如：<code>，</code>、<code>：</code></li>
-<li>注释遵循英文写作习惯，标点符号后空一格，避免句子紧凑</li>
+<li>如果使用英文来注释，请遵循英文写作习惯，标点符号后空一格，避免句子紧凑</li>
 <li>颜色色值的字母必须全部大写</li>
 </ul>
-</blockquote>
-<h2 id="命名规则">命名规则</h2><h3 id="包命名">包命名</h3><p>包名由小写的字母组成，默认以<code>com.huashengrun.android.rourou</code>开头，然后接上根据功能划分的模块名。</p>
+<h2 id="命名规则">命名规则</h2><h3 id="包命名">包命名</h3><p>包名由小写的字母组成，默认以<code>com.jiongbull.jlog</code>开头，然后接上根据功能划分的模块名。</p>
 <blockquote>
-<p><code>com.huashengrun.android.rourou.ui</code><br><code>com.huashengrun.android.rourou.ui.widget</code></p>
+<p><code>com.jiongbull.jlog.util</code><br><code>com.jiongbull.jlog.printer</code>  </p>
 </blockquote>
 <h3 id="类和接口命名">类和接口命名</h3><p>名称的首字母需要大写，如果由多个单词组成，那么每个单词的首字母需要大写，其他字母小写。</p>
 <blockquote>
@@ -664,7 +750,7 @@
 <li>集合类型的变量使用复数形式，若多种集合类型的变量存储的是相同类型的对象，除了根据功能区分，也可以简单通过集合类型来区分</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mId;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> User sUser;</span><br><span class="line">    String mName;</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">int</span> mAge;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> level;</span><br><span class="line">    <span class="keyword">public</span> List&lt;Company&gt; companies;</span><br><span class="line">    <span class="keyword">public</span> List&lt;Score&gt; listScores;</span><br><span class="line">    <span class="keyword">public</span> Score[] arrScores;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="常量的命名">常量的命名</h3><p>常量需要声明为final static形式，组成名称的单词必须全部大写，单词之间用下划线隔开。</p>
+<h3 id="常量的命名">常量的命名</h3><p>常量需要声明为static final形式，组成名称的单词必须全部大写，单词之间用下划线隔开。</p>
 <blockquote>
 <p><code>private static final int FADE_IN_TIME = 200;</code></p>
 </blockquote>
@@ -672,7 +758,7 @@
 <blockquote>
 <p><code>NullPointerException</code></p>
 </blockquote>
-<h3 id="布局的命名">布局的命名</h3><p>name是模块的名称或功能的描述，单词必须全部小写，单词之间用下划线隔开。</p>
+<h3 id="布局的命名">布局的命名</h3><p><code>name</code>是模块的名称或功能的描述，单词必须全部小写，单词之间用下划线隔开。</p>
 <table>
 <thead>
 <tr>
@@ -686,6 +772,11 @@
 <td style="text-align:center">Activity</td>
 <td style="text-align:center">activity_name.xml</td>
 <td style="text-align:center">activity_main.xml</td>
+</tr>
+<tr>
+<td style="text-align:center">Fragment</td>
+<td style="text-align:center">fragment_name.xml</td>
+<td style="text-align:center">fragment_ad.xml</td>
 </tr>
 <tr>
 <td style="text-align:center">Tab</td>
@@ -705,7 +796,7 @@
 </tbody>
 </table>
 <h3 id="ID的命名">ID的命名</h3><p>组成名称的单词必须全部小写，单词之间用下划线隔开，名称不需要复杂的层级定位，只需要准确描述所代表控件的功能作用即可，通常我们在名称前使用控件类型的缩写前缀来避免重复起名的麻烦。</p>
-<p>name是模块的名称或功能的描述。</p>
+<p><code>name</code>是模块的名称或功能的描述。</p>
 <table>
 <thead>
 <tr>
@@ -824,7 +915,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="图片的命名">图片的命名</h3><p>name是模块的名称或功能的描述。</p>
+<h3 id="图片的命名">图片的命名</h3><p><code>name</code>是模块的名称或功能的描述。</p>
 <p>图片名称一般由模块名称/功能描述 + 后缀组成，后缀是可选的。</p>
 <table>
 <thead>
@@ -888,13 +979,18 @@
 <p><code>&lt;string name=&quot;welcome&quot;&gt;欢迎&lt;/string&gt;</code><br><code>&lt;color name=&quot;white&quot;&gt;#FFFFFF&lt;/color&gt;</code></p>
 </blockquote>
 <h2 id="注释">注释</h2><p>养成良好的注释习惯，对提升自己的编程能力和团队合作能力有很大的益处。</p>
-<h3 id="文件注释">文件注释</h3><p>源文件的开头需要注释说明当前的文件信息，包括文件名、作者、版本信息、日期、修改记录等。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line"> * -----------------------------------------------------------------</span><br><span class="line"> * Copyright (C) 2014, by Peanut Run, Shenzhen, All rights reserved.</span><br><span class="line"> * -----------------------------------------------------------------</span><br><span class="line"> *</span><br><span class="line"> * File: RootApp</span><br><span class="line"> * Author: JiongBull</span><br><span class="line"> * Version: 1.0</span><br><span class="line"> * Create: 2014/9/25</span><br><span class="line"> *</span><br><span class="line"> * Changes (from 2014/9/25)</span><br><span class="line"> * -----------------------------------------------------------------</span><br><span class="line"> * 2014/9/25 : 创建 RootApp (JiongBull);</span><br><span class="line"> * -----------------------------------------------------------------</span><br><span class="line"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="文件注释">文件注释</h3><p>一般来说是版权声明。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line"> * Copyright JiongBull 2016</span><br><span class="line"> *</span><br><span class="line"> * Licensed under the Apache License, Version 2.0 (the "License");</span><br><span class="line"> * you may not use this file except in compliance with the License.</span><br><span class="line"> * You may obtain a copy of the License at</span><br><span class="line"> *</span><br><span class="line"> *     http://www.apache.org/licenses/LICENSE-2.0</span><br><span class="line"> *</span><br><span class="line"> * Unless required by applicable law or agreed to in writing, software</span><br><span class="line"> * distributed under the License is distributed on an "AS IS" BASIS,</span><br><span class="line"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span><br><span class="line"> * See the License for the specific language governing permissions and</span><br><span class="line"> * limitations under the License.</span><br><span class="line"> */</span></span><br></pre></td></tr></table></figure>
 <h3 id="类注释">类注释</h3><p>在类的开头添加类信息的描述.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="javadoc">/**</span><br><span class="line"> * 登录页.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="方法注释">方法注释</h3><p>一般情况下需要为每个方法添加注释，包括方法的功能描述，参数信息、返回值、异常信息等，有些约定俗成的方法可以不需要添加注释，请参考<code>约定俗成</code>的说明。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="javadoc">/**</span><br><span class="line"> * 输出日志.</span><br><span class="line"> *</span><br><span class="line"> *<span class="javadoctag"> @param</span> context   Context</span><br><span class="line"> *<span class="javadoctag"> @param</span> logLevel  日志等级</span><br><span class="line"> *<span class="javadoctag"> @param</span> tag       标签</span><br><span class="line"> *<span class="javadoctag"> @param</span> content   输出内容</span><br><span class="line"> *<span class="javadoctag"> @param</span> throwable 异常信息, 若没有异常可为空</span><br><span class="line"> */</span></span><br><span class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">trace</span><span class="params">(<span class="keyword">final</span> Context context, <span class="keyword">final</span> <span class="keyword">int</span> logLevel, <span class="keyword">final</span> String tag, <span class="keyword">final</span> String content, <span class="keyword">final</span> Throwable throwable)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="域变量和常量注释">域变量和常量注释</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="javadoc">/**</span><br><span class="line"> * 日志的扩展名.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String LOG_EXTENSION = <span class="string">".log"</span>;</span><br><span class="line"></span><br><span class="line"><span class="javadoc">/**</span><br><span class="line"> * 网络请求队列.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">private</span> RequestQueue mRequestQueue;</span><br></pre></td></tr></table></figure>
+<h3 id="方法注释">方法注释</h3><p>一般情况下需要为每个非私有方法添加注释，包括方法的功能描述，参数信息、返回值、异常信息等。</p>
+<p>例外情况：</p>
+<ul>
+<li>见名知意的方法（起名一定要慎重、多花点时间也是值得的）</li>
+<li>约定俗成的方法，例如IDE generate产生的get/set方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="javadoc">/**</span><br><span class="line"> * 获取异常栈信息，不同于Log.getStackTraceString()，该方法不会过滤掉UnknownHostException.</span><br><span class="line"> *</span><br><span class="line"> *<span class="javadoctag"> @param</span> t &#123;@link Throwable&#125;</span><br><span class="line"> *<span class="javadoctag"> @return</span> 异常栈里的信息</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getStackTraceString</span><span class="params">(Throwable t)</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="域变量和常量注释">域变量和常量注释</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="javadoc">/** 日志的扩展名. */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String LOG_EXTENSION = <span class="string">".log"</span>;</span><br><span class="line"></span><br><span class="line"><span class="javadoc">/** 打印机. */</span></span><br><span class="line"> <span class="keyword">private</span> Printer mPrinter;</span><br></pre></td></tr></table></figure>
 <h3 id="其他注释">其他注释</h3><p>单行注释</p>
 <blockquote>
 <p> <code>view.setImageResource(defaultImageResId);</code> // 无图片显示默认图片</p>
@@ -902,10 +998,6 @@
 <p>区块注释</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/* 网络图片添加渐变动画 */</span></span><br><span class="line">Resources resource = mContext.getResources();</span><br><span class="line"><span class="keyword">final</span> TransitionDrawable transitionDrawable =</span><br><span class="line">        <span class="keyword">new</span> TransitionDrawable(<span class="keyword">new</span> Drawable[] &#123;</span><br><span class="line">                <span class="keyword">new</span> ColorDrawable(android.R.color.transparent),</span><br><span class="line">                <span class="keyword">new</span> BitmapDrawable(resource, bmpResponse)</span><br><span class="line">        &#125;);</span><br><span class="line">view.setBackgroundResource(defaultImageResId);</span><br><span class="line">view.setImageDrawable(transitionDrawable);</span><br><span class="line">transitionDrawable.startTransition(RequestManager.FADE_IN_TIME);</span><br></pre></td></tr></table></figure>
 <h3 id="XML注释">XML注释</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span> <span class="attribute">name</span>=<span class="value">"AppTheme"</span> <span class="attribute">parent</span>=<span class="value">"android:Theme.Holo.Light.NoActionBar"</span>&gt;</span><span class="css"></span><br><span class="line">        &lt;!<span class="tag">--</span> <span class="tag">Customize</span> <span class="tag">your</span> <span class="tag">theme</span> <span class="tag">here</span>. <span class="tag">--</span>&gt;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="约定俗成">约定俗成</h2><h3 id="get_/_set_方法的注释">get / set 方法的注释</h3><p>通过IDE工具批量生成域变量的 get / set 方法可以不用注释。</p>
-<h3 id="第三方库生成代码的注释">第三方库生成代码的注释</h3><p>第三方库生成的代码可以不用注释，例如greenDao生成的代码。</p>
-<h3 id="通用类的注释">通用类的注释</h3><p>通用类的公共方法应全部添加注释。</p>
-<h3 id="一般情况下的注释">一般情况下的注释</h3><p>例如在activity、service等文件中，只需对关键的类变量进行注释，方法建议全部添加注释。</p>
 <h2 id="分享">分享</h2><p>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。<br>更多支持，请扫描下面的二维码进行捐赠。</p>
 <p><img src="http://7xize8.com1.z0.glb.clouddn.com/donate.png" alt="分享与捐赠"></p>
 
@@ -920,7 +1012,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
+  <a class="article-category-link" href="/categories/Android-Experience/">Android Experience</a>
 </div>
 
 
@@ -965,7 +1057,11 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Android/" title="Android">Android<sup>5</sup></a></li>
+			<li><a href="/categories/Android-Experience/" title="Android Experience">Android Experience<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Github/" title="Github">Github<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -976,6 +1072,14 @@
 <div class="tagslist">
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Github/" title="Github">Github<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Log/" title="Log">Log<sup>1</sup></a></li>
+			
 		
 			
 				<li><a href="/tags/Material-Design/" title="Material Design">Material Design<sup>1</sup></a></li>

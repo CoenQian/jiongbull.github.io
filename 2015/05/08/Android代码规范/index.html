@@ -11,37 +11,43 @@
     
 
     
-    <meta name="description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+    <meta name="description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
+
 
 开始之前请详细阅读并遵守Android Developer代码规范
 不要使用拼音命名
 名称应简洁而富于描述，使用完整单词，避免使用缩写（除非该缩写被更广泛使用，例如URL、HTML）
-代码和注释中不要出现中文标点字符，例如：，、：
-注释遵循英文写作习惯，标点符号后空一格，避免句子紧凑
-颜色色值的字母">
+如果使用英文来注释，请遵循英文写作习惯，标点符号后空一格，避免句子紧凑
+颜色色值的字母必须全部大写
+
+命名">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android代码规范">
 <meta property="og:url" content="http://jiongbull.com/2015/05/08/Android代码规范/index.html">
 <meta property="og:site_name" content="JiongBull's Blog">
-<meta property="og:description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+<meta property="og:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
+
 
 开始之前请详细阅读并遵守Android Developer代码规范
 不要使用拼音命名
 名称应简洁而富于描述，使用完整单词，避免使用缩写（除非该缩写被更广泛使用，例如URL、HTML）
-代码和注释中不要出现中文标点字符，例如：，、：
-注释遵循英文写作习惯，标点符号后空一格，避免句子紧凑
-颜色色值的字母">
+如果使用英文来注释，请遵循英文写作习惯，标点符号后空一格，避免句子紧凑
+颜色色值的字母必须全部大写
+
+命名">
 <meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/donate.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android代码规范">
-<meta name="twitter:description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+<meta name="twitter:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
+
 
 开始之前请详细阅读并遵守Android Developer代码规范
 不要使用拼音命名
 名称应简洁而富于描述，使用完整单词，避免使用缩写（除非该缩写被更广泛使用，例如URL、HTML）
-代码和注释中不要出现中文标点字符，例如：，、：
-注释遵循英文写作习惯，标点符号后空一格，避免句子紧凑
-颜色色值的字母">
+如果使用英文来注释，请遵循英文写作习惯，标点符号后空一格，避免句子紧凑
+颜色色值的字母必须全部大写
+
+命名">
 
     
     
@@ -115,27 +121,23 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命名规则"><span class="toc-number">1.</span> <span class="toc-text">命名规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#包命名"><span class="toc-number">1.1.</span> <span class="toc-text">包命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类和接口命名"><span class="toc-number">1.2.</span> <span class="toc-text">类和接口命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法的命名"><span class="toc-number">1.3.</span> <span class="toc-text">方法的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的命名"><span class="toc-number">1.4.</span> <span class="toc-text">变量的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常量的命名"><span class="toc-number">1.5.</span> <span class="toc-text">常量的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常的命名"><span class="toc-number">1.6.</span> <span class="toc-text">异常的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布局的命名"><span class="toc-number">1.7.</span> <span class="toc-text">布局的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ID的命名"><span class="toc-number">1.8.</span> <span class="toc-text">ID的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片的命名"><span class="toc-number">1.9.</span> <span class="toc-text">图片的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他资源命名"><span class="toc-number">1.10.</span> <span class="toc-text">其他资源命名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-number">2.</span> <span class="toc-text">注释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件注释"><span class="toc-number">2.1.</span> <span class="toc-text">文件注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类注释"><span class="toc-number">2.2.</span> <span class="toc-text">类注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法注释"><span class="toc-number">2.3.</span> <span class="toc-text">方法注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域变量和常量注释"><span class="toc-number">2.4.</span> <span class="toc-text">域变量和常量注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他注释"><span class="toc-number">2.5.</span> <span class="toc-text">其他注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML注释"><span class="toc-number">2.6.</span> <span class="toc-text">XML注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#约定俗成"><span class="toc-number">3.</span> <span class="toc-text">约定俗成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#get_/_set_方法的注释"><span class="toc-number">3.1.</span> <span class="toc-text">get / set 方法的注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三方库生成代码的注释"><span class="toc-number">3.2.</span> <span class="toc-text">第三方库生成代码的注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通用类的注释"><span class="toc-number">3.3.</span> <span class="toc-text">通用类的注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一般情况下的注释"><span class="toc-number">3.4.</span> <span class="toc-text">一般情况下的注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">4.</span> <span class="toc-text">分享</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命名规则"><span class="toc-number">1.</span> <span class="toc-text">命名规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#包命名"><span class="toc-number">1.1.</span> <span class="toc-text">包命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类和接口命名"><span class="toc-number">1.2.</span> <span class="toc-text">类和接口命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法的命名"><span class="toc-number">1.3.</span> <span class="toc-text">方法的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的命名"><span class="toc-number">1.4.</span> <span class="toc-text">变量的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常量的命名"><span class="toc-number">1.5.</span> <span class="toc-text">常量的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常的命名"><span class="toc-number">1.6.</span> <span class="toc-text">异常的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布局的命名"><span class="toc-number">1.7.</span> <span class="toc-text">布局的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ID的命名"><span class="toc-number">1.8.</span> <span class="toc-text">ID的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片的命名"><span class="toc-number">1.9.</span> <span class="toc-text">图片的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他资源命名"><span class="toc-number">1.10.</span> <span class="toc-text">其他资源命名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-number">2.</span> <span class="toc-text">注释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件注释"><span class="toc-number">2.1.</span> <span class="toc-text">文件注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类注释"><span class="toc-number">2.2.</span> <span class="toc-text">类注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法注释"><span class="toc-number">2.3.</span> <span class="toc-text">方法注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域变量和常量注释"><span class="toc-number">2.4.</span> <span class="toc-text">域变量和常量注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他注释"><span class="toc-number">2.5.</span> <span class="toc-text">其他注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML注释"><span class="toc-number">2.6.</span> <span class="toc-text">XML注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">3.</span> <span class="toc-text">分享</span></a></li></ol>
 		
 		</div>
 		
-    <blockquote class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">
-<p class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">来源：<a href="http://jiongbull.com" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">JiongBull’s Blog</a><br class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">@JiongBull</a><br class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">JiongBull</a></p>
-</blockquote>
 		<blockquote>
-<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
 <ul>
 <li>开始之前请详细阅读并遵守<a href="http://source.android.com/source/code-style.html" target="_blank" rel="external">Android Developer代码规范</a></li>
 <li>不要使用拼音命名</li>
 <li>名称应简洁而富于描述，使用完整单词，避免使用缩写（除非该缩写被更广泛使用，例如URL、HTML）</li>
-<li>代码和注释中不要出现中文标点字符，例如：<code>，</code>、<code>：</code></li>
-<li>注释遵循英文写作习惯，标点符号后空一格，避免句子紧凑</li>
+<li>如果使用英文来注释，请遵循英文写作习惯，标点符号后空一格，避免句子紧凑</li>
 <li>颜色色值的字母必须全部大写</li>
 </ul>
-</blockquote>
-<h2 id="命名规则">命名规则</h2><h3 id="包命名">包命名</h3><p>包名由小写的字母组成，默认以<code>com.huashengrun.android.rourou</code>开头，然后接上根据功能划分的模块名。</p>
+<h2 id="命名规则">命名规则</h2><h3 id="包命名">包命名</h3><p>包名由小写的字母组成，默认以<code>com.jiongbull.jlog</code>开头，然后接上根据功能划分的模块名。</p>
 <blockquote>
-<p><code>com.huashengrun.android.rourou.ui</code><br><code>com.huashengrun.android.rourou.ui.widget</code></p>
+<p><code>com.jiongbull.jlog.util</code><br><code>com.jiongbull.jlog.printer</code>  </p>
 </blockquote>
 <h3 id="类和接口命名">类和接口命名</h3><p>名称的首字母需要大写，如果由多个单词组成，那么每个单词的首字母需要大写，其他字母小写。</p>
 <blockquote>
@@ -152,7 +154,7 @@
 <li>集合类型的变量使用复数形式，若多种集合类型的变量存储的是相同类型的对象，除了根据功能区分，也可以简单通过集合类型来区分</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mId;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> User sUser;</span><br><span class="line">    String mName;</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">int</span> mAge;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> level;</span><br><span class="line">    <span class="keyword">public</span> List&lt;Company&gt; companies;</span><br><span class="line">    <span class="keyword">public</span> List&lt;Score&gt; listScores;</span><br><span class="line">    <span class="keyword">public</span> Score[] arrScores;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="常量的命名">常量的命名</h3><p>常量需要声明为final static形式，组成名称的单词必须全部大写，单词之间用下划线隔开。</p>
+<h3 id="常量的命名">常量的命名</h3><p>常量需要声明为static final形式，组成名称的单词必须全部大写，单词之间用下划线隔开。</p>
 <blockquote>
 <p><code>private static final int FADE_IN_TIME = 200;</code></p>
 </blockquote>
@@ -160,7 +162,7 @@
 <blockquote>
 <p><code>NullPointerException</code></p>
 </blockquote>
-<h3 id="布局的命名">布局的命名</h3><p>name是模块的名称或功能的描述，单词必须全部小写，单词之间用下划线隔开。</p>
+<h3 id="布局的命名">布局的命名</h3><p><code>name</code>是模块的名称或功能的描述，单词必须全部小写，单词之间用下划线隔开。</p>
 <table>
 <thead>
 <tr>
@@ -174,6 +176,11 @@
 <td style="text-align:center">Activity</td>
 <td style="text-align:center">activity_name.xml</td>
 <td style="text-align:center">activity_main.xml</td>
+</tr>
+<tr>
+<td style="text-align:center">Fragment</td>
+<td style="text-align:center">fragment_name.xml</td>
+<td style="text-align:center">fragment_ad.xml</td>
 </tr>
 <tr>
 <td style="text-align:center">Tab</td>
@@ -193,7 +200,7 @@
 </tbody>
 </table>
 <h3 id="ID的命名">ID的命名</h3><p>组成名称的单词必须全部小写，单词之间用下划线隔开，名称不需要复杂的层级定位，只需要准确描述所代表控件的功能作用即可，通常我们在名称前使用控件类型的缩写前缀来避免重复起名的麻烦。</p>
-<p>name是模块的名称或功能的描述。</p>
+<p><code>name</code>是模块的名称或功能的描述。</p>
 <table>
 <thead>
 <tr>
@@ -312,7 +319,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="图片的命名">图片的命名</h3><p>name是模块的名称或功能的描述。</p>
+<h3 id="图片的命名">图片的命名</h3><p><code>name</code>是模块的名称或功能的描述。</p>
 <p>图片名称一般由模块名称/功能描述 + 后缀组成，后缀是可选的。</p>
 <table>
 <thead>
@@ -376,13 +383,18 @@
 <p><code>&lt;string name=&quot;welcome&quot;&gt;欢迎&lt;/string&gt;</code><br><code>&lt;color name=&quot;white&quot;&gt;#FFFFFF&lt;/color&gt;</code></p>
 </blockquote>
 <h2 id="注释">注释</h2><p>养成良好的注释习惯，对提升自己的编程能力和团队合作能力有很大的益处。</p>
-<h3 id="文件注释">文件注释</h3><p>源文件的开头需要注释说明当前的文件信息，包括文件名、作者、版本信息、日期、修改记录等。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line"> * -----------------------------------------------------------------</span><br><span class="line"> * Copyright (C) 2014, by Peanut Run, Shenzhen, All rights reserved.</span><br><span class="line"> * -----------------------------------------------------------------</span><br><span class="line"> *</span><br><span class="line"> * File: RootApp</span><br><span class="line"> * Author: JiongBull</span><br><span class="line"> * Version: 1.0</span><br><span class="line"> * Create: 2014/9/25</span><br><span class="line"> *</span><br><span class="line"> * Changes (from 2014/9/25)</span><br><span class="line"> * -----------------------------------------------------------------</span><br><span class="line"> * 2014/9/25 : 创建 RootApp (JiongBull);</span><br><span class="line"> * -----------------------------------------------------------------</span><br><span class="line"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="文件注释">文件注释</h3><p>一般来说是版权声明。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line"> * Copyright JiongBull 2016</span><br><span class="line"> *</span><br><span class="line"> * Licensed under the Apache License, Version 2.0 (the "License");</span><br><span class="line"> * you may not use this file except in compliance with the License.</span><br><span class="line"> * You may obtain a copy of the License at</span><br><span class="line"> *</span><br><span class="line"> *     http://www.apache.org/licenses/LICENSE-2.0</span><br><span class="line"> *</span><br><span class="line"> * Unless required by applicable law or agreed to in writing, software</span><br><span class="line"> * distributed under the License is distributed on an "AS IS" BASIS,</span><br><span class="line"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span><br><span class="line"> * See the License for the specific language governing permissions and</span><br><span class="line"> * limitations under the License.</span><br><span class="line"> */</span></span><br></pre></td></tr></table></figure>
 <h3 id="类注释">类注释</h3><p>在类的开头添加类信息的描述.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="javadoc">/**</span><br><span class="line"> * 登录页.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="方法注释">方法注释</h3><p>一般情况下需要为每个方法添加注释，包括方法的功能描述，参数信息、返回值、异常信息等，有些约定俗成的方法可以不需要添加注释，请参考<code>约定俗成</code>的说明。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="javadoc">/**</span><br><span class="line"> * 输出日志.</span><br><span class="line"> *</span><br><span class="line"> *<span class="javadoctag"> @param</span> context   Context</span><br><span class="line"> *<span class="javadoctag"> @param</span> logLevel  日志等级</span><br><span class="line"> *<span class="javadoctag"> @param</span> tag       标签</span><br><span class="line"> *<span class="javadoctag"> @param</span> content   输出内容</span><br><span class="line"> *<span class="javadoctag"> @param</span> throwable 异常信息, 若没有异常可为空</span><br><span class="line"> */</span></span><br><span class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">trace</span><span class="params">(<span class="keyword">final</span> Context context, <span class="keyword">final</span> <span class="keyword">int</span> logLevel, <span class="keyword">final</span> String tag, <span class="keyword">final</span> String content, <span class="keyword">final</span> Throwable throwable)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="域变量和常量注释">域变量和常量注释</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="javadoc">/**</span><br><span class="line"> * 日志的扩展名.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String LOG_EXTENSION = <span class="string">".log"</span>;</span><br><span class="line"></span><br><span class="line"><span class="javadoc">/**</span><br><span class="line"> * 网络请求队列.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">private</span> RequestQueue mRequestQueue;</span><br></pre></td></tr></table></figure>
+<h3 id="方法注释">方法注释</h3><p>一般情况下需要为每个非私有方法添加注释，包括方法的功能描述，参数信息、返回值、异常信息等。</p>
+<p>例外情况：</p>
+<ul>
+<li>见名知意的方法（起名一定要慎重、多花点时间也是值得的）</li>
+<li>约定俗成的方法，例如IDE generate产生的get/set方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="javadoc">/**</span><br><span class="line"> * 获取异常栈信息，不同于Log.getStackTraceString()，该方法不会过滤掉UnknownHostException.</span><br><span class="line"> *</span><br><span class="line"> *<span class="javadoctag"> @param</span> t &#123;@link Throwable&#125;</span><br><span class="line"> *<span class="javadoctag"> @return</span> 异常栈里的信息</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getStackTraceString</span><span class="params">(Throwable t)</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="域变量和常量注释">域变量和常量注释</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="javadoc">/** 日志的扩展名. */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String LOG_EXTENSION = <span class="string">".log"</span>;</span><br><span class="line"></span><br><span class="line"><span class="javadoc">/** 打印机. */</span></span><br><span class="line"> <span class="keyword">private</span> Printer mPrinter;</span><br></pre></td></tr></table></figure>
 <h3 id="其他注释">其他注释</h3><p>单行注释</p>
 <blockquote>
 <p> <code>view.setImageResource(defaultImageResId);</code> // 无图片显示默认图片</p>
@@ -390,10 +402,6 @@
 <p>区块注释</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/* 网络图片添加渐变动画 */</span></span><br><span class="line">Resources resource = mContext.getResources();</span><br><span class="line"><span class="keyword">final</span> TransitionDrawable transitionDrawable =</span><br><span class="line">        <span class="keyword">new</span> TransitionDrawable(<span class="keyword">new</span> Drawable[] &#123;</span><br><span class="line">                <span class="keyword">new</span> ColorDrawable(android.R.color.transparent),</span><br><span class="line">                <span class="keyword">new</span> BitmapDrawable(resource, bmpResponse)</span><br><span class="line">        &#125;);</span><br><span class="line">view.setBackgroundResource(defaultImageResId);</span><br><span class="line">view.setImageDrawable(transitionDrawable);</span><br><span class="line">transitionDrawable.startTransition(RequestManager.FADE_IN_TIME);</span><br></pre></td></tr></table></figure>
 <h3 id="XML注释">XML注释</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span> <span class="attribute">name</span>=<span class="value">"AppTheme"</span> <span class="attribute">parent</span>=<span class="value">"android:Theme.Holo.Light.NoActionBar"</span>&gt;</span><span class="css"></span><br><span class="line">        &lt;!<span class="tag">--</span> <span class="tag">Customize</span> <span class="tag">your</span> <span class="tag">theme</span> <span class="tag">here</span>. <span class="tag">--</span>&gt;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="约定俗成">约定俗成</h2><h3 id="get_/_set_方法的注释">get / set 方法的注释</h3><p>通过IDE工具批量生成域变量的 get / set 方法可以不用注释。</p>
-<h3 id="第三方库生成代码的注释">第三方库生成代码的注释</h3><p>第三方库生成的代码可以不用注释，例如greenDao生成的代码。</p>
-<h3 id="通用类的注释">通用类的注释</h3><p>通用类的公共方法应全部添加注释。</p>
-<h3 id="一般情况下的注释">一般情况下的注释</h3><p>例如在activity、service等文件中，只需对关键的类变量进行注释，方法建议全部添加注释。</p>
 <h2 id="分享">分享</h2><p>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。<br>更多支持，请扫描下面的二维码进行捐赠。</p>
 <p><img src="http://7xize8.com1.z0.glb.clouddn.com/donate.png" alt="分享与捐赠"></p>
 
@@ -403,7 +411,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
+  <a class="article-category-link" href="/categories/Android-Experience/">Android Experience</a>
 </div>
 
 
@@ -455,7 +463,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命名规则"><span class="toc-number">1.</span> <span class="toc-text">命名规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#包命名"><span class="toc-number">1.1.</span> <span class="toc-text">包命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类和接口命名"><span class="toc-number">1.2.</span> <span class="toc-text">类和接口命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法的命名"><span class="toc-number">1.3.</span> <span class="toc-text">方法的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的命名"><span class="toc-number">1.4.</span> <span class="toc-text">变量的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常量的命名"><span class="toc-number">1.5.</span> <span class="toc-text">常量的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常的命名"><span class="toc-number">1.6.</span> <span class="toc-text">异常的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布局的命名"><span class="toc-number">1.7.</span> <span class="toc-text">布局的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ID的命名"><span class="toc-number">1.8.</span> <span class="toc-text">ID的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片的命名"><span class="toc-number">1.9.</span> <span class="toc-text">图片的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他资源命名"><span class="toc-number">1.10.</span> <span class="toc-text">其他资源命名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-number">2.</span> <span class="toc-text">注释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件注释"><span class="toc-number">2.1.</span> <span class="toc-text">文件注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类注释"><span class="toc-number">2.2.</span> <span class="toc-text">类注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法注释"><span class="toc-number">2.3.</span> <span class="toc-text">方法注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域变量和常量注释"><span class="toc-number">2.4.</span> <span class="toc-text">域变量和常量注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他注释"><span class="toc-number">2.5.</span> <span class="toc-text">其他注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML注释"><span class="toc-number">2.6.</span> <span class="toc-text">XML注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#约定俗成"><span class="toc-number">3.</span> <span class="toc-text">约定俗成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#get_/_set_方法的注释"><span class="toc-number">3.1.</span> <span class="toc-text">get / set 方法的注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三方库生成代码的注释"><span class="toc-number">3.2.</span> <span class="toc-text">第三方库生成代码的注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通用类的注释"><span class="toc-number">3.3.</span> <span class="toc-text">通用类的注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一般情况下的注释"><span class="toc-number">3.4.</span> <span class="toc-text">一般情况下的注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">4.</span> <span class="toc-text">分享</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命名规则"><span class="toc-number">1.</span> <span class="toc-text">命名规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#包命名"><span class="toc-number">1.1.</span> <span class="toc-text">包命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类和接口命名"><span class="toc-number">1.2.</span> <span class="toc-text">类和接口命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法的命名"><span class="toc-number">1.3.</span> <span class="toc-text">方法的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的命名"><span class="toc-number">1.4.</span> <span class="toc-text">变量的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常量的命名"><span class="toc-number">1.5.</span> <span class="toc-text">常量的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常的命名"><span class="toc-number">1.6.</span> <span class="toc-text">异常的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布局的命名"><span class="toc-number">1.7.</span> <span class="toc-text">布局的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ID的命名"><span class="toc-number">1.8.</span> <span class="toc-text">ID的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片的命名"><span class="toc-number">1.9.</span> <span class="toc-text">图片的命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他资源命名"><span class="toc-number">1.10.</span> <span class="toc-text">其他资源命名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-number">2.</span> <span class="toc-text">注释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件注释"><span class="toc-number">2.1.</span> <span class="toc-text">文件注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类注释"><span class="toc-number">2.2.</span> <span class="toc-text">类注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法注释"><span class="toc-number">2.3.</span> <span class="toc-text">方法注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域变量和常量注释"><span class="toc-number">2.4.</span> <span class="toc-text">域变量和常量注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他注释"><span class="toc-number">2.5.</span> <span class="toc-text">其他注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML注释"><span class="toc-number">2.6.</span> <span class="toc-text">XML注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">3.</span> <span class="toc-text">分享</span></a></li></ol>
  
   </div>
 
@@ -469,7 +477,11 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Android/" title="Android">Android<sup>5</sup></a></li>
+			<li><a href="/categories/Android-Experience/" title="Android Experience">Android Experience<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Github/" title="Github">Github<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -480,6 +492,14 @@
 <div class="tagslist">
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Github/" title="Github">Github<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Log/" title="Log">Log<sup>1</sup></a></li>
+			
 		
 			
 				<li><a href="/tags/Material-Design/" title="Material Design">Material Design<sup>1</sup></a></li>

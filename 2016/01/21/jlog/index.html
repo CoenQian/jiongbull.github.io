@@ -13,20 +13,49 @@
     
     <meta name="description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
 
-分享如果这篇文章对你有帮助，请分享下面的链接让更多人受益。更多支持，请扫描下面的二维码进行捐赠。">
+jlog是一款针对Android开发者的日志工具。
+orhanobut的logger，ZhaoKaiQiang的KLog和JakeWharton的timber给了我灵感和参考，感谢他们的开源精神。
+再结合一些工作上的经验，就撸出了这个库。
+希望你会喜欢它。( ^_^ )
+特点
+兼容android l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jlog">
 <meta property="og:url" content="http://jiongbull.com/2016/01/21/jlog/index.html">
 <meta property="og:site_name" content="JiongBull's Blog">
 <meta property="og:description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
 
-分享如果这篇文章对你有帮助，请分享下面的链接让更多人受益。更多支持，请扫描下面的二维码进行捐赠。">
+jlog是一款针对Android开发者的日志工具。
+orhanobut的logger，ZhaoKaiQiang的KLog和JakeWharton的timber给了我灵感和参考，感谢他们的开源精神。
+再结合一些工作上的经验，就撸出了这个库。
+希望你会喜欢它。( ^_^ )
+特点
+兼容android l">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/jlog_sample.gif">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/jlog_def_directory.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/jlog_app_directory.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/jlog_app_sub_directory.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/jlog_prefix_file.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/jlog_time_segment.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/jlog_time_format.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/default_tag.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/custom_tag.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/json.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/proguard_console.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/proguard_file.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/environment_en.jpg">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/environment_zh.jpg">
 <meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/donate.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jlog">
 <meta name="twitter:description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
 
-分享如果这篇文章对你有帮助，请分享下面的链接让更多人受益。更多支持，请扫描下面的二维码进行捐赠。">
+jlog是一款针对Android开发者的日志工具。
+orhanobut的logger，ZhaoKaiQiang的KLog和JakeWharton的timber给了我灵感和参考，感谢他们的开源精神。
+再结合一些工作上的经验，就撸出了这个库。
+希望你会喜欢它。( ^_^ )
+特点
+兼容android l">
 
     
     
@@ -100,16 +129,84 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">1.</span> <span class="toc-text">分享</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖"><span class="toc-number">2.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化"><span class="toc-number">3.1.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#init(context)"><span class="toc-number">3.2.</span> <span class="toc-text">init(context)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setDebug(boolean)"><span class="toc-number">3.3.</span> <span class="toc-text">setDebug(boolean)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#writeToFile(boolean)"><span class="toc-number">3.4.</span> <span class="toc-text">writeToFile(boolean)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setLogLevelsForFile(List)"><span class="toc-number">3.5.</span> <span class="toc-text">setLogLevelsForFile(List)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setLogDir(String)"><span class="toc-number">3.6.</span> <span class="toc-text">setLogDir(String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setLogPrefix(String)"><span class="toc-number">3.7.</span> <span class="toc-text">setLogPrefix(String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setLogSegment(LogSegment)"><span class="toc-number">3.8.</span> <span class="toc-text">setLogSegment(LogSegment)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setCharset(String)"><span class="toc-number">3.9.</span> <span class="toc-text">setCharset(String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setTimeFormat(String)"><span class="toc-number">3.10.</span> <span class="toc-text">setTimeFormat(String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setZoneOffset(ZoneOffset)"><span class="toc-number">3.11.</span> <span class="toc-text">setZoneOffset(ZoneOffset)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-number">4.</span> <span class="toc-text">用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JLog-v(String)"><span class="toc-number">4.1.</span> <span class="toc-text">JLog.v(String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JLog-v(TAG,_String)"><span class="toc-number">4.2.</span> <span class="toc-text">JLog.v(TAG, String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JLog-json(json)"><span class="toc-number">4.3.</span> <span class="toc-text">JLog.json(json)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混淆"><span class="toc-number">4.4.</span> <span class="toc-text">混淆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行环境信息"><span class="toc-number">4.5.</span> <span class="toc-text">运行环境信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#License"><span class="toc-number">5.</span> <span class="toc-text">License</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">6.</span> <span class="toc-text">分享</span></a></li></ol>
 		
 		</div>
 		
-    <blockquote class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">
-<p class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">来源：<a href="http://jiongbull.com" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">JiongBull’s Blog</a><br class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">@JiongBull</a><br class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">JiongBull</a></p>
-</blockquote>
 		<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
+<p>jlog是一款针对Android开发者的日志工具。</p>
+<p><a href="https://github.com/orhanobut" target="_blank" rel="external">orhanobut</a>的<a href="https://github.com/orhanobut/logger" target="_blank" rel="external">logger</a>，<a href="https://github.com/ZhaoKaiQiang" target="_blank" rel="external">ZhaoKaiQiang</a>的<a href="https://github.com/ZhaoKaiQiang/KLog" target="_blank" rel="external">KLog</a>和<a href="https://github.com/JakeWharton" target="_blank" rel="external">JakeWharton</a>的<a href="https://github.com/JakeWharton/timber" target="_blank" rel="external">timber</a>给了我灵感和参考，感谢他们的开源精神。</p>
+<p>再结合一些工作上的经验，就撸出了这个库。</p>
+<p>希望你会喜欢它。( ^_^ )</p>
+<h2 id="特点">特点</h2><ul>
+<li>兼容android logcat，<code>VERBOSE</code>、<code>DEBUG</code>、<code>INFO</code>、<code>WARN</code>、<code>ERROR</code>和<code>WTF</code>全都有，一个都不能少</li>
+<li>在<code>JSON</code>模式下，jlog会把json内容格式化，便于理解</li>
+<li>jlog提供了调用者的类、方法和行号信息，甚至可以从控制台直接跳转到源文件</li>
+<li>简化了logcat，jlog使用调用者的类名作TAG（当然也支持自定义TAG）</li>
+<li>突破了logcat的4000字长度限制</li>
+<li>jlog可以把日志输出到指定的目录和文件中</li>
+<li>你可以决定哪些级别的日志写入文件中</li>
+<li>在日志文件的顶部，jlog提供了很多有用的运行环境相关的信息，比如<code>操作系统信息</code>、<code>设备信息</code>和<code>应用信息</code></li>
+<li>jlog针对写入文件的日志做了格式化，同时提供了足够的信息方便分析，例如<code>时间</code>、<code>日志等级</code>和<code>调用位置</code></li>
+<li>混淆后也能工作正常（获取调用位置）</li>
+<li>支持配置日志文件编码，例如<code>UTF-8</code>，<code>GBK</code></li>
+<li>支持设置日志文件的时间格式</li>
+<li>支持设置日志文件的时区（便于调试其他时区的设备）</li>
+<li>日志按照时间切片写入到不同的文件中，默认是24小时，文件名诸如<code>2016-01-19.log</code>，你也可以指定<code>前缀</code>和<code>时间切片</code>，比如<code>用户标识_2016-01-19_2021.log</code></li>
+</ul>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_sample.gif" alt="jlog sample"></p>
+<h2 id="依赖">依赖</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.jiongbull:jlog:1.0.2'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置">配置</h2><h3 id="初始化">初始化</h3><p>建议在你的application的<code>onCreate()</code>方法里初始化jlog的全局配置，设置一次终身受用。</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">RootApp</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Application</span> &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    public void onCreate() &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate();</span><br><span class="line">        <span class="type">JLog</span>.init(<span class="keyword">this</span>)</span><br><span class="line">            .setDebug(<span class="type">BuildConfig</span>.<span class="type">DEBUG</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所有的配置都保存在<code>JLog</code>类里。你可以通过<code>getSettings()</code>来获取配置，它会返回一个<code>Settings</code>对象。修改<code>Settings</code>对象后再用<code>setSettings()</code>设置，下次使用时就会生效了。</p>
+<p>记得把下面的代码添加到你的混淆文件中（例如：<code>proguard-rules.pro</code>）。</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">keepattributes <span class="constant">SourceFile</span>, <span class="constant">LineNumberTable</span></span><br><span class="line"></span>-<span class="ruby">keep <span class="class"><span class="keyword">class</span> <span class="title">com</span>.<span class="title">jiongbull</span>.<span class="title">jlog</span>.** &#123; *;</span> &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="init(context)">init(context)</h3><p>建议使用application context。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="setDebug(boolean)">setDebug(boolean)</h3><p>默认是true，日志会输出到控制台中。在发布版本的时候请把这个变量设置为false。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .setDebug(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .setDebug(BuildConfig.DEBUG);</span><br></pre></td></tr></table></figure>
+<h3 id="writeToFile(boolean)">writeToFile(boolean)</h3><p>日志开关，如果是true，日志会输出到文件中，默认是false。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="setLogLevelsForFile(List)">setLogLevelsForFile(List<loglevel>)</loglevel></h3><p>这个方法决定了哪些级别的日志可以输出到文件中。默认的日志级别是<code>LogLevel.ERROR</code>和<code>LogLevel.WTF</code>。</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List<span class="variable">&lt;LogLevel&gt;</span> <span class="keyword">log</span>Levels = new ArrayList<span class="variable">&lt;&gt;</span>();</span><br><span class="line"><span class="keyword">log</span>Levels.add(LogLevel.ERROR);</span><br><span class="line"><span class="keyword">log</span>Levels.add(LogLevel.JSON);</span><br><span class="line">JLog.init(this)</span><br><span class="line">    .writeToFile(true)</span><br><span class="line">    .<span class="built_in">set</span>LogLevelsForFile(<span class="keyword">log</span>Levels);</span><br></pre></td></tr></table></figure>
+<h3 id="setLogDir(String)">setLogDir(String)</h3><p>配置日志保存的目录名称，日志目录是位于sd卡中，默认名称是<code>jlog</code>.</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_def_directory.jpg" alt="default directory"></p>
+<p>可以使用应用的名称作为日志目录名。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name));</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_app_directory.jpg" alt="app directory"></p>
+<p>子目录当然也支持啦，可以使用一些唯一标识作为子目录的名称，比如用户标识。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name) + File.separator + <span class="string">"JiongBull"</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_app_sub_directory.jpg" alt="app sub directory"></p>
+<h3 id="setLogPrefix(String)">setLogPrefix(String)</h3><p>如果不想使用子目录，你或许可以试一试日志文件的<code>前缀</code>功能。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name))</span><br><span class="line">    .setLogPrefix(<span class="string">"JiongBull"</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_prefix_file.jpg" alt="prefix file"></p>
+<h3 id="setLogSegment(LogSegment)">setLogSegment(LogSegment)</h3><p>日志按照时间切片写入到不同的文件中，默认是24小时，文件名诸如<code>2016-01-19.log</code>，如果设置为<code>LogSegment.ONE_HOUR</code>，文件名就会变成诸如<code>2016-01-19_0203.log</code>那样了，表示文件里记录的是2:00到3:00的日志。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name))</span><br><span class="line">    .setLogSegment(LogSegment.ONE_HOUR);</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_time_segment.jpg" alt="time segment"></p>
+<h3 id="setCharset(String)">setCharset(String)</h3><p>配置日志文件的编码格式，默认是<code>UTF-8</code>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name))</span><br><span class="line">    .setCharset(<span class="string">"GBK"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="setTimeFormat(String)">setTimeFormat(String)</h3><p>默认的时间格式是<code>yyyy-MM-dd HH:mm:ss</code>，你可以使用这个方法让日志更容易理解。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name))</span><br><span class="line">    .setTimeFormat(<span class="string">"yyyy年MM月dd日 HH时mm分ss秒"</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_time_format.jpg" alt="time format"></p>
+<h3 id="setZoneOffset(ZoneOffset)">setZoneOffset(ZoneOffset)</h3><p>我们可以指定文件里日志时间的时区，而不受用户位置的影响，这样会更容易定位问题，默认是<code>ZoneOffset.P0800</code>（+0800），表示“北京时间”。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .writeToFile(<span class="keyword">true</span>)</span><br><span class="line">    .setLogDir(getString(R.<span class="built_in">string</span>.app_name))</span><br><span class="line">    .setZoneOffset(ZoneOffset.P0800);</span><br></pre></td></tr></table></figure>
+<h2 id="用法">用法</h2><h3 id="JLog-v(String)">JLog.v(String)</h3><p>jlog默认会使用调用者的类名作TAG。</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/default_tag.jpg" alt="default tag"></p>
+<h3 id="JLog-v(TAG,_String)">JLog.v(TAG, String)</h3><p>你也可以自己指定TAG。</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/custom_tag.jpg" alt="custom tag"></p>
+<h3 id="JLog-json(json)">JLog.json(json)</h3><p>jlog会把json内容格式化，便于理解。</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/json.jpg" alt="json"></p>
+<h3 id="混淆">混淆</h3><p>jlog在混淆模式下依旧工作正常。</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/proguard_console.jpg" alt="logs in console"></p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/proguard_file.jpg" alt="logs in file"></p>
+<h3 id="运行环境信息">运行环境信息</h3><p>在日志文件的顶部，jlog提供了很多有用的运行环境相关的信息，比如<code>操作系统信息</code>、<code>设备信息</code>和<code>应用信息</code></p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/environment_en.jpg" alt="environment info en"></p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/environment_zh.jpg" alt="environment info zh"></p>
+<h2 id="License">License</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Copyright JiongBull 2016</span><br><span class="line"></span><br><span class="line">Licensed under the Apache License, Version 2.0 (the "License");</span><br><span class="line">you may not <span class="operator"><span class="keyword">use</span> this file <span class="keyword">except</span> <span class="keyword">in</span> compliance <span class="keyword">with</span> the License.</span><br><span class="line">You may obtain a copy <span class="keyword">of</span> the License <span class="keyword">at</span></span><br><span class="line"></span><br><span class="line">    http://www.apache.org/licenses/LICENSE-<span class="number">2.0</span></span><br><span class="line"></span><br><span class="line">Unless required <span class="keyword">by</span> applicable law <span class="keyword">or</span> agreed <span class="keyword">to</span> <span class="keyword">in</span> writing, software</span><br><span class="line">distributed under the License <span class="keyword">is</span> distributed <span class="keyword">on</span> an <span class="string">"AS IS"</span> BASIS,</span><br><span class="line">WITHOUT WARRANTIES <span class="keyword">OR</span> CONDITIONS <span class="keyword">OF</span> <span class="keyword">ANY</span> KIND, either express <span class="keyword">or</span> implied.</span><br><span class="line">See the License <span class="keyword">for</span> the specific <span class="keyword">language</span> governing permissions <span class="keyword">and</span></span><br><span class="line">limitations under the License.</span></span><br></pre></td></tr></table></figure>
 <h2 id="分享">分享</h2><p>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。<br>更多支持，请扫描下面的二维码进行捐赠。</p>
 <p><img src="http://7xize8.com1.z0.glb.clouddn.com/donate.png" alt="分享与捐赠"></p>
 
@@ -119,9 +216,14 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
+  <a class="article-category-link" href="/categories/Github/">Github</a>
 </div>
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Github/">Github</a><a href="/tags/Log/">Log</a>
+  </div>
 
 </div>
 
@@ -166,7 +268,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">1.</span> <span class="toc-text">分享</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖"><span class="toc-number">2.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化"><span class="toc-number">3.1.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#init(context)"><span class="toc-number">3.2.</span> <span class="toc-text">init(context)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setDebug(boolean)"><span class="toc-number">3.3.</span> <span class="toc-text">setDebug(boolean)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#writeToFile(boolean)"><span class="toc-number">3.4.</span> <span class="toc-text">writeToFile(boolean)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setLogLevelsForFile(List)"><span class="toc-number">3.5.</span> <span class="toc-text">setLogLevelsForFile(List)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setLogDir(String)"><span class="toc-number">3.6.</span> <span class="toc-text">setLogDir(String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setLogPrefix(String)"><span class="toc-number">3.7.</span> <span class="toc-text">setLogPrefix(String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setLogSegment(LogSegment)"><span class="toc-number">3.8.</span> <span class="toc-text">setLogSegment(LogSegment)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setCharset(String)"><span class="toc-number">3.9.</span> <span class="toc-text">setCharset(String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setTimeFormat(String)"><span class="toc-number">3.10.</span> <span class="toc-text">setTimeFormat(String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setZoneOffset(ZoneOffset)"><span class="toc-number">3.11.</span> <span class="toc-text">setZoneOffset(ZoneOffset)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-number">4.</span> <span class="toc-text">用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JLog-v(String)"><span class="toc-number">4.1.</span> <span class="toc-text">JLog.v(String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JLog-v(TAG,_String)"><span class="toc-number">4.2.</span> <span class="toc-text">JLog.v(TAG, String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JLog-json(json)"><span class="toc-number">4.3.</span> <span class="toc-text">JLog.json(json)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混淆"><span class="toc-number">4.4.</span> <span class="toc-text">混淆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行环境信息"><span class="toc-number">4.5.</span> <span class="toc-text">运行环境信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#License"><span class="toc-number">5.</span> <span class="toc-text">License</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">6.</span> <span class="toc-text">分享</span></a></li></ol>
  
   </div>
 
@@ -180,7 +282,11 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Android/" title="Android">Android<sup>5</sup></a></li>
+			<li><a href="/categories/Android-Experience/" title="Android Experience">Android Experience<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Github/" title="Github">Github<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -191,6 +297,14 @@
 <div class="tagslist">
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Github/" title="Github">Github<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Log/" title="Log">Log<sup>1</sup></a></li>
+			
 		
 			
 				<li><a href="/tags/Material-Design/" title="Material Design">Material Design<sup>1</sup></a></li>

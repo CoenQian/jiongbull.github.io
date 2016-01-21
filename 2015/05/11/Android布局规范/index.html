@@ -11,28 +11,28 @@
     
 
     
-    <meta name="description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+    <meta name="description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull  
 
 单位尺寸为了更容易的适配不同尺寸和像素密度的屏幕，我们约定在布局文件中必须使用dp单位的尺寸（由于部分机型可以调整手机字体大小，为了避免影响到布局结构，字号的单位也要求使用dp单位的尺寸）。
 
-我们适配三种像素密度的屏幕（hdpi、xhdpi、xxhdpi），他们的比例系数为1.5 : 2 : 3，">
+我们适配四种像素密度的屏幕（hdpi、xhdpi、xxhdpi、xxxhdpi），他们的比例系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android布局规范">
 <meta property="og:url" content="http://jiongbull.com/2015/05/11/Android布局规范/index.html">
 <meta property="og:site_name" content="JiongBull's Blog">
-<meta property="og:description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+<meta property="og:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull  
 
 单位尺寸为了更容易的适配不同尺寸和像素密度的屏幕，我们约定在布局文件中必须使用dp单位的尺寸（由于部分机型可以调整手机字体大小，为了避免影响到布局结构，字号的单位也要求使用dp单位的尺寸）。
 
-我们适配三种像素密度的屏幕（hdpi、xhdpi、xxhdpi），他们的比例系数为1.5 : 2 : 3，">
+我们适配四种像素密度的屏幕（hdpi、xhdpi、xxhdpi、xxxhdpi），他们的比例系">
 <meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/donate.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android布局规范">
-<meta name="twitter:description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+<meta name="twitter:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull  
 
 单位尺寸为了更容易的适配不同尺寸和像素密度的屏幕，我们约定在布局文件中必须使用dp单位的尺寸（由于部分机型可以调整手机字体大小，为了避免影响到布局结构，字号的单位也要求使用dp单位的尺寸）。
 
-我们适配三种像素密度的屏幕（hdpi、xhdpi、xxhdpi），他们的比例系数为1.5 : 2 : 3，">
+我们适配四种像素密度的屏幕（hdpi、xhdpi、xxhdpi、xxxhdpi），他们的比例系">
 
     
     
@@ -110,21 +110,18 @@
 		
 		</div>
 		
-    <blockquote class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">
-<p class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">来源：<a href="http://jiongbull.com" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">JiongBull’s Blog</a><br class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">@JiongBull</a><br class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">JiongBull</a></p>
-</blockquote>
 		<blockquote>
-<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
 </blockquote>
 <h2 id="单位">单位</h2><h3 id="尺寸">尺寸</h3><p>为了更容易的适配不同尺寸和像素密度的屏幕，我们约定在布局文件中必须使用dp单位的尺寸（由于部分机型可以调整手机字体大小，为了避免影响到布局结构，字号的单位也要求使用dp单位的尺寸）。</p>
 <blockquote>
-<p>我们适配三种像素密度的屏幕（hdpi、xhdpi、xxhdpi），他们的比例系数为1.5 : 2 : 3，那么10dp在这三种屏幕上分别表示10 <em> 1.5 = 15px，10 </em> 2 = 20px，10 * 3 = 30px</p>
+<p>我们适配四种像素密度的屏幕（hdpi、xhdpi、xxhdpi、xxxhdpi），他们的比例系数为1.5 : 2 : 3 : 4，那么10dp在这四种屏幕上分别表示10 <em> 1.5 = 15px，10 </em> 2 = 20px，10 <em> 3 = 30px，10 </em> 4 = 40px。</p>
 </blockquote>
 <h3 id="色彩">色彩</h3><p>色彩使用ARGB模式，用32位表示，例如#AABBCCDD，其中AA表示透明度，BB表示红色，CC表示绿色，DD表示蓝色。</p>
 <blockquote>
 <p><strong>注意</strong>：遵从设计规范，色值需要全部为大写。</p>
 </blockquote>
-<h2 id="图片">图片</h2><h3 id="分辨率">分辨率</h3><p>需要三种规格尺寸的图片，比例系数为1.5 : 2 : 3</p>
+<h2 id="图片">图片</h2><h3 id="分辨率">分辨率</h3><p>需要四种规格尺寸的图片，比例系数为1.5 : 2 : 3 : 4</p>
 <p>例如logo的图片：</p>
 <table>
 <thead>
@@ -154,10 +151,16 @@
 <td style="text-align:center">144px * 144px</td>
 <td style="text-align:center">48dp * 48dp</td>
 </tr>
+<tr>
+<td style="text-align:center">xxxhdpi</td>
+<td style="text-align:center">4.0</td>
+<td style="text-align:center">192px * 192px</td>
+<td style="text-align:center">48dp * 48dp</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>注意</strong>：对于9-patch，也需要三种规格尺寸。</p>
+<p><strong>注意</strong>：对于9-patch，也需要四种规格尺寸。</p>
 </blockquote>
 <h3 id="状态">状态</h3><p>有些图片是有状态的，例如按钮、单选框、复选框等，我们对有状态的图片进行命名时会在图片名称后面后缀对应的状态字符串。</p>
 <table>
@@ -190,7 +193,7 @@
 <h3 id="字号">字号</h3><p>统一的字号标准可以使应用风格更加统一，在不同的设备上做到一致的用户体验。</p>
 <h3 id="尺寸-1">尺寸</h3><p>对于常用的尺寸可以抽取出来，方便快速开发。对于设计师来说，规范化的尺寸可以让设计看起来更加大气一体，开发前可以先与设计师沟通，共同抽取出一些预定义的尺寸。</p>
 <blockquote>
-<p>根据在<a href="http://jiongbull.com/2015/05/11/Android%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/" target="_blank" rel="external">Android屏幕适配</a>一文中指出的，我们适配宽度为320dp和360dp的屏幕。可以先使用360dp的手机或者模拟器进行布局开发，待编译打包时，只需要把values-w360dp里dimens.xml新定义的尺寸拷贝到values-w320dp里，把数值乘以320/360，也就是8/9即可，这样它们占屏幕宽度的比例就一致了。</p>
+<p>根据在<a href="/2015/05/11/Android屏幕适配">Android屏幕适配</a>一文中指出的，我们适配宽度为320dp和360dp的屏幕。可以先使用360dp的手机或者模拟器进行布局开发，待编译打包时，只需要把values-w360dp里dimens.xml新定义的尺寸拷贝到values-w320dp里，把数值乘以320/360，也就是8/9即可，这样它们占屏幕宽度的比例就一致了。</p>
 <p>例如，values-w360dp中定义了宽度为90dp的按钮，那么在values-w320dp中对应的尺寸就是80dp，90 / 360 = 25%且80 / 320 = 25%，它们在各自的屏幕中看起来占屏幕宽度的比例就是一致的了。</p>
 </blockquote>
 <h2 id="分享">分享</h2><p>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。<br>更多支持，请扫描下面的二维码进行捐赠。</p>
@@ -202,7 +205,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
+  <a class="article-category-link" href="/categories/Android-Experience/">Android Experience</a>
 </div>
 
 
@@ -276,7 +279,11 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Android/" title="Android">Android<sup>5</sup></a></li>
+			<li><a href="/categories/Android-Experience/" title="Android Experience">Android Experience<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Github/" title="Github">Github<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -287,6 +294,14 @@
 <div class="tagslist">
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Github/" title="Github">Github<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Log/" title="Log">Log<sup>1</sup></a></li>
+			
 		
 			
 				<li><a href="/tags/Material-Design/" title="Material Design">Material Design<sup>1</sup></a></li>

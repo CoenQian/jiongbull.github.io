@@ -11,7 +11,7 @@
     
 
     
-    <meta name="description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+    <meta name="description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
 
 统计分析2014Q1活跃Android设备统计
 参数表格:
@@ -39,13 +39,12 @@ xhdpi
 
 
 小米手机2S
-720 * 1280
-x">
+720 * 12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android屏幕适配">
 <meta property="og:url" content="http://jiongbull.com/2015/05/11/Android屏幕适配/index.html">
 <meta property="og:site_name" content="JiongBull's Blog">
-<meta property="og:description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+<meta property="og:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
 
 统计分析2014Q1活跃Android设备统计
 参数表格:
@@ -73,14 +72,13 @@ xhdpi
 
 
 小米手机2S
-720 * 1280
-x">
+720 * 12">
 <meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/2014Top20.png">
 <meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/android_trend.png">
 <meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/donate.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android屏幕适配">
-<meta name="twitter:description" content="来源：JiongBull’s Blog微博：@JiongBullGitHub：JiongBull
+<meta name="twitter:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
 
 统计分析2014Q1活跃Android设备统计
 参数表格:
@@ -108,8 +106,7 @@ xhdpi
 
 
 小米手机2S
-720 * 1280
-x">
+720 * 12">
 
     
     
@@ -187,11 +184,8 @@ x">
 		
 		</div>
 		
-    <blockquote class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">
-<p class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">来源：<a href="http://jiongbull.com" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">JiongBull’s Blog</a><br class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">@JiongBull</a><br class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external" class="eye-protector-processed" style="border-color: rgba(0, 0, 0, 0.34902);">JiongBull</a></p>
-</blockquote>
 		<blockquote>
-<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
 <h2 id="统计分析">统计分析</h2><h3 id="2014Q1活跃Android设备统计">2014Q1活跃Android设备统计</h3><p><img src="http://7xize8.com1.z0.glb.clouddn.com/2014Top20.png" alt="2014Q1活跃Android设备Top20"></p>
 <p>参数表格:</p>
@@ -358,9 +352,9 @@ x">
 <li>可以使用XML绘图代替位图，比如圆角矩形，使用XML绘制的色图比位图节省空间资源，而且可以自动适配</li>
 <li>使用9-patch，9-patch可以缩放，我们可以使用很小的9-patch填充很大的UI控件，节省空间资源，提高应用的性能</li>
 <li>尽量减少XML的布局层次，减少布局层次可以减少系统解析代码所做的工作，让界面的渲染速度变快</li>
-<li>使用merge而不是include，使用merge可以达到减少布局层次的效果</li>
+<li>可以使用merge的情形就不要使用include，使用merge可以达到减少布局层次的效果</li>
 <li>尽量使用RelativeLayout，使用RelativeLayout相比使用多个LinearLayout来说可以减少布局的层次</li>
-<li>每种切图都需要下面表格中的展示的三种规格</li>
+<li>每种切图都需要下面表格中的展示的四种规格</li>
 </ul>
 <table>
 <thead>
@@ -374,17 +368,22 @@ x">
 <tr>
 <td style="text-align:center">hdpi</td>
 <td style="text-align:center">1.5</td>
-<td style="text-align:center">72 * 72</td>
+<td style="text-align:center">72px * 72px</td>
 </tr>
 <tr>
 <td style="text-align:center">xhdpi</td>
 <td style="text-align:center">2.0</td>
-<td style="text-align:center">96 * 96</td>
+<td style="text-align:center">96px * 96px</td>
 </tr>
 <tr>
 <td style="text-align:center">xxhdpi</td>
 <td style="text-align:center">3.0</td>
-<td style="text-align:center">144 * 144</td>
+<td style="text-align:center">144px * 144px</td>
+</tr>
+<tr>
+<td style="text-align:center">xxxhdpi</td>
+<td style="text-align:center">4.0</td>
+<td style="text-align:center">192px * 192px</td>
 </tr>
 </tbody>
 </table>
@@ -397,7 +396,7 @@ x">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
+  <a class="article-category-link" href="/categories/Android-Experience/">Android Experience</a>
 </div>
 
 
@@ -471,7 +470,11 @@ x">
 		<ul>
 		
 		  
-			<li><a href="/categories/Android/" title="Android">Android<sup>5</sup></a></li>
+			<li><a href="/categories/Android-Experience/" title="Android Experience">Android Experience<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Github/" title="Github">Github<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -482,6 +485,14 @@ x">
 <div class="tagslist">
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Github/" title="Github">Github<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Log/" title="Log">Log<sup>1</sup></a></li>
+			
 		
 			
 				<li><a href="/tags/Material-Design/" title="Material Design">Material Design<sup>1</sup></a></li>
