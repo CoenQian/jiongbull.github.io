@@ -6,6 +6,7 @@
   
     <title>Android屏幕适配 | JiongBull&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<meta name="baidu-site-verification" content="D2uzc1tiUm" />
     
     <meta name="author" content="JiongBull">
     
@@ -109,12 +110,14 @@ xhdpi
 720 * 12">
 
     
+    <link rel="alternative" href="/atom.xml" title="JiongBull&#39;s Blog" type="application/atom+xml">
+    
     
     <link rel="icon" href="/img/favicon.ico">
     
     
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon" href="/img/apple.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple.png">
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
@@ -140,6 +143,10 @@ xhdpi
 					 
 						<li><a href="/">主页</a></li>
 					
+						<li><a href="/categories/Android-Experience">Android Experience</a></li>
+					
+						<li><a href="/categories/Github">GitHub</a></li>
+					
 						<li><a href="/archives">归档</a></li>
 					
 						<li><a href="/about">关于</a></li>
@@ -160,7 +167,7 @@ xhdpi
     <div id="container">
       <div id="main" class="post" itemscope itemprop="blogPost">
   
-	<article itemprop="articleBody">
+	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
@@ -389,7 +396,7 @@ xhdpi
 </table>
 <h2 id="分享">分享</h2><p>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。<br>更多支持，请扫描下面的二维码进行捐赠。</p>
 <p><img src="http://7xize8.com1.z0.glb.clouddn.com/donate.png" alt="分享与捐赠"></p>
-
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -419,7 +426,7 @@ xhdpi
 
 </footer>
 
-
+   	       
 	</article>
 	
 <nav class="article-nav clearfix">
@@ -449,8 +456,7 @@ xhdpi
 </section>
 
 
-</div>
-
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
@@ -533,6 +539,20 @@ xhdpi
     </ul>
 </div>
 
+  
+<div class="github-card">
+<p class="asidetitle">Github 名片</p>
+<div class="github-card" data-github="JiongBull" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+  </div>
+
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
 </aside>
 </div>
     </div>
@@ -545,8 +565,8 @@ xhdpi
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m JiongBull in Peanut Run. <br/>
-			Welcome to my blog.</p>
+		<p> 人生得意须尽欢，莫使金尊空对月 <br/>
+			天生我材必有用，千金散尽还复来</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
@@ -582,6 +602,7 @@ xhdpi
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){ 
@@ -666,8 +687,8 @@ $(document).ready(function(){
       tsina = $this.attr('data-tsina'),
       description = $this.attr('description');
   var html = [
-  '<a href="#" class="overlay" id="qrcode"></a>',
-  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
   '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
   '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
   '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
@@ -676,14 +697,34 @@ $(document).ready(function(){
   '<span title="Share to"></span>'
   ].join('');
   $this.append(html);
-  $('.article-share-qrcode').click(function(){
-    var imgSrc = $('#qrcode-pic').attr('data-src');
-    $('#qrcode-pic').attr('src', imgSrc);
-    $('#qrcode-pic').load(function(){
-        $('.qrcode strong').text(' ');
-    });
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
   });
-});     
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
 </script>
 
 
@@ -731,12 +772,16 @@ $(document).ready(function(){
 
 <!-- Analytics Begin -->
 
-
-
 <script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F04085bf1893ac7a48de0dc50e7ed2573' type='text/javascript'%3E%3C/script%3E"));
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-72760362-1', 'jiongbull.com');  
+ga('send', 'pageview');
 </script>
+
+
 
 
 
