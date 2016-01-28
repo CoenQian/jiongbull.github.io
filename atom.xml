@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-01-28T16:28:16.857Z</updated>
+  <updated>2016-01-28T16:32:01.165Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -19,11 +19,11 @@
     <link href="http://jiongbull.com/2016/01/21/jlog/"/>
     <id>http://jiongbull.com/2016/01/21/jlog/</id>
     <published>2016-01-21T09:18:30.000Z</published>
-    <updated>2016-01-28T16:28:16.857Z</updated>
+    <updated>2016-01-28T16:32:01.165Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
-<p><a href="https://bintray.com/jiongbull/maven/jlog/_latestVersion" target="_blank" rel="external"><img src="https://api.bintray.com/packages/jiongbull/maven/jlog/images/download.svg" alt="Download"> </a><br><a href="https://travis-ci.org/JiongBull/jlog" target="_blank" rel="external"><img src="https://travis-ci.org/JiongBull/jlog.svg?branch=master" alt="Build Status"></a></p>
+<p><a href="https://bintray.com/jiongbull/maven/jlog/_latestVersion" target="_blank" rel="external"><img src="https://api.bintray.com/packages/jiongbull/maven/jlog/images/download.svg" alt=""> </a><a href="https://travis-ci.org/JiongBull/jlog" target="_blank" rel="external"><img src="https://travis-ci.org/JiongBull/jlog.svg?branch=master" alt=""></a></p>
 <p>jlog是一款针对Android开发者的日志工具。</p>
 <p><a href="https://github.com/orhanobut" target="_blank" rel="external">orhanobut</a>的<a href="https://github.com/orhanobut/logger" target="_blank" rel="external">logger</a>，<a href="https://github.com/ZhaoKaiQiang" target="_blank" rel="external">ZhaoKaiQiang</a>的<a href="https://github.com/ZhaoKaiQiang/KLog" target="_blank" rel="external">KLog</a>和<a href="https://github.com/JakeWharton" target="_blank" rel="external">JakeWharton</a>的<a href="https://github.com/JakeWharton/timber" target="_blank" rel="external">timber</a>给了我灵感和参考，感谢他们的开源精神。</p>
 <p>再结合一些工作上的经验，就撸出了这个库。</p>
