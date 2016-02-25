@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Android布局规范 | JiongBull&#39;s Blog</title>
+    <title>《Android开发艺术探索》读书笔记(1) - Activity的生命周期和启动模式 | JiongBull&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 	<meta name="baidu-site-verification" content="D2uzc1tiUm" />
     
@@ -14,26 +14,28 @@
     
     <meta name="description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull  
 
-单位尺寸为了更容易的适配不同尺寸和像素密度的屏幕，我们约定在布局文件中必须使用dp单位的尺寸（由于部分机型可以调整手机字体大小，为了避免影响到布局结构，字号的单位也要求使用dp单位的尺寸）。
-
-我们适配四种像素密度的屏幕（hdpi、xhdpi、xxhdpi、xxxhdpi），他们的比例系">
+Activity的生命周期全面分析典型情况下的生命周期分析
+Activity从不可见状态重新变为可见状态时，会调用onRestart()
+onPause()里不能做耗时的工作，因为会影响新Activity的显示
+如果打开的新Activity启用了透明主题，那么当前Activity不会调用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android布局规范">
-<meta property="og:url" content="http://jiongbull.com/2015/05/11/Android布局规范/index.html">
+<meta property="og:title" content="《Android开发艺术探索》读书笔记(1) - Activity的生命周期和启动模式">
+<meta property="og:url" content="http://jiongbull.com/2016/02/20/《Android开发艺术探索》读书笔记(1)/index.html">
 <meta property="og:site_name" content="JiongBull's Blog">
 <meta property="og:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull  
 
-单位尺寸为了更容易的适配不同尺寸和像素密度的屏幕，我们约定在布局文件中必须使用dp单位的尺寸（由于部分机型可以调整手机字体大小，为了避免影响到布局结构，字号的单位也要求使用dp单位的尺寸）。
-
-我们适配四种像素密度的屏幕（hdpi、xhdpi、xxhdpi、xxxhdpi），他们的比例系">
-<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/donate.png">
+Activity的生命周期全面分析典型情况下的生命周期分析
+Activity从不可见状态重新变为可见状态时，会调用onRestart()
+onPause()里不能做耗时的工作，因为会影响新Activity的显示
+如果打开的新Activity启用了透明主题，那么当前Activity不会调用">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android布局规范">
+<meta name="twitter:title" content="《Android开发艺术探索》读书笔记(1) - Activity的生命周期和启动模式">
 <meta name="twitter:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull  
 
-单位尺寸为了更容易的适配不同尺寸和像素密度的屏幕，我们约定在布局文件中必须使用dp单位的尺寸（由于部分机型可以调整手机字体大小，为了避免影响到布局结构，字号的单位也要求使用dp单位的尺寸）。
-
-我们适配四种像素密度的屏幕（hdpi、xhdpi、xxhdpi、xxxhdpi），他们的比例系">
+Activity的生命周期全面分析典型情况下的生命周期分析
+Activity从不可见状态重新变为可见状态时，会调用onRestart()
+onPause()里不能做耗时的工作，因为会影响新Activity的显示
+如果打开的新Activity启用了透明主题，那么当前Activity不会调用">
 
     
     <link rel="alternative" href="/atom.xml" title="JiongBull&#39;s Blog" type="application/atom+xml">
@@ -97,14 +99,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/05/11/Android布局规范/" title="Android布局规范" itemprop="url">Android布局规范</a>
+      <a href="/2016/02/20/《Android开发艺术探索》读书笔记(1)/" title="《Android开发艺术探索》读书笔记(1) - Activity的生命周期和启动模式" itemprop="url">《Android开发艺术探索》读书笔记(1) - Activity的生命周期和启动模式</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="JiongBull" target="_blank" itemprop="author">JiongBull</a>
 		
   <p class="article-time">
-    <time datetime="2015-05-11T06:52:36.000Z" itemprop="datePublished"> 发表于 2015-05-11</time>
+    <time datetime="2016-02-20T14:07:42.000Z" itemprop="datePublished"> 发表于 2016-02-20</time>
     
   </p>
 </header>
@@ -113,98 +115,52 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#单位"><span class="toc-number">1.</span> <span class="toc-text">单位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#尺寸"><span class="toc-number">1.1.</span> <span class="toc-text">尺寸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#色彩"><span class="toc-number">1.2.</span> <span class="toc-text">色彩</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片"><span class="toc-number">2.</span> <span class="toc-text">图片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分辨率"><span class="toc-number">2.1.</span> <span class="toc-text">分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#状态"><span class="toc-number">2.2.</span> <span class="toc-text">状态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些技巧"><span class="toc-number">3.</span> <span class="toc-text">一些技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#色值"><span class="toc-number">3.1.</span> <span class="toc-text">色值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字号"><span class="toc-number">3.2.</span> <span class="toc-text">字号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尺寸-1"><span class="toc-number">3.3.</span> <span class="toc-text">尺寸</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">4.</span> <span class="toc-text">分享</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity的生命周期全面分析"><span class="toc-number">1.</span> <span class="toc-text">Activity的生命周期全面分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#典型情况下的生命周期分析"><span class="toc-number">1.1.</span> <span class="toc-text">典型情况下的生命周期分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常情况下的生命周期分析"><span class="toc-number">1.2.</span> <span class="toc-text">异常情况下的生命周期分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity的启动模式"><span class="toc-number">2.</span> <span class="toc-text">Activity的启动模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Activity的LaunchMode"><span class="toc-number">2.1.</span> <span class="toc-text">Activity的LaunchMode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Activity的Flags"><span class="toc-number">2.2.</span> <span class="toc-text">Activity的Flags</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IntentFilter的匹配规则"><span class="toc-number">3.</span> <span class="toc-text">IntentFilter的匹配规则</span></a></li></ol>
 		
 		</div>
 		
 		<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
 </blockquote>
-<h2 id="单位">单位</h2><h3 id="尺寸">尺寸</h3><p>为了更容易的适配不同尺寸和像素密度的屏幕，我们约定在布局文件中必须使用dp单位的尺寸（由于部分机型可以调整手机字体大小，为了避免影响到布局结构，字号的单位也要求使用dp单位的尺寸）。</p>
-<blockquote>
-<p>我们适配四种像素密度的屏幕（hdpi、xhdpi、xxhdpi、xxxhdpi），他们的比例系数为1.5 : 2 : 3 : 4，那么10dp在这四种屏幕上分别表示10 <em> 1.5 = 15px，10 </em> 2 = 20px，10 <em> 3 = 30px，10 </em> 4 = 40px。</p>
-</blockquote>
-<h3 id="色彩">色彩</h3><p>色彩使用ARGB模式，用32位表示，例如#AABBCCDD，其中AA表示透明度，BB表示红色，CC表示绿色，DD表示蓝色。</p>
-<blockquote>
-<p><strong>注意</strong>：遵从设计规范，色值需要全部为大写。</p>
-</blockquote>
-<h2 id="图片">图片</h2><h3 id="分辨率">分辨率</h3><p>需要四种规格尺寸的图片，比例系数为1.5 : 2 : 3 : 4</p>
-<p>例如logo的图片：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">像素密度</th>
-<th style="text-align:center">比例系数</th>
-<th style="text-align:center">logo分辨率</th>
-<th style="text-align:center">logo的尺寸</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">1.5</td>
-<td style="text-align:center">72px * 72px</td>
-<td style="text-align:center">48dp * 48dp</td>
-</tr>
-<tr>
-<td style="text-align:center">xhdpi</td>
-<td style="text-align:center">2.0</td>
-<td style="text-align:center">96px * 96px</td>
-<td style="text-align:center">48dp * 48dp</td>
-</tr>
-<tr>
-<td style="text-align:center">xxhdpi</td>
-<td style="text-align:center">3.0</td>
-<td style="text-align:center">144px * 144px</td>
-<td style="text-align:center">48dp * 48dp</td>
-</tr>
-<tr>
-<td style="text-align:center">xxxhdpi</td>
-<td style="text-align:center">4.0</td>
-<td style="text-align:center">192px * 192px</td>
-<td style="text-align:center">48dp * 48dp</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>注意</strong>：对于9-patch，也需要四种规格尺寸。</p>
-</blockquote>
-<h3 id="状态">状态</h3><p>有些图片是有状态的，例如按钮、单选框、复选框等，我们对有状态的图片进行命名时会在图片名称后面后缀对应的状态字符串。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">状态</th>
-<th style="text-align:center">后缀</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">默认</td>
-<td style="text-align:center">无后缀</td>
-</tr>
-<tr>
-<td style="text-align:center">按下</td>
-<td style="text-align:center">_p</td>
-</tr>
-<tr>
-<td style="text-align:center">选中</td>
-<td style="text-align:center">_c</td>
-</tr>
-<tr>
-<td style="text-align:center">不可用</td>
-<td style="text-align:center">_d</td>
-</tr>
-</tbody>
-</table>
-<h2 id="一些技巧">一些技巧</h2><h3 id="色值">色值</h3><p>应用中出现的色值不应过多，而且需要配置在xml中，这样应用才会显得简洁干净，风格统一。</p>
-<h3 id="字号">字号</h3><p>统一的字号标准可以使应用风格更加统一，在不同的设备上做到一致的用户体验。</p>
-<h3 id="尺寸-1">尺寸</h3><p>对于常用的尺寸可以抽取出来，方便快速开发。对于设计师来说，规范化的尺寸可以让设计看起来更加大气一体，开发前可以先与设计师沟通，共同抽取出一些预定义的尺寸。</p>
-<blockquote>
-<p>根据在<a href="/2015/05/11/Android屏幕适配">Android屏幕适配</a>一文中指出的，我们适配宽度为320dp和360dp的屏幕。可以先使用360dp的手机或者模拟器进行布局开发，待编译打包时，只需要把values-w360dp里dimens.xml新定义的尺寸拷贝到values-w320dp里，把数值乘以320/360，也就是8/9即可，这样它们占屏幕宽度的比例就一致了。</p>
-<p>例如，values-w360dp中定义了宽度为90dp的按钮，那么在values-w320dp中对应的尺寸就是80dp，90 / 360 = 25%且80 / 320 = 25%，它们在各自的屏幕中看起来占屏幕宽度的比例就是一致的了。</p>
-</blockquote>
-<h2 id="分享">分享</h2><p>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。<br>更多支持，请扫描下面的二维码进行捐赠。</p>
-<p><img src="http://7xize8.com1.z0.glb.clouddn.com/donate.png" alt="分享与捐赠"></p>
+<h2 id="Activity的生命周期全面分析">Activity的生命周期全面分析</h2><h3 id="典型情况下的生命周期分析">典型情况下的生命周期分析</h3><ul>
+<li>Activity从不可见状态重新变为可见状态时，会调用<code>onRestart()</code></li>
+<li><code>onPause()</code>里不能做耗时的工作，因为会影响新Activity的显示</li>
+<li>如果打开的新Activity启用了透明主题，那么当前Activity不会调用<code>onStop()</code></li>
+<li><code>onStart()</code>和<code>onStop()</code>是从Activity是否可见的角度进行回调(可见是针对系统来讲的，对人不可见)，<code>onResume()</code>和<code>onPause()</code>是从Activity是否可以交互的角度进行回调</li>
+<li>Activity A打开Activity B的回调顺序是<code>onPause(A)</code> -&gt; <code>onCreate(B)</code> -&gt; <code>onStart(B)</code> -&gt; <code>onResume(B)</code> -&gt; <code>onStop(A)</code></li>
+</ul>
+<h3 id="异常情况下的生命周期分析">异常情况下的生命周期分析</h3><ul>
+<li>系统在Activity可能会被回收之前调用<code>onSaveInstanceState()</code>保存状态信息，调用时机发生在<code>onPause()</code>或<code>onStop()</code>之前，没有特定的时序关系</li>
+<li>当Activity被重新创建后，系统会调用<code>onRestoreInstanceState()</code>，并把Activity销毁时在<code>onSaveInstanceState()</code>保存的Bundle对象作为参数同时传递给<code>onRestoreInstanceState()</code>和<code>onCreate()</code>，<code>onRestoreInstanceState()</code>的调用时机发生在<code>onStart()</code>之后</li>
+<li>View都有<code>onSaveInstanceState()</code>和<code>onRestoreInstanceState()</code>回调，系统会自动保存和恢复View的状态(一定要给View指定ID才行)</li>
+<li>系统配置发生改变后，Activity会被重新创建，若不想重新创建，可以给Activity指定configChanges属性，系统会调用<code>onConfigurationChanged()</code></li>
+</ul>
+<h2 id="Activity的启动模式">Activity的启动模式</h2><h3 id="Activity的LaunchMode">Activity的LaunchMode</h3><ul>
+<li>一般需要使用Activity的context来启动Activity，除非把待启动Activity的flag设置为<code>FLAG_ACTIVITY_NEW_TASK</code>，就能用非Activity的context启动Activity了</li>
+<li><code>standard</code>和<code>singleTop</code>模式的Activity默认会进入启动它的Activity所属的任务栈中，在跨应用启动Activity时会觉得它们属于同一个应用，在任务管理器观察也是如此</li>
+<li><code>singleTop</code>模式下，如果待启动的Activity已经位于任务栈的栈顶，那么该Activity不会被重新创建，它的<code>onNewIntent()</code>会被回调，<code>onCreate()</code>和<code>onStart()</code>都不会被回调。如果该Activity已经存在但不是位于栈顶，该Activity依旧会重新创建</li>
+<li><code>singleTask</code>模式被称为栈内复用模式或单实例模式，只要Activity在栈中存在，多次启动该Activity都不会创建新的实例</li>
+<li><code>singleInstance</code>模式也被称为加强的单实例模式，栈内只会有一个Activity实例</li>
+<li><code>taskAffinity</code>用来指定任务栈的名称，默认情况下，所有Activity所需的任务栈的名字为应用的包名</li>
+<li><code>taskAffinity</code>主要和<code>singleTask</code>(<code>FLAG_ACTIVITY_NEW_TASK</code>)启动模式或<code>allowTaskReparenting</code>配合使用，其他情况下没有意义</li>
+<li>使用<code>adb shell dumpsys activity</code>查看Activity的栈信息</li>
+<li>有两种设置启动模式的方式，第一种在AndroidManifest中指定<code>launchMode</code>，第二种是通过Intent设置标志位来指定启动模式，第二种的优先级比第一种高</li>
+</ul>
+<h3 id="Activity的Flags">Activity的Flags</h3><ul>
+<li><code>FLAG_ACTIVITY_NEW_TASK</code>效果与<code>singleTask</code>效果相同</li>
+<li><code>FLAG_ACTIVITY_SINGLE_TOP</code>效果与<code>singleTop</code>效果相同</li>
+<li><code>FLAG_ACTIVITY_CLEAR_TOP</code>常与<code>FLAG_ACTIVITY_SINGLE_TOP</code>配合使用</li>
+</ul>
+<h2 id="IntentFilter的匹配规则">IntentFilter的匹配规则</h2><ul>
+<li>一个Activity中可以有多个intent-filter，Intent只要能匹配任何一个intent-filter即可成功启动对应的Activity</li>
+<li>一个intent-filter中的action、category和data元素可以有多个，Intent只有完全匹配所有类别才能匹配成功</li>
+<li>如果intent-filter中不包含任何action，那么它不能匹配任何指定action的Intent</li>
+<li>Intent要通过category匹配规则的话，在Intent中的每个category都必须匹配intent-filter中的category。反之不必要，intent-filter中声明的category可能比Intent中的还多，但是Intent依然会通过。因此，没有category的intent不管filter里声明了什么category都会通过。</li>
+<li>使用<code>startActivity()</code>和<code>startActivityForResult()</code>时，Android会自动的在所有的隐式intent中添加<code>CATEGORY_DEFAULT</code>的category，所以如果想要Activity能够接收到这些隐式Intent的话，就必须在它的intent-filter中包含<code>android.intent.category.DEFAULT</code>的category</li>
+<li>每个data元素都可以指定一个URI和MIME，URI的一般结构为<code>&lt;scheme&gt;://&lt;host&gt;:&lt;port&gt;/[&lt;path&gt;|&lt;pathPrefix&gt;|&lt;pathPattern&gt;]</code></li>
+<li>如果要为Intent指定完整的data，必须要调用<code>setDataAndType()</code>方法，因为<code>setType()</code>和<code>setData()</code>会互相覆盖</li>
+<li>PackageManager有一系列的<code>query...()</code>方法，它可以返回所有可以接收某个特定Intent的组件，同样，还有一系列的<code>resolve...()</code>方法，可以找出最适合响应某个Intent的组件</li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -212,13 +168,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android-Experience/">Android Experience</a>
+  <a class="article-category-link" href="/categories/《Android开发艺术探索》读书笔记/">《Android开发艺术探索》读书笔记</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/布局规范/">布局规范</a>
+  <span></span> <a href="/tags/Activity/">Activity</a><a href="/tags/启动模式/">启动模式</a><a href="/tags/生命周期/">生命周期</a><a href="/tags/读书笔记/">读书笔记</a>
   </div>
 
 </div>
@@ -227,7 +183,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://jiongbull.com/2015/05/11/Android布局规范/" data-title="Android布局规范 | JiongBull&#39;s Blog" data-tsina="1792183427" class="share clearfix">
+	  <div data-url="http://jiongbull.com/2016/02/20/《Android开发艺术探索》读书笔记(1)/" data-title="《Android开发艺术探索》读书笔记(1) - Activity的生命周期和启动模式 | JiongBull&#39;s Blog" data-tsina="1792183427" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -240,19 +196,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/07/13/Material-Design-Color/" title="Material Design color">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Material Design color</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/05/11/Android屏幕适配/"  title="Android屏幕适配">
+<a href="/2016/02/20/jlog-qiniu/"  title="jlog-qiniu">
  <strong>下一篇：</strong><br/> 
- <span>Android屏幕适配
+ <span>jlog-qiniu
 </span>
 </a>
 </div>
@@ -261,7 +209,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/05/11/Android布局规范/" data-title="Android布局规范" data-url="http://jiongbull.com/2015/05/11/Android布局规范/"></div>
+	<div class="ds-thread" data-thread-key="2016/02/20/《Android开发艺术探索》读书笔记(1)/" data-title="《Android开发艺术探索》读书笔记(1) - Activity的生命周期和启动模式" data-url="http://jiongbull.com/2016/02/20/《Android开发艺术探索》读书笔记(1)/"></div>
 </section>
 
 
@@ -271,7 +219,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#单位"><span class="toc-number">1.</span> <span class="toc-text">单位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#尺寸"><span class="toc-number">1.1.</span> <span class="toc-text">尺寸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#色彩"><span class="toc-number">1.2.</span> <span class="toc-text">色彩</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片"><span class="toc-number">2.</span> <span class="toc-text">图片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分辨率"><span class="toc-number">2.1.</span> <span class="toc-text">分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#状态"><span class="toc-number">2.2.</span> <span class="toc-text">状态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些技巧"><span class="toc-number">3.</span> <span class="toc-text">一些技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#色值"><span class="toc-number">3.1.</span> <span class="toc-text">色值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字号"><span class="toc-number">3.2.</span> <span class="toc-text">字号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尺寸-1"><span class="toc-number">3.3.</span> <span class="toc-text">尺寸</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享"><span class="toc-number">4.</span> <span class="toc-text">分享</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity的生命周期全面分析"><span class="toc-number">1.</span> <span class="toc-text">Activity的生命周期全面分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#典型情况下的生命周期分析"><span class="toc-number">1.1.</span> <span class="toc-text">典型情况下的生命周期分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常情况下的生命周期分析"><span class="toc-number">1.2.</span> <span class="toc-text">异常情况下的生命周期分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity的启动模式"><span class="toc-number">2.</span> <span class="toc-text">Activity的启动模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Activity的LaunchMode"><span class="toc-number">2.1.</span> <span class="toc-text">Activity的LaunchMode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Activity的Flags"><span class="toc-number">2.2.</span> <span class="toc-text">Activity的Flags</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IntentFilter的匹配规则"><span class="toc-number">3.</span> <span class="toc-text">IntentFilter的匹配规则</span></a></li></ol>
  
   </div>
 
