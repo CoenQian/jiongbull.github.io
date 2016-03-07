@@ -14,25 +14,25 @@
     
     <meta name="description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull  
 
-Android IPC简介在Android平台上可以通过Binder实现进程间通信，通过Socket实现 任意两个终端之间的通信
+Android IPC简介在Android平台上可以通过Binder实现进程间通信，通过Socket实现任意两个终端之间的通信
 Android中的多进程模式开启多进程模式
-在Android中使用多进程的唯一方法，就是给四大组件在AndroidManifest中指定android:pro">
+在Android中使用多进程的唯一方法，就是给四大组件在AndroidManifest中指定android:proc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《Android开发艺术探索》读书笔记(2) - IPC机制">
 <meta property="og:url" content="http://jiongbull.com/2016/02/29/《Android开发艺术探索》读书笔记(2)/index.html">
 <meta property="og:site_name" content="JiongBull's Blog">
 <meta property="og:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull  
 
-Android IPC简介在Android平台上可以通过Binder实现进程间通信，通过Socket实现 任意两个终端之间的通信
+Android IPC简介在Android平台上可以通过Binder实现进程间通信，通过Socket实现任意两个终端之间的通信
 Android中的多进程模式开启多进程模式
-在Android中使用多进程的唯一方法，就是给四大组件在AndroidManifest中指定android:pro">
+在Android中使用多进程的唯一方法，就是给四大组件在AndroidManifest中指定android:proc">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Android开发艺术探索》读书笔记(2) - IPC机制">
 <meta name="twitter:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull  
 
-Android IPC简介在Android平台上可以通过Binder实现进程间通信，通过Socket实现 任意两个终端之间的通信
+Android IPC简介在Android平台上可以通过Binder实现进程间通信，通过Socket实现任意两个终端之间的通信
 Android中的多进程模式开启多进程模式
-在Android中使用多进程的唯一方法，就是给四大组件在AndroidManifest中指定android:pro">
+在Android中使用多进程的唯一方法，就是给四大组件在AndroidManifest中指定android:proc">
 
     
     <link rel="alternative" href="/atom.xml" title="JiongBull&#39;s Blog" type="application/atom+xml">
@@ -119,7 +119,7 @@ Android中的多进程模式开启多进程模式
 		<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
 </blockquote>
-<h2 id="Android_IPC简介">Android IPC简介</h2><p>在Android平台上可以通过Binder实现进程间通信，通过Socket实现 任意两个终端之间的通信</p>
+<h2 id="Android_IPC简介">Android IPC简介</h2><p>在Android平台上可以通过Binder实现进程间通信，通过Socket实现任意两个终端之间的通信</p>
 <h2 id="Android中的多进程模式">Android中的多进程模式</h2><h3 id="开启多进程模式">开启多进程模式</h3><ul>
 <li>在Android中使用多进程的唯一方法，就是给四大组件在AndroidManifest中指定<code>android:process</code>属性</li>
 <li><code>adb shell ps | grep com.jiongbull.art.note</code>可以查看包名对应的进程信息</li>
@@ -170,6 +170,7 @@ Android中的多进程模式开启多进程模式
 <li>服务端的Binder方法运行在Binder的线程池中，所以Binder方法不管是否耗时都应该采用同步的方式实现，保证线程安全</li>
 </ol>
 </li>
+<li>Binder有两个重要的方法<code>linkToDeath(...)</code>和<code>unlinkToDeath(...)</code>，当服务端程序异常终止时，客户端到服务端的连接就会断裂（Binder死亡），导致远程调用失败，更为关键的是，如果我们不知道Binder连接已经断裂，客户端的功能会受到影响。通过<code>linkToDeath(...)</code>可以给Binder注册死亡代理，当Binder死亡时，客户端就会收到通知，这时候可以重新发起连接请求从而恢复连接</li>
 </ul>
 <h2 id="Android中的IPC方式">Android中的IPC方式</h2><h3 id="使用Binder">使用Binder</h3><h3 id="使用文件共享">使用文件共享</h3><h3 id="使用Messenger">使用Messenger</h3><h3 id="使用AIDL">使用AIDL</h3><h3 id="使用ContentProvider">使用ContentProvider</h3><h3 id="使用Socket">使用Socket</h3><h2 id="Binder连接池">Binder连接池</h2><h2 id="选用合适的IPC方式">选用合适的IPC方式</h2>  
 	</div>
