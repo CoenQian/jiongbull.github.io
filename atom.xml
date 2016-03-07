@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-03-03T13:42:23.227Z</updated>
+  <updated>2016-03-04T09:52:41.828Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jiongbull.com/2016/02/29/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(2)/"/>
     <id>http://jiongbull.com/2016/02/29/《Android开发艺术探索》读书笔记(2)/</id>
     <published>2016-02-29T05:16:39.000Z</published>
-    <updated>2016-03-03T13:42:23.227Z</updated>
+    <updated>2016-03-04T09:52:41.828Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
 </blockquote>
@@ -57,7 +57,25 @@
 <li>Parcel内部包装了可序列化的数据，需要实现序列化、反序列化和内容描述，序列化功能由<code>writeToParcel</code>方法来完成，最终通过Parcel中的一系列write方法来完成，反序列化功能由<code>CREATOR</code>来完成，其内部标明了如何创建序列化对象和数组，并通过Parcel中的一系列read方法来完成反序列化，内容描述功能通过<code>describeContents</code>方法完成，一般情况下返回0，仅当当前对象存在文件描述符时才返回1</li>
 <li>Serializable是Java中的序列化接口，使用简单但开销大，序列化和反序列化过程需要大量的IO操作。而Parcel是Android中的序列化方式，适用Android平台，效率高</li>
 </ul>
-<h3 id="Binder">Binder</h3><h2 id="Android中的IPC方式">Android中的IPC方式</h2><h3 id="使用Binder">使用Binder</h3><h3 id="使用文件共享">使用文件共享</h3><h3 id="使用Messenger">使用Messenger</h3><h3 id="使用AIDL">使用AIDL</h3><h3 id="使用ContentProvider">使用ContentProvider</h3><h3 id="使用Socket">使用Socket</h3><h2 id="Binder连接池">Binder连接池</h2><h2 id="选用合适的IPC方式">选用合适的IPC方式</h2>]]></content>
+<h3 id="Binder">Binder</h3><ul>
+<li>从IPC角度来说，Binder是Android中的一种跨进程通信方式，可以理解为一种虚拟的物理设备，它的设备驱动是<code>/dev/binder</code>，从Android Framework角度来说，Binder是ServiceManager连接各种Manager和相应ManagerService的桥梁，从Android应用层来说，Binder是客户端和服务器进行通信的媒介，当<code>bindService</code>的时候，客户端就可以获取服务端提供的服务或者数据</li>
+<li>系统会把我们书写的.aidl接口文件解析成对应的java接口文件，主要包含这几个部分：<ol>
+<li>接口方法</li>
+<li>内部类Stub和它的代理类Proxy，Stub继承了Binder类，当客户端和服务端位于同一个进程中时，方法调用不会走跨进程的transact过程，而当两者位于不同进程时，方法调用需要走transact过程，这个逻辑由Proxy来完成，Stub内部还声明了一些整型ID，在transact过程中用来标识客户端请求的是哪个接口方法</li>
+</ol>
+</li>
+<li>生成的接口的核心实现是内部类Stub和Stub的内部代理类Proxy，下面介绍一些核心方法的含义：<ol>
+<li><code>DESCRIPTOR</code>，Binder的唯一标识，一般用当前Binder的全限定类名表示</li>
+<li><code>asInterface(...)</code>，将服务端的Binder对象转换成客户端AIDL接口对象，如果客户端和服务端位于同一进程，那么此方法返回的就是服务端的Stub对象本身，否则返回的是系统封装后的Stub.proxy对象</li>
+<li><code>asBinder()</code>，返回当前的Binder对象</li>
+<li><code>onTransact(...)</code>，运行在服务端的Binder线程池中，当客户端发起跨进程请求时，远程请求会通过系统底层封装后交由此方法来处理。服务端通过方法参数code来确定客户端所请求的目标方法是什么，接着从data中取出目标方法所需的参数，然后执行目标方法，方法执行完毕后向reply中写入返回值。如果返回true，表示请求执行成功，如果返回false表示请求失败，可以根据这个特性做权限校验</li>
+<li><code>Proxy#method</code>，运行在客户端中，当客户端调用此方法时，首先创建该方法所需要的输入型Parcel对象<code>_data</code>、输出型Parcel对象<code>_reply</code>和返回值对象，然后把该方法的参数信息写入到<code>_data</code>中，接着调用<code>transact()</code>方法来完成RPC请求，同时当前线程挂起，然后服务端的<code>onTransact(...)</code>方法会被调用，直到PRC过程返回后，当前线程继续执行，并从<code>_reply</code>中取出RPC过程的返回结果，最后返回_reply中的数据</li>
+<li>客户端发起请求时，当前线程会被挂起直至服务端进程返回数据，所以不适合在UI线程中发起远程请求</li>
+<li>服务端的Binder方法运行在Binder的线程池中，所以Binder方法不管是否耗时都应该采用同步的方式实现，保证线程安全</li>
+</ol>
+</li>
+</ul>
+<h2 id="Android中的IPC方式">Android中的IPC方式</h2><h3 id="使用Binder">使用Binder</h3><h3 id="使用文件共享">使用文件共享</h3><h3 id="使用Messenger">使用Messenger</h3><h3 id="使用AIDL">使用AIDL</h3><h3 id="使用ContentProvider">使用ContentProvider</h3><h3 id="使用Socket">使用Socket</h3><h2 id="Binder连接池">Binder连接池</h2><h2 id="选用合适的IPC方式">选用合适的IPC方式</h2>]]></content>
     <summary type="html">
     <![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
