@@ -155,7 +155,10 @@
 </li>
 <li>Binder有两个重要的方法<code>linkToDeath(...)</code>和<code>unlinkToDeath(...)</code>，当服务端程序异常终止时，客户端到服务端的连接就会断裂（Binder死亡），导致远程调用失败，更为关键的是，如果我们不知道Binder连接已经断裂，客户端的功能会受到影响。通过<code>linkToDeath(...)</code>可以给Binder注册死亡代理，当Binder死亡时，客户端就会收到通知，这时候可以重新发起连接请求从而恢复连接</li>
 </ul>
-<h2 id="Android中的IPC方式">Android中的IPC方式</h2><h3 id="使用Binder">使用Binder</h3><h3 id="使用文件共享">使用文件共享</h3><h3 id="使用Messenger">使用Messenger</h3><h3 id="使用AIDL">使用AIDL</h3><h3 id="使用ContentProvider">使用ContentProvider</h3><h3 id="使用Socket">使用Socket</h3><h2 id="Binder连接池">Binder连接池</h2><h2 id="选用合适的IPC方式">选用合适的IPC方式</h2>
+<h2 id="Android中的IPC方式">Android中的IPC方式</h2><h3 id="使用Bundle">使用Bundle</h3><p>Activity、Service和Receiver都支持在Intent中传递Bundle数据，由于Bundle实现了Parcelable接口，所以它可以方便的在不同的进程中进行传输</p>
+<h3 id="使用文件共享">使用文件共享</h3><p>文件共享方式适合在对数据同步要求不高的进程之间进行通信，并且要妥善处理并发读/写的问题</p>
+<h3 id="使用Messenger">使用Messenger</h3><p>Messenger是一种轻量级的IPC方案，它的底层实现是AIDL。Messenger一次处理一个请求，因此不用考虑线程同步的问题</p>
+<h3 id="使用AIDL">使用AIDL</h3><h3 id="使用ContentProvider">使用ContentProvider</h3><h3 id="使用Socket">使用Socket</h3><h2 id="Binder连接池">Binder连接池</h2><h2 id="选用合适的IPC方式">选用合适的IPC方式</h2>
         
         
         <p class="article-more-link">
