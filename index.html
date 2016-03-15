@@ -158,7 +158,18 @@
 <h2 id="Android中的IPC方式">Android中的IPC方式</h2><h3 id="使用Bundle">使用Bundle</h3><p>Activity、Service和Receiver都支持在Intent中传递Bundle数据，由于Bundle实现了Parcelable接口，所以它可以方便的在不同的进程中进行传输</p>
 <h3 id="使用文件共享">使用文件共享</h3><p>文件共享方式适合在对数据同步要求不高的进程之间进行通信，并且要妥善处理并发读/写的问题</p>
 <h3 id="使用Messenger">使用Messenger</h3><p>Messenger是一种轻量级的IPC方案，它的底层实现是AIDL。Messenger一次处理一个请求，因此不用考虑线程同步的问题</p>
-<h3 id="使用AIDL">使用AIDL</h3><h3 id="使用ContentProvider">使用ContentProvider</h3><h3 id="使用Socket">使用Socket</h3><h2 id="Binder连接池">Binder连接池</h2><h2 id="选用合适的IPC方式">选用合适的IPC方式</h2>
+<h3 id="使用AIDL">使用AIDL</h3><ul>
+<li>AIDL可以并行的处理客户端的请求，使用请参考<a href="http://hukai.me/android-notes-aidl/" target="_blank" rel="external">AIDL</a></li>
+<li>AIDL支持基本数据类型、String和CharSequence、ArrayList和HashMap（每个元素都必须被AIDL支持）、Parcelable、AIDL对象</li>
+<li>自定义的AIDL对象和Parcelable必须显示import，不管它们是否和AIDL文件位于同一个包内</li>
+<li>除了基本数据类型，其他类型的参数必须标上方向：in、out或inout</li>
+<li>AIDL只支持方法，不支持静态常量</li>
+<li>服务端可以使用CopyOnWriteArrayList和ConcurrentHashMap来处理并发请求，客户端接收到的仍是ArrayList和HashMap</li>
+<li>客户端和服务器跨进程监听，服务端需要使用RemoteCallbackList，否则无法解除注册</li>
+<li>客户端调用远程服务的方法，被调用的方法运行在服务端的Binder线程池中，同时客户端的线程会被挂起，这时候如果服务端的方法执行比较耗时，就会导致客户端线程长时间的阻塞在这里，而如果这个客户端线程是UI线程的话，就会导致客户端ANR，所以要避免在客户端的UI线程中去访问远程方法。由于客户端的<code>onServiceConnected()</code>和<code>onServiceDisconnected()</code>方法都运行在UI线程中，所以也不能在它们里面直接调用服务端的耗时方法。另外，由于服务端的方法本身就运行在服务端的Binder线程池中，所以服务端方法本身可以执行大量耗时操作，不需要在服务端方法中开线程去执行异步任务</li>
+<li>当远程服务端调用客户端的listener中的方法时，被调用的方法运行在客户端的Binder线程池中，所以，不可以在服务端中UI线程里调用客户端的耗时方法</li>
+</ul>
+<h3 id="使用ContentProvider">使用ContentProvider</h3><h3 id="使用Socket">使用Socket</h3><h2 id="Binder连接池">Binder连接池</h2><h2 id="选用合适的IPC方式">选用合适的IPC方式</h2>
         
         
         <p class="article-more-link">
