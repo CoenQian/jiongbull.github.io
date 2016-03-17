@@ -111,7 +111,7 @@
     <link href="http://jiongbull.com/2016/02/20/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(1)/"/>
     <id>http://jiongbull.com/2016/02/20/《Android开发艺术探索》读书笔记(1)/</id>
     <published>2016-02-20T14:07:42.000Z</published>
-    <updated>2016-02-25T14:16:23.520Z</updated>
+    <updated>2016-03-17T11:32:53.130Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
 </blockquote>
@@ -130,7 +130,7 @@
 </ul>
 <h2 id="Activity的启动模式">Activity的启动模式</h2><h3 id="Activity的LaunchMode">Activity的LaunchMode</h3><ul>
 <li>一般需要使用Activity的context来启动Activity，除非把待启动Activity的flag设置为<code>FLAG_ACTIVITY_NEW_TASK</code>，就能用非Activity的context启动Activity了</li>
-<li><code>standard</code>和<code>singleTop</code>模式的Activity默认会进入启动它的Activity所属的任务栈中，在跨应用启动Activity时会觉得它们属于同一个应用，在任务管理器观察也是如此</li>
+<li><code>standard</code>和<code>singleTop</code>模式的Activity默认会进入启动它的Activity所属的任务栈中，在跨应用启动Activity时会觉得它们属于同一个应用，在任务管理器观察也是如此，如果同时指定了该Activity的<code>allowTaskReparenting = true</code>并且处于栈顶，那么在启动它原本所在的应用时会回到自己应用的任务栈中</li>
 <li><code>singleTop</code>模式下，如果待启动的Activity已经位于任务栈的栈顶，那么该Activity不会被重新创建，它的<code>onNewIntent()</code>会被回调，<code>onCreate()</code>和<code>onStart()</code>都不会被回调。如果该Activity已经存在但不是位于栈顶，该Activity依旧会重新创建</li>
 <li><code>singleTask</code>模式被称为栈内复用模式或单实例模式，只要Activity在栈中存在，多次启动该Activity都不会创建新的实例</li>
 <li><code>singleInstance</code>模式也被称为加强的单实例模式，栈内只会有一个Activity实例</li>
@@ -143,6 +143,7 @@
 <li><code>FLAG_ACTIVITY_NEW_TASK</code>效果与<code>singleTask</code>效果相同</li>
 <li><code>FLAG_ACTIVITY_SINGLE_TOP</code>效果与<code>singleTop</code>效果相同</li>
 <li><code>FLAG_ACTIVITY_CLEAR_TOP</code>常与<code>FLAG_ACTIVITY_SINGLE_TOP</code>配合使用</li>
+<li><code>FLAG_ACTIVITY_CLEAR_TOP</code>从栈顶往栈底匹配最符合的Activity并清除该Activity之上的Activity</li>
 </ul>
 <h2 id="IntentFilter的匹配规则">IntentFilter的匹配规则</h2><ul>
 <li>一个Activity中可以有多个intent-filter，Intent只要能匹配任何一个intent-filter即可成功启动对应的Activity</li>
