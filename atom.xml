@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-03-15T13:35:39.861Z</updated>
+  <updated>2016-03-25T10:44:29.960Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -13,6 +13,97 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[adb和adb shell命令]]></title>
+    <link href="http://jiongbull.com/2016/03/17/adb%E5%92%8Cadb%20shell%E5%91%BD%E4%BB%A4/"/>
+    <id>http://jiongbull.com/2016/03/17/adb和adb shell命令/</id>
+    <published>2016-03-17T15:39:22.000Z</published>
+    <updated>2016-03-25T10:44:29.960Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
+<h2 id="adb命令集">adb命令集</h2><h3 id="adb_devices">adb devices</h3><p>显示所有连接的设备，<code>-l</code>显示设备的全限定名。</p>
+<ol>
+<li><p>adb devices</p>
+<figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\Code\Git&gt;adb devices</span><br><span class="line"><span class="built_in">List</span> <span class="keyword">of</span> devices attached</span><br><span class="line"><span class="number">192.168</span>.<span class="number">46.101</span>:<span class="number">5555</span>     device</span><br><span class="line"><span class="number">192.168</span>.<span class="number">46.102</span>:<span class="number">5555</span>     device</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>adb devices -l</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">D:</span>\Code\Git&gt;adb devices -l</span><br><span class="line">List of devices attached</span><br><span class="line"><span class="number">192.168</span>.46.101:<span class="number">5555</span>    device <span class="string">product:</span>vbox86p <span class="string">model:</span>Google_Nexus_5___4_4_4___API_19___1080x1920 <span class="string">device:</span>vbox86p</span><br><span class="line"><span class="number">192.168</span>.46.102:<span class="number">5555</span>    device <span class="string">product:</span>vbox86p <span class="string">model:</span>Google_Nexus_6___5_0_0___API_21___1440x2560 <span class="string">device:</span>vbox86p</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="adb_connect_&lt;host&gt;[:&lt;port&gt;]">adb connect <code>&lt;host&gt;</code>[:<code>&lt;port&gt;</code>]</h3><p>通过TCP/IP连接设备，如果没有指定端口，则默认使用<code>5555</code>端口。</p>
+<ol>
+<li><p>adb connect 192.168.46.101</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:<span class="string">\Code\Git&gt;adb</span> connect <span class="number">192.168</span>.<span class="number">46.101</span></span><br><span class="line">already connected <span class="keyword">to</span> <span class="number">192.168</span>.<span class="number">46.101</span>:<span class="number">5555</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>adb connect 192.168.46.101:5555</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:<span class="string">\Code\Git&gt;adb</span> connect <span class="number">192.168</span>.<span class="number">46.101</span>:<span class="number">5555</span></span><br><span class="line">already connected <span class="keyword">to</span> <span class="number">192.168</span>.<span class="number">46.101</span>:<span class="number">5555</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="adb_disconnect_[&lt;host&gt;[:&lt;port&gt;]]">adb disconnect [<code>&lt;host&gt;</code>[:<code>&lt;port&gt;</code>]]</h3><p>断开TCP/IP连接的设备，如果没有指定端口，则默认使用<code>5555</code>端口，如果没有指定任何参数会断开所有通过TCP/IP连接的设备。</p>
+<ol>
+<li><p>adb disconnect 192.168.46.101</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="command">\Code</span><span class="command">\Git</span>&gt;adb disconnect 192.168.46.101</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>adb disconnect 192.168.46.101:5555</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="command">\Code</span><span class="command">\Git</span>&gt;adb disconnect 192.168.46.101:5555</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="adb_push_[-p]_&lt;local&gt;_&lt;remote&gt;">adb push [-p] <code>&lt;local&gt;</code> <code>&lt;remote&gt;</code></h3><p>把文件/文件夹拷贝到设备中，<code>-p</code>可以显示传输进度。</p>
+<ol>
+<li><p>adb push C:\Users\JiongBull\Desktop\logo.png /storage/sdcard0/</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="command">\Code</span><span class="command">\Git</span>&gt;adb push C:<span class="command">\Users</span><span class="command">\JiongBull</span><span class="command">\Desktop</span><span class="command">\logo</span>.png /storage/sdcard0/</span><br><span class="line">79 KB/s (6663 bytes in 0.081s)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>adb push -p C:\Users\JiongBull\Desktop\logo.png /storage/sdcard0/</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="command">\Code</span><span class="command">\Git</span>&gt;adb push -p C:<span class="command">\Users</span><span class="command">\JiongBull</span><span class="command">\Desktop</span><span class="command">\logo</span>.png /storage/sdcard0/</span><br><span class="line">Transferring: 6663/6663 (100<span class="comment">%)</span></span><br><span class="line">86 KB/s (6663 bytes in 0.075s)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="adb_pull_[-p]_[-a]_&lt;remote&gt;_[&lt;local&gt;]">adb pull [-p] [-a] <code>&lt;remote&gt;</code> [<code>&lt;local&gt;</code>]</h3><p>从设备中拷贝文件/文件夹，<code>-p</code>可以显示传输进度，<code>-a</code>拷贝文件的时间信息和模式。</p>
+<ol>
+<li><p>adb pull /storage/sdcard0/logo.png D:\logo.png</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\Code\Git&gt;adb pull /storage/sdcard0/logo<span class="class">.png</span> D:\logo<span class="class">.png</span></span><br><span class="line"><span class="number">381</span> KB/s (<span class="number">6663</span> bytes <span class="keyword">in</span> <span class="number">0.017s</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>adb pull -p /storage/sdcard0/logo.png D:\logo.png</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\Code\Git&gt;adb pull -<span class="tag">p</span> /storage/sdcard0/logo<span class="class">.png</span> D:\logo<span class="class">.png</span></span><br><span class="line">Transferring: <span class="number">6663</span>/<span class="number">6663</span> (<span class="number">100%</span>)</span><br><span class="line"><span class="number">282</span> KB/s (<span class="number">6663</span> bytes <span class="keyword">in</span> <span class="number">0.023s</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>adb pull -a /storage/sdcard0/logo.png D:\logo.png</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\Code\Git&gt;adb pull -<span class="tag">a</span> /storage/sdcard0/logo<span class="class">.png</span> D:\logo<span class="class">.png</span></span><br><span class="line"><span class="number">418</span> KB/s (<span class="number">6663</span> bytes <span class="keyword">in</span> <span class="number">0.015s</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/adb/pull_remote.png" alt="adb pull remote"><br><img src="http://7xize8.com1.z0.glb.clouddn.com/adb/pull_local.png" alt="adb pull local"></p>
+<h3 id="adb_sync_[_&lt;directory&gt;_]">adb sync [ <code>&lt;directory&gt;</code> ]</h3><p>把Android设备上<code>/system</code>和<code>/data</code>目录中与主机目录中不一致的内容同步到主机上。使用前需要设置主机目录地址的环境变量。</p>
+<ol>
+<li><p>adb sync(未设置环境变量)</p>
+<figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">D</span>:\<span class="constant">Code</span>\<span class="constant">Git</span>&gt;adb sync</span><br><span class="line">adb: <span class="constant">Product</span> <span class="literal">directory</span> not specified; <span class="literal">use</span> -p <span class="keyword">or</span> <span class="keyword">define</span> <span class="constant">A</span>NDROID_PRODUCT_OUT</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>set ANDROID_PRODUCT_OUT = <path></path></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="command">\Code</span><span class="command">\Git</span>&gt;set ANDROID_PRODUCT_OUT = D:<span class="command">\Data</span><span class="command">\Android</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>adb sync(已设置环境变量)</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">D:</span>\Code\Git&gt;adb sync</span><br><span class="line">syncing /system...</span><br><span class="line"><span class="string">push:</span> <span class="string">D:</span>\Data\Android\system<span class="regexp">/app/</span>WAPPushManager.apk -&gt; <span class="regexp">/system/</span>app/WAPPushManager.apk</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/adb/sync_system.png" alt="adb sync system"><br><img src="http://7xize8.com1.z0.glb.clouddn.com/adb/sync_data.png" alt="adb sync data"></p>
+<h3 id="adb_shell">adb shell</h3><p>调用远程shell</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\Code\Git&gt;adb shell</span><br><span class="line">root<span class="variable">@vbox86p</span>:/ #</span><br></pre></td></tr></table></figure>
+<h3 id="adb_shell-1">adb shell <command></h3><p>调用远程shell命令。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\Code\Git&gt;adb shell su</span><br><span class="line">root<span class="variable">@vbox86p</span>:/ #</span><br></pre></td></tr></table></figure>
+<h3 id="adb_emu">adb emu <command></h3><p>运行模拟器命令。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="command">\Code</span><span class="command">\Git</span>&gt;adb emu</span><br></pre></td></tr></table></figure>
+<h2 id="shell命令集">shell命令集</h2><h2 id="分享">分享</h2><p>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。<br>更多支持，请扫描下面的二维码进行捐赠。</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/donate.png" alt="分享与捐赠"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="adb" scheme="http://jiongbull.com/tags/adb/"/>
+    
+      <category term="Android Experience" scheme="http://jiongbull.com/categories/Android-Experience/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[《Android开发艺术探索》读书笔记(2) - IPC机制]]></title>
@@ -221,7 +312,7 @@
     <link href="http://jiongbull.com/2016/01/21/jlog/"/>
     <id>http://jiongbull.com/2016/01/21/jlog/</id>
     <published>2016-01-21T09:18:30.000Z</published>
-    <updated>2016-02-25T12:24:19.298Z</updated>
+    <updated>2016-03-17T15:45:14.866Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
@@ -258,6 +349,9 @@
 <p>如果你的应用的’targetSdkVersion’是23+，不要忘记在闪屏页或首页申请’android.permission.WRITE_EXTERNAL_STORAG’权限。<br>你可以参考这篇文章，<a href="http://gudong.name/%E6%8A%80%E6%9C%AF/2015/11/10/android_m_permission.html" target="_blank" rel="external">在Android 6.0 设备上动态获取权限</a>.</p>
 <h3 id="init(context)">init(context)</h3><p>建议使用application context。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="setPackagedLevel(int)">setPackagedLevel(int)</h3><p>如果需要再封装jlog，请设置封装的层级，否则jlog不能获取调用者的信息.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .setPackagedLevel(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_jlog%E7%9A%84%E8%B0%83%E7%94%A8%E6%A0%88%E7%BB%93%E6%9E%84.png" alt="jlog&#39;s stack structure"></p>
 <h3 id="setDebug(boolean)">setDebug(boolean)</h3><p>默认是true，日志会输出到控制台中。在发布版本的时候请把这个变量设置为false。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JLog.init(<span class="keyword">this</span>)</span><br><span class="line">    .setDebug(<span class="keyword">false</span>);</span><br></pre></td></tr></table></figure>
 <p>或</p>
