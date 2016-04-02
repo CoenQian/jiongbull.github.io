@@ -4,41 +4,23 @@
 
     
   <url>
-    <loc>http://jiongbull.com/2016/03/17/adb%E5%92%8Cadb%20shell%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2016-03-25T16:57:21.893Z</lastmod>
+    <loc>http://jiongbull.com/2016/02/29/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(2)/</loc>
+    <lastmod>2016-04-02T11:28:57.015Z</lastmod>
     <data>
         <display>
-        <title>adb和adb shell命令</title>
-        <pubTime>2016-03-17T15:39:22.000Z</pubTime>
+        <title>《Android开发艺术探索》读书笔记(2) - IPC机制</title>
+        <pubTime>2016-02-29T05:16:39.000Z</pubTime>
         
-        <tag>adb</tag>
+        <tag>IPC</tag>
+         
+        <tag>多进程</tag>
+         
+        <tag>读书笔记</tag>
          
          
            
              
-              <breadCrumb title="Android Experience" url="http://jiongbull.com/categories/Android-Experience/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jiongbull.com/2016/01/21/jlog/</loc>
-    <lastmod>2016-03-17T15:45:14.866Z</lastmod>
-    <data>
-        <display>
-        <title>jlog(基佬哥)</title>
-        <pubTime>2016-01-21T09:18:30.000Z</pubTime>
-        
-        <tag>Github</tag>
-         
-        <tag>Log</tag>
-         
-         
-           
-             
-              <breadCrumb title="Github" url="http://jiongbull.com/categories/Github/"/>
+              <breadCrumb title="《Android开发艺术探索》读书笔记" url="http://jiongbull.com/categories/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -47,7 +29,7 @@
     
   <url>
     <loc>http://jiongbull.com/2016/02/20/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(1)/</loc>
-    <lastmod>2016-03-17T11:32:53.130Z</lastmod>
+    <lastmod>2016-04-02T11:28:53.414Z</lastmod>
     <data>
         <display>
         <title>《Android开发艺术探索》读书笔记(1) - Activity的生命周期和启动模式</title>
@@ -72,23 +54,19 @@
 
     
   <url>
-    <loc>http://jiongbull.com/2016/02/29/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(2)/</loc>
-    <lastmod>2016-03-15T13:35:39.861Z</lastmod>
+    <loc>http://jiongbull.com/2015/07/13/Material-Design-Color/</loc>
+    <lastmod>2016-04-02T11:28:49.973Z</lastmod>
     <data>
         <display>
-        <title>《Android开发艺术探索》读书笔记(2) - IPC机制</title>
-        <pubTime>2016-02-29T05:16:39.000Z</pubTime>
+        <title>Material Design color</title>
+        <pubTime>2015-07-13T14:31:44.000Z</pubTime>
         
-        <tag>IPC</tag>
-         
-        <tag>多进程</tag>
-         
-        <tag>读书笔记</tag>
+        <tag>Material Design</tag>
          
          
            
              
-              <breadCrumb title="《Android开发艺术探索》读书笔记" url="http://jiongbull.com/categories/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+              <breadCrumb title="Android Experience" url="http://jiongbull.com/categories/Android-Experience/"/>
           
         </display>
     </data>
@@ -97,7 +75,7 @@
     
   <url>
     <loc>http://jiongbull.com/2016/02/20/jlog-qiniu/</loc>
-    <lastmod>2016-02-20T05:40:23.902Z</lastmod>
+    <lastmod>2016-04-02T11:28:46.052Z</lastmod>
     <data>
         <display>
         <title>jlog-qiniu</title>
@@ -118,39 +96,21 @@
 
     
   <url>
-    <loc>http://jiongbull.com/2015/05/11/Android%E5%B8%83%E5%B1%80%E8%A7%84%E8%8C%83/</loc>
-    <lastmod>2016-01-21T13:44:29.354Z</lastmod>
+    <loc>http://jiongbull.com/2016/01/21/jlog/</loc>
+    <lastmod>2016-04-02T11:28:43.057Z</lastmod>
     <data>
         <display>
-        <title>Android布局规范</title>
-        <pubTime>2015-05-11T06:52:36.000Z</pubTime>
+        <title>jlog(基佬哥)</title>
+        <pubTime>2016-01-21T09:18:30.000Z</pubTime>
         
-        <tag>布局规范</tag>
+        <tag>Github</tag>
+         
+        <tag>Log</tag>
          
          
            
              
-              <breadCrumb title="Android Experience" url="http://jiongbull.com/categories/Android-Experience/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jiongbull.com/2015/07/13/Material-Design-Color/</loc>
-    <lastmod>2016-01-21T13:32:22.512Z</lastmod>
-    <data>
-        <display>
-        <title>Material Design color</title>
-        <pubTime>2015-07-13T14:31:44.000Z</pubTime>
-        
-        <tag>Material Design</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android Experience" url="http://jiongbull.com/categories/Android-Experience/"/>
+              <breadCrumb title="Github" url="http://jiongbull.com/categories/Github/"/>
           
         </display>
     </data>
@@ -159,7 +119,7 @@
     
   <url>
     <loc>http://jiongbull.com/2015/05/11/Android%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/</loc>
-    <lastmod>2016-01-21T13:29:39.760Z</lastmod>
+    <lastmod>2016-04-02T11:28:39.888Z</lastmod>
     <data>
         <display>
         <title>Android屏幕适配</title>
@@ -179,13 +139,53 @@
     
   <url>
     <loc>http://jiongbull.com/2015/05/08/Android%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</loc>
-    <lastmod>2016-01-21T13:24:25.104Z</lastmod>
+    <lastmod>2016-04-02T11:28:36.339Z</lastmod>
     <data>
         <display>
         <title>Android代码规范</title>
         <pubTime>2015-05-08T02:40:00.000Z</pubTime>
         
         <tag>代码规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android Experience" url="http://jiongbull.com/categories/Android-Experience/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jiongbull.com/2015/05/11/Android%E5%B8%83%E5%B1%80%E8%A7%84%E8%8C%83/</loc>
+    <lastmod>2016-04-02T11:28:32.872Z</lastmod>
+    <data>
+        <display>
+        <title>Android布局规范</title>
+        <pubTime>2015-05-11T06:52:36.000Z</pubTime>
+        
+        <tag>布局规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android Experience" url="http://jiongbull.com/categories/Android-Experience/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jiongbull.com/2016/03/17/adb%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2016-04-02T11:28:15.944Z</lastmod>
+    <data>
+        <display>
+        <title>adb命令</title>
+        <pubTime>2016-03-17T15:39:22.000Z</pubTime>
+        
+        <tag>adb</tag>
          
          
            
