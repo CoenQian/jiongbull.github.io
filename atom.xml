@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-04-02T11:28:15.944Z</updated>
+  <updated>2016-04-05T04:46:58.925Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -15,14 +15,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[adb shell命令]]></title>
+    <link href="http://jiongbull.com/2016/04/02/adb%20shell%E5%91%BD%E4%BB%A4/"/>
+    <id>http://jiongbull.com/2016/04/02/adb shell命令/</id>
+    <published>2016-04-02T14:32:11.000Z</published>
+    <updated>2016-04-05T04:46:58.925Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
+<h2 id="如何查看命令">如何查看命令</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\Code\Git&gt;adb shell</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # ls /system/bin</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="命令大全">命令大全</h2><h3 id="aapt">aapt</h3><p>Android Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将资源文件编译成二进制文件。</p>
+<h3 id="adb">adb</h3><h3 id="am">am</h3><h3 id="app_process">app_process</h3><h3 id="app_process32">app_process32</h3><h3 id="app_process64">app_process64</h3><h3 id="applypatch">applypatch</h3><h3 id="applypatch_static">applypatch_static</h3><h3 id="appops">appops</h3><h3 id="appwidget">appwidget</h3><h3 id="atrace">atrace</h3><h3 id="bcc">bcc</h3><h3 id="bdt">bdt</h3>]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="adb shell" scheme="http://jiongbull.com/tags/adb-shell/"/>
+    
+      <category term="Android Experience" scheme="http://jiongbull.com/categories/Android-Experience/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[adb命令]]></title>
     <link href="http://jiongbull.com/2016/03/17/adb%E5%91%BD%E4%BB%A4/"/>
     <id>http://jiongbull.com/2016/03/17/adb命令/</id>
     <published>2016-03-17T15:39:22.000Z</published>
-    <updated>2016-04-02T11:28:15.944Z</updated>
+    <updated>2016-04-05T13:58:39.051Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
+<h2 id="如何查看命令">如何查看命令</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">D</span>:\Code\Git&gt;adb <span class="keyword">help</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <h2 id="设备连接相关命令">设备连接相关命令</h2><h3 id="-a">-a</h3><p>命令针对所有设备，需要和其他命令组合使用。</p>
 <h3 id="-d">-d</h3><p>命令针对真机，需要和其他命令组合使用。</p>
 <h3 id="-e">-e</h3><p>命令针对虚拟机，需要和其他命令组合使用。</p>
@@ -132,7 +156,7 @@
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">D</span>:\Code\Git&gt;adb logcat -<span class="keyword">d</span> -f /<span class="keyword">log</span>.txt</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="adb_forward_—list">adb forward —list</h3><p>显示所有(PC —&gt; DEVICE)映射的端口连接列表，每一行都以这样的格式显示，(serial) “ “ (local) “ “ (remote) “\n”`</p>
+<h3 id="adb_forward_—list">adb forward —list</h3><p>显示所有(PC —&gt; DEVICE)映射的端口连接列表，每一行都以这样的格式显示，<code>serial) &quot; &quot; (local) &quot; &quot; (remote) &quot;\n&quot;</code></p>
 <p>adb forward —list<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">D:</span>\Code\Git&gt;adb forward --list</span><br><span class="line">emulator-<span class="number">5554</span> <span class="string">tcp:</span><span class="number">6100</span> <span class="string">tcp:</span><span class="number">7100</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="adb_forward_(local)_(remote)">adb forward (local) (remote)</h3><p>映射端口连接(PC —&gt; DEVICE)。</p>
 <p>adb forward tcp:6100 tcp:7100<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">D:</span>\Code\Git&gt;adb forward <span class="string">tcp:</span><span class="number">6100</span> <span class="string">tcp:</span><span class="number">7100</span></span><br></pre></td></tr></table></figure></p>
