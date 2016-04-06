@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>adb shell命令 | JiongBull&#39;s Blog</title>
+    <title>启用网络ADB调试 | JiongBull&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 	<meta name="baidu-site-verification" content="D2uzc1tiUm" />
     
@@ -14,22 +14,29 @@
     
     <meta name="description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
 
-如何查看命令123D:\Code\Git&amp;gt;adb shellroot@generic_x86_64:/ # ls /system/bin...
-命令大全aaptAndroid Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将">
+激活开发者选项菜单开发者选项菜单默认是隐藏的，我们需要激活该菜单，进入设置 → 关于手机，点击七次版本号，返回设置，就能看到开发者选项了。
+打开网络ADB调试进入开发者选项，找到调试模块，打开Android 调试和网络ADB调试选项。
+
+连接设备在开发者选项菜单里的网络ADB调试选项下可以看">
 <meta property="og:type" content="article">
-<meta property="og:title" content="adb shell命令">
-<meta property="og:url" content="http://jiongbull.com/2016/04/02/adb shell命令/index.html">
+<meta property="og:title" content="启用网络ADB调试">
+<meta property="og:url" content="http://jiongbull.com/2016/04/06/启用网络ADB调试/index.html">
 <meta property="og:site_name" content="JiongBull's Blog">
 <meta property="og:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
 
-如何查看命令123D:\Code\Git&amp;gt;adb shellroot@generic_x86_64:/ # ls /system/bin...
-命令大全aaptAndroid Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将">
+激活开发者选项菜单开发者选项菜单默认是隐藏的，我们需要激活该菜单，进入设置 → 关于手机，点击七次版本号，返回设置，就能看到开发者选项了。
+打开网络ADB调试进入开发者选项，找到调试模块，打开Android 调试和网络ADB调试选项。
+
+连接设备在开发者选项菜单里的网络ADB调试选项下可以看">
+<meta property="og:image" content="http://7xize8.com1.z0.glb.clouddn.com/net_adb/developer_menu.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="adb shell命令">
+<meta name="twitter:title" content="启用网络ADB调试">
 <meta name="twitter:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
 
-如何查看命令123D:\Code\Git&amp;gt;adb shellroot@generic_x86_64:/ # ls /system/bin...
-命令大全aaptAndroid Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将">
+激活开发者选项菜单开发者选项菜单默认是隐藏的，我们需要激活该菜单，进入设置 → 关于手机，点击七次版本号，返回设置，就能看到开发者选项了。
+打开网络ADB调试进入开发者选项，找到调试模块，打开Android 调试和网络ADB调试选项。
+
+连接设备在开发者选项菜单里的网络ADB调试选项下可以看">
 
     
     <link rel="alternative" href="/atom.xml" title="JiongBull&#39;s Blog" type="application/atom+xml">
@@ -93,14 +100,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/02/adb shell命令/" title="adb shell命令" itemprop="url">adb shell命令</a>
+      <a href="/2016/04/06/启用网络ADB调试/" title="启用网络ADB调试" itemprop="url">启用网络ADB调试</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="JiongBull" target="_blank" itemprop="author">JiongBull</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-02T14:32:11.000Z" itemprop="datePublished"> 发表于 2016-04-02</time>
+    <time datetime="2016-04-06T11:27:55.000Z" itemprop="datePublished"> 发表于 2016-04-06</time>
     
   </p>
 </header>
@@ -109,26 +116,24 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何查看命令"><span class="toc-number">1.</span> <span class="toc-text">如何查看命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令大全"><span class="toc-number">2.</span> <span class="toc-text">命令大全</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#aapt"><span class="toc-number">2.1.</span> <span class="toc-text">aapt</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#aapt_v"><span class="toc-number">2.1.1.</span> <span class="toc-text">aapt v</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#aapt_l[ist]_[-v]_[-a]_file-{zip,jar,apk}"><span class="toc-number">2.1.2.</span> <span class="toc-text">aapt l[ist] [-v] [-a] file.{zip,jar,apk}</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="##"><span class="toc-number">2.2.</span> <span class="toc-text">#</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#adb"><span class="toc-number">2.3.</span> <span class="toc-text">adb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#am"><span class="toc-number">2.4.</span> <span class="toc-text">am</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app_process"><span class="toc-number">2.5.</span> <span class="toc-text">app_process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app_process32"><span class="toc-number">2.6.</span> <span class="toc-text">app_process32</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app_process64"><span class="toc-number">2.7.</span> <span class="toc-text">app_process64</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#applypatch"><span class="toc-number">2.8.</span> <span class="toc-text">applypatch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#applypatch_static"><span class="toc-number">2.9.</span> <span class="toc-text">applypatch_static</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appops"><span class="toc-number">2.10.</span> <span class="toc-text">appops</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appwidget"><span class="toc-number">2.11.</span> <span class="toc-text">appwidget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#atrace"><span class="toc-number">2.12.</span> <span class="toc-text">atrace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bcc"><span class="toc-number">2.13.</span> <span class="toc-text">bcc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bdt"><span class="toc-number">2.14.</span> <span class="toc-text">bdt</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享与支持"><span class="toc-number">3.</span> <span class="toc-text">分享与支持</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#激活开发者选项菜单"><span class="toc-number">1.</span> <span class="toc-text">激活开发者选项菜单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开网络ADB调试"><span class="toc-number">2.</span> <span class="toc-text">打开网络ADB调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接设备"><span class="toc-number">3.</span> <span class="toc-text">连接设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看连接"><span class="toc-number">4.</span> <span class="toc-text">查看连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享与支持"><span class="toc-number">5.</span> <span class="toc-text">分享与支持</span></a></li></ol>
 		
 		</div>
 		
 		<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
-<h2 id="如何查看命令">如何查看命令</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\Code\Git&gt;adb shell</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # ls /system/bin</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h2 id="命令大全">命令大全</h2><h3 id="aapt">aapt</h3><p>Android Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将资源文件编译成二进制文件。</p>
-<h4 id="aapt_v">aapt v</h4><p>显示aapt版本号。</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># aapt v</span></span><br><span class="line"><span class="constant">Android Asset Packaging Tool,</span> v<span class="number">0</span>.<span class="number">2</span>-0ec622cc9f</span><br></pre></td></tr></table></figure>
-<h4 id="aapt_l[ist]_[-v]_[-a]_file-{zip,jar,apk}">aapt l[ist] [-v] [-a] file.{zip,jar,apk}</h4><p>列出归档文件内容。</p>
-<ol>
-<li>aapt l -v</li>
-</ol>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@shamu</span>:<span class="regexp">/ # aapt l /</span>data<span class="regexp">/app/</span>com.zhihu.android-<span class="number">2</span>/base.apk</span><br><span class="line">...</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_bk_red_rounded.xml</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_bk_yellow_rounded.xml</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_logo.png</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_text_box.xml</span><br><span class="line">res<span class="regexp">/drawable/</span>liukanshan_cake.gif</span><br><span class="line">res<span class="regexp">/drawable/</span>progress_view.xml</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>2.</p>
-<h3 id="#">#</h3><h3 id="adb">adb</h3><p>Android Debug Bridge，android调试桥。</p>
-<h3 id="am">am</h3><p>Activity Manager，activity管理器，可以启动activity、启动service、发送广播、停止进程等。</p>
-<h3 id="app_process">app_process</h3><h3 id="app_process32">app_process32</h3><h3 id="app_process64">app_process64</h3><h3 id="applypatch">applypatch</h3><h3 id="applypatch_static">applypatch_static</h3><h3 id="appops">appops</h3><h3 id="appwidget">appwidget</h3><h3 id="atrace">atrace</h3><h3 id="bcc">bcc</h3><h3 id="bdt">bdt</h3><h2 id="分享与支持">分享与支持</h2><ul>
+<h2 id="激活开发者选项菜单">激活开发者选项菜单</h2><p><code>开发者选项</code>菜单默认是隐藏的，我们需要激活该菜单，进入<code>设置</code> → <code>关于手机</code>，点击七次<code>版本号</code>，返回<code>设置</code>，就能看到<code>开发者选项</code>了。</p>
+<h2 id="打开网络ADB调试">打开网络ADB调试</h2><p>进入<code>开发者选项</code>，找到<code>调试</code>模块，打开<code>Android 调试</code>和<code>网络ADB调试</code>选项。</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/net_adb/developer_menu.png" alt="开发者选项菜单"></p>
+<h2 id="连接设备">连接设备</h2><p>在<code>开发者选项</code>菜单里的<code>网络ADB调试</code>选项下可以看到当前设备的IP地址和端口号，例如192.168.31.228:5555，使用<code>adb connect</code>命令连接设备。</p>
+<blockquote>
+<p>设备与主机需要在同一网段里，否则无法使用网络ADB调试</p>
+</blockquote>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:<span class="string">\Code\Git&gt;adb</span> connect <span class="number">192.168</span>.<span class="number">31.228</span>:<span class="number">5555</span></span><br><span class="line">connected <span class="keyword">to</span> <span class="number">192.168</span>.<span class="number">31.228</span>:<span class="number">5555</span></span><br></pre></td></tr></table></figure>
+<h2 id="查看连接">查看连接</h2><p>使用<code>adb devices</code>命令查看连接的设备。</p>
+<figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\Code\Git&gt;adb devices</span><br><span class="line"><span class="built_in">List</span> <span class="keyword">of</span> devices attached</span><br><span class="line"><span class="number">192.168</span>.<span class="number">31.228</span>:<span class="number">5555</span>     device</span><br></pre></td></tr></table></figure>
+<h2 id="分享与支持">分享与支持</h2><ul>
 <li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
 <li>更多支持，请点<a href="/about">这里</a></li>
 </ul>
@@ -154,7 +159,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://jiongbull.com/2016/04/02/adb shell命令/" data-title="adb shell命令 | JiongBull&#39;s Blog" data-tsina="1792183427" class="share clearfix">
+	  <div data-url="http://jiongbull.com/2016/04/06/启用网络ADB调试/" data-title="启用网络ADB调试 | JiongBull&#39;s Blog" data-tsina="1792183427" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -167,19 +172,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/04/06/启用网络ADB调试/" title="启用网络ADB调试">
-  <strong>上一篇：</strong><br/>
-  <span>
-  启用网络ADB调试</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/03/17/adb命令/"  title="adb命令">
+<a href="/2016/04/02/adb shell命令/"  title="adb shell命令">
  <strong>下一篇：</strong><br/> 
- <span>adb命令
+ <span>adb shell命令
 </span>
 </a>
 </div>
@@ -188,7 +185,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/04/02/adb shell命令/" data-title="adb shell命令" data-url="http://jiongbull.com/2016/04/02/adb shell命令/"></div>
+	<div class="ds-thread" data-thread-key="2016/04/06/启用网络ADB调试/" data-title="启用网络ADB调试" data-url="http://jiongbull.com/2016/04/06/启用网络ADB调试/"></div>
 </section>
 
 
@@ -198,7 +195,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何查看命令"><span class="toc-number">1.</span> <span class="toc-text">如何查看命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令大全"><span class="toc-number">2.</span> <span class="toc-text">命令大全</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#aapt"><span class="toc-number">2.1.</span> <span class="toc-text">aapt</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#aapt_v"><span class="toc-number">2.1.1.</span> <span class="toc-text">aapt v</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#aapt_l[ist]_[-v]_[-a]_file-{zip,jar,apk}"><span class="toc-number">2.1.2.</span> <span class="toc-text">aapt l[ist] [-v] [-a] file.{zip,jar,apk}</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="##"><span class="toc-number">2.2.</span> <span class="toc-text">#</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#adb"><span class="toc-number">2.3.</span> <span class="toc-text">adb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#am"><span class="toc-number">2.4.</span> <span class="toc-text">am</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app_process"><span class="toc-number">2.5.</span> <span class="toc-text">app_process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app_process32"><span class="toc-number">2.6.</span> <span class="toc-text">app_process32</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app_process64"><span class="toc-number">2.7.</span> <span class="toc-text">app_process64</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#applypatch"><span class="toc-number">2.8.</span> <span class="toc-text">applypatch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#applypatch_static"><span class="toc-number">2.9.</span> <span class="toc-text">applypatch_static</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appops"><span class="toc-number">2.10.</span> <span class="toc-text">appops</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appwidget"><span class="toc-number">2.11.</span> <span class="toc-text">appwidget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#atrace"><span class="toc-number">2.12.</span> <span class="toc-text">atrace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bcc"><span class="toc-number">2.13.</span> <span class="toc-text">bcc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bdt"><span class="toc-number">2.14.</span> <span class="toc-text">bdt</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享与支持"><span class="toc-number">3.</span> <span class="toc-text">分享与支持</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#激活开发者选项菜单"><span class="toc-number">1.</span> <span class="toc-text">激活开发者选项菜单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开网络ADB调试"><span class="toc-number">2.</span> <span class="toc-text">打开网络ADB调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接设备"><span class="toc-number">3.</span> <span class="toc-text">连接设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看连接"><span class="toc-number">4.</span> <span class="toc-text">查看连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享与支持"><span class="toc-number">5.</span> <span class="toc-text">分享与支持</span></a></li></ol>
  
   </div>
 

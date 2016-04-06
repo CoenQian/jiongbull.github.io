@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-04-05T04:46:58.925Z</updated>
+  <updated>2016-04-06T15:53:42.150Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -15,17 +15,66 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[启用网络ADB调试]]></title>
+    <link href="http://jiongbull.com/2016/04/06/%E5%90%AF%E7%94%A8%E7%BD%91%E7%BB%9CADB%E8%B0%83%E8%AF%95/"/>
+    <id>http://jiongbull.com/2016/04/06/启用网络ADB调试/</id>
+    <published>2016-04-06T11:27:55.000Z</published>
+    <updated>2016-04-06T15:53:42.150Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
+<h2 id="激活开发者选项菜单">激活开发者选项菜单</h2><p><code>开发者选项</code>菜单默认是隐藏的，我们需要激活该菜单，进入<code>设置</code> → <code>关于手机</code>，点击七次<code>版本号</code>，返回<code>设置</code>，就能看到<code>开发者选项</code>了。</p>
+<h2 id="打开网络ADB调试">打开网络ADB调试</h2><p>进入<code>开发者选项</code>，找到<code>调试</code>模块，打开<code>Android 调试</code>和<code>网络ADB调试</code>选项。</p>
+<p><img src="http://7xize8.com1.z0.glb.clouddn.com/net_adb/developer_menu.png" alt="开发者选项菜单"></p>
+<h2 id="连接设备">连接设备</h2><p>在<code>开发者选项</code>菜单里的<code>网络ADB调试</code>选项下可以看到当前设备的IP地址和端口号，例如192.168.31.228:5555，使用<code>adb connect</code>命令连接设备。</p>
+<blockquote>
+<p>设备与主机需要在同一网段里，否则无法使用网络ADB调试</p>
+</blockquote>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:<span class="string">\Code\Git&gt;adb</span> connect <span class="number">192.168</span>.<span class="number">31.228</span>:<span class="number">5555</span></span><br><span class="line">connected <span class="keyword">to</span> <span class="number">192.168</span>.<span class="number">31.228</span>:<span class="number">5555</span></span><br></pre></td></tr></table></figure>
+<h2 id="查看连接">查看连接</h2><p>使用<code>adb devices</code>命令查看连接的设备。</p>
+<figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\Code\Git&gt;adb devices</span><br><span class="line"><span class="built_in">List</span> <span class="keyword">of</span> devices attached</span><br><span class="line"><span class="number">192.168</span>.<span class="number">31.228</span>:<span class="number">5555</span>     device</span><br></pre></td></tr></table></figure>
+<h2 id="分享与支持">分享与支持</h2><ul>
+<li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
+<li>更多支持，请点<a href="/about">这里</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="adb shell" scheme="http://jiongbull.com/tags/adb-shell/"/>
+    
+      <category term="Android Experience" scheme="http://jiongbull.com/categories/Android-Experience/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[adb shell命令]]></title>
     <link href="http://jiongbull.com/2016/04/02/adb%20shell%E5%91%BD%E4%BB%A4/"/>
     <id>http://jiongbull.com/2016/04/02/adb shell命令/</id>
     <published>2016-04-02T14:32:11.000Z</published>
-    <updated>2016-04-05T04:46:58.925Z</updated>
+    <updated>2016-04-06T15:53:46.651Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
 <h2 id="如何查看命令">如何查看命令</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\Code\Git&gt;adb shell</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # ls /system/bin</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <h2 id="命令大全">命令大全</h2><h3 id="aapt">aapt</h3><p>Android Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将资源文件编译成二进制文件。</p>
-<h3 id="adb">adb</h3><h3 id="am">am</h3><h3 id="app_process">app_process</h3><h3 id="app_process32">app_process32</h3><h3 id="app_process64">app_process64</h3><h3 id="applypatch">applypatch</h3><h3 id="applypatch_static">applypatch_static</h3><h3 id="appops">appops</h3><h3 id="appwidget">appwidget</h3><h3 id="atrace">atrace</h3><h3 id="bcc">bcc</h3><h3 id="bdt">bdt</h3>]]></content>
+<h4 id="aapt_v">aapt v</h4><p>显示aapt版本号。</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># aapt v</span></span><br><span class="line"><span class="constant">Android Asset Packaging Tool,</span> v<span class="number">0</span>.<span class="number">2</span>-0ec622cc9f</span><br></pre></td></tr></table></figure>
+<h4 id="aapt_l[ist]_[-v]_[-a]_file-{zip,jar,apk}">aapt l[ist] [-v] [-a] file.{zip,jar,apk}</h4><p>列出归档文件内容。</p>
+<ol>
+<li>aapt l -v</li>
+</ol>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@shamu</span>:<span class="regexp">/ # aapt l /</span>data<span class="regexp">/app/</span>com.zhihu.android-<span class="number">2</span>/base.apk</span><br><span class="line">...</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_bk_red_rounded.xml</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_bk_yellow_rounded.xml</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_logo.png</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_text_box.xml</span><br><span class="line">res<span class="regexp">/drawable/</span>liukanshan_cake.gif</span><br><span class="line">res<span class="regexp">/drawable/</span>progress_view.xml</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>2.</p>
+<h3 id="#">#</h3><h3 id="adb">adb</h3><p>Android Debug Bridge，android调试桥。</p>
+<h3 id="am">am</h3><p>Activity Manager，activity管理器，可以启动activity、启动service、发送广播、停止进程等。</p>
+<h3 id="app_process">app_process</h3><h3 id="app_process32">app_process32</h3><h3 id="app_process64">app_process64</h3><h3 id="applypatch">applypatch</h3><h3 id="applypatch_static">applypatch_static</h3><h3 id="appops">appops</h3><h3 id="appwidget">appwidget</h3><h3 id="atrace">atrace</h3><h3 id="bcc">bcc</h3><h3 id="bdt">bdt</h3><h2 id="分享与支持">分享与支持</h2><ul>
+<li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
+<li>更多支持，请点<a href="/about">这里</a></li>
+</ul>
+]]></content>
     <summary type="html">
     <![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
