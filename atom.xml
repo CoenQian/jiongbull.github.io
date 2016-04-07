@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-04-06T15:53:42.150Z</updated>
+  <updated>2016-04-07T17:00:21.572Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -15,11 +15,81 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[aapt使用说明]]></title>
+    <link href="http://jiongbull.com/2016/04/08/aapt%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <id>http://jiongbull.com/2016/04/08/aapt使用说明/</id>
+    <published>2016-04-07T16:12:56.000Z</published>
+    <updated>2016-04-07T17:00:21.572Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
+<p>Android Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将资源文件编译成二进制文件。</p>
+<h2 id="aapt_v">aapt v</h2><p>显示aapt版本号。</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># aapt v</span></span><br><span class="line"><span class="constant">Android Asset Packaging Tool,</span> v<span class="number">0</span>.<span class="number">2</span>-0ec622cc9f</span><br></pre></td></tr></table></figure>
+<h2 id="aapt_l[ist]_[-v]_[-a]_file-{zip,jar,apk}">aapt l[ist] [-v] [-a] file.{zip,jar,apk}</h2><p>列出归档文件内容。</p>
+<ul>
+<li><code>-v</code> 以table形式显示</li>
+<li><code>-a</code> 额外显示<code>AndroidManifest.xml</code>内容</li>
+</ul>
+<ol>
+<li><p>aapt l /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@shamu</span>:<span class="regexp">/ # aapt l /</span>data<span class="regexp">/app/</span>com.zhihu.android-<span class="number">2</span>/base.apk</span><br><span class="line">AndroidManifest.xml</span><br><span class="line">assets/crashlytics-build.properties</span><br><span class="line">assets<span class="regexp">/drawable-hdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">assets<span class="regexp">/drawable-ldpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">assets<span class="regexp">/drawable-mdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">assets<span class="regexp">/drawable-xhdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">assets<span class="regexp">/drawable-xxhdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">assets<span class="regexp">/drawable/</span>weibosdk_dialog_bg.9.png</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>aapt l -v /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@shamu</span>:<span class="regexp">/ # aapt l -v /</span>data<span class="regexp">/app/</span>com.zhihu.android-<span class="number">2</span>/base.apk</span><br><span class="line"><span class="string">Archive:</span>  <span class="regexp">/data/</span>app<span class="regexp">/com.zhihu.android-2/</span>base.apk</span><br><span class="line"> Length   Method    Size  Ratio   Offset      Date  Time  CRC-<span class="number">32</span>    Name</span><br><span class="line">--------  ------  ------- -----  -------      ----  ----  ------    ----</span><br><span class="line">   <span class="number">15856</span>  Deflate    <span class="number">3343</span>  <span class="number">79</span>%         <span class="number">0</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">28</span>  <span class="number">9304</span>d664  AndroidManifest.xml</span><br><span class="line">     <span class="number">338</span>  Deflate     <span class="number">266</span>  <span class="number">21</span>%      <span class="number">3396</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">28</span>  <span class="number">416243</span>b9  assets/crashlytics-build.properties</span><br><span class="line">    <span class="number">2054</span>  Stored     <span class="number">2054</span>   <span class="number">0</span>%      <span class="number">3727</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  be9fc2e4  assets<span class="regexp">/drawable-hdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">     <span class="number">869</span>  Stored      <span class="number">869</span>   <span class="number">0</span>%      <span class="number">5865</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  fb4127df  assets<span class="regexp">/drawable-ldpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">    <span class="number">1387</span>  Stored     <span class="number">1387</span>   <span class="number">0</span>%      <span class="number">6816</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  <span class="number">055</span>b26ac  assets<span class="regexp">/drawable-mdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">    <span class="number">2971</span>  Stored     <span class="number">2971</span>   <span class="number">0</span>%      <span class="number">8286</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  fd14d699  assets<span class="regexp">/drawable-xhdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">    <span class="number">4162</span>  Stored     <span class="number">4162</span>   <span class="number">0</span>%     <span class="number">11342</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  <span class="number">65</span>f5bfc5  assets<span class="regexp">/drawable-xxhdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">     <span class="number">495</span>  Stored      <span class="number">495</span>   <span class="number">0</span>%     <span class="number">15589</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  <span class="number">0</span>dfdb02b  assets<span class="regexp">/drawable/</span>weibosdk_dialog_bg.9.png</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>aapt l -a /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">Android manifest:</span><br><span class="line">N: android=http:<span class="comment">//schemas.android.com/apk/res/android</span></span><br><span class="line">  E: manifest (line=<span class="number">15</span>)</span><br><span class="line">    A: android:<span class="function"><span class="title">versionCode</span><span class="params">(<span class="number">0</span>x0101021b)</span></span>=(type <span class="number">0</span>x10)<span class="number">0</span>x133</span><br><span class="line">    A: android:<span class="function"><span class="title">versionName</span><span class="params">(<span class="number">0</span>x0101021c)</span></span>=<span class="string">"3.2.0"</span> (Raw: <span class="string">"3.2.0"</span>)</span><br><span class="line">    A: package=<span class="string">"com.zhihu.android"</span> (Raw: <span class="string">"com.zhihu.android"</span>)</span><br><span class="line">    A: platformBuildVersionCode=(type <span class="number">0</span>x10)<span class="number">0</span>x17 (Raw: <span class="string">"23"</span>)</span><br><span class="line">    A: platformBuildVersionName=<span class="string">"6.0-2438415"</span> (Raw: <span class="string">"6.0-2438415"</span>)</span><br><span class="line">    E: uses-sdk (line=<span class="number">20</span>)</span><br><span class="line">      A: android:<span class="function"><span class="title">minSdkVersion</span><span class="params">(<span class="number">0</span>x0101020c)</span></span>=(type <span class="number">0</span>x10)<span class="number">0</span>xf</span><br><span class="line">      A: android:<span class="function"><span class="title">targetSdkVersion</span><span class="params">(<span class="number">0</span>x01010270)</span></span>=(type <span class="number">0</span>x10)<span class="number">0</span>x17</span><br><span class="line">    E: uses-permission (line=<span class="number">30</span>)</span><br><span class="line">      A: android:<span class="function"><span class="title">name</span><span class="params">(<span class="number">0</span>x01010003)</span></span>=<span class="string">"android.permission.READ_EXTERNAL_STORAGE"</span> (Raw: <span class="string">"android.permission.READ_EXTERNAL_STORAGE"</span>)</span><br><span class="line">    E: uses-permission (line=<span class="number">31</span>)</span><br><span class="line">      A: android:<span class="function"><span class="title">name</span><span class="params">(<span class="number">0</span>x01010003)</span></span>=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> (Raw: <span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="aapt_d[ump]_[—values]_[—include-meta-data]_WHAT_file-{apk}_[asset_[asset_…]]">aapt d[ump] [—values] [—include-meta-data] WHAT file.{apk} [asset [asset …]]</h2><p>输出APK内的一些信息。</p>
+<ul>
+<li><code>strings</code> 显示APK中资源表字符常量池里的内容</li>
+<li><code>badging</code> 显示APK中声明的应用的标签、图标和相关描述</li>
+<li><code>permissions</code> 显示APK的权限</li>
+<li><code>resources</code> 显示APK的资源表</li>
+<li><code>configurations</code> 显示APK的配置信息</li>
+<li><code>xmltree</code> 以树形结构显示指定资产中编译的XML资源</li>
+<li><code>xmlstrings</code> 显示指定的编译的XML文件里所有字符串</li>
+</ul>
+<ol>
+<li><p>aapt d strings /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root@shamu:/ <span class="preprocessor"># apt d strings /data/app/com.zhihu.android-2/base.apk</span></span><br><span class="line"><span class="built_in">String</span> pool <span class="keyword">of</span> <span class="number">6140</span> unique UTF-<span class="number">8</span> non-sorted strings, <span class="number">6140</span> entries <span class="keyword">and</span> <span class="number">1</span> styles <span class="keyword">using</span> <span class="number">313704</span> bytes:</span><br><span class="line"><span class="built_in">String</span> <span class="preprocessor">#0: Requested by %1$s</span></span><br><span class="line"><span class="built_in">String</span> <span class="preprocessor">#1: Requested by %1$s</span></span><br><span class="line"><span class="built_in">String</span> <span class="preprocessor">#2: Requested by %1$s</span></span><br><span class="line"><span class="built_in">String</span> <span class="preprocessor">#3: res/menu/question_edit.xml</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>aapt d badging /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root<span class="annotation">@shamu</span>:<span class="regexp">/ # aapt d badging /</span>data<span class="regexp">/app/</span>com.zhihu.android-<span class="number">2</span>/base.apk</span><br><span class="line"><span class="string">package:</span> name=<span class="string">'com.zhihu.android'</span> versionCode=<span class="string">'307'</span> versionName=<span class="string">'3.2.0'</span> platformBuildVersionName=<span class="string">'6.0-2438415'</span></span><br><span class="line"><span class="string">sdkVersion:</span><span class="string">'15'</span></span><br><span class="line"><span class="string">targetSdkVersion:</span><span class="string">'23'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.READ_EXTERNAL_STORAGE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.WRITE_EXTERNAL_STORAGE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.NFC'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.RECEIVE_BOOT_COMPLETED'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.DOWNLOAD_WITHOUT_NOTIFICATION'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.ACCESS_NETWORK_STATE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.INTERNET'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.ACCESS_WIFI_STATE'</span></span><br><span class="line">application-<span class="string">label:</span><span class="string">'知乎'</span></span><br><span class="line">...</span><br><span class="line">application-icon-<span class="number">120</span>:<span class="string">'res/mipmap-mdpi-v4/ic_launcher.png'</span></span><br><span class="line">application-icon-<span class="number">160</span>:<span class="string">'res/mipmap-mdpi-v4/ic_launcher.png'</span></span><br><span class="line">application-icon-<span class="number">213</span>:<span class="string">'res/mipmap-hdpi-v4/ic_launcher.png'</span></span><br><span class="line">application-icon-<span class="number">240</span>:<span class="string">'res/mipmap-hdpi-v4/ic_launcher.png'</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>aapt d permissions /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root<span class="annotation">@shamu</span>:<span class="regexp">/ # aapt d permissions /</span>data<span class="regexp">/app/</span>com.zhihu.android-<span class="number">2</span>/base.apk</span><br><span class="line"><span class="string">package:</span> com.zhihu.android</span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.READ_EXTERNAL_STORAGE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.WRITE_EXTERNAL_STORAGE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.NFC'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.RECEIVE_BOOT_COMPLETED'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.DOWNLOAD_WITHOUT_NOTIFICATION'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.ACCESS_NETWORK_STATE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.INTERNET'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.ACCESS_WIFI_STATE'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>aapt d resources /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># aapt d resources /data/app/com.zhihu.android-2/base.apk</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="分享与支持">分享与支持</h2><ul>
+<li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
+<li>更多支持，请点<a href="/about">这里</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="adb shell" scheme="http://jiongbull.com/tags/adb-shell/"/>
+    
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
+    
+      <category term="adb" scheme="http://jiongbull.com/categories/Android/adb/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[启用网络ADB调试]]></title>
     <link href="http://jiongbull.com/2016/04/06/%E5%90%AF%E7%94%A8%E7%BD%91%E7%BB%9CADB%E8%B0%83%E8%AF%95/"/>
     <id>http://jiongbull.com/2016/04/06/启用网络ADB调试/</id>
     <published>2016-04-06T11:27:55.000Z</published>
-    <updated>2016-04-06T15:53:42.150Z</updated>
+    <updated>2016-04-07T16:20:20.251Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
@@ -45,7 +115,9 @@
     
       <category term="adb shell" scheme="http://jiongbull.com/tags/adb-shell/"/>
     
-      <category term="Android Experience" scheme="http://jiongbull.com/categories/Android-Experience/"/>
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
+    
+      <category term="adb" scheme="http://jiongbull.com/categories/Android/adb/"/>
     
   </entry>
   
@@ -54,21 +126,14 @@
     <link href="http://jiongbull.com/2016/04/02/adb%20shell%E5%91%BD%E4%BB%A4/"/>
     <id>http://jiongbull.com/2016/04/02/adb shell命令/</id>
     <published>2016-04-02T14:32:11.000Z</published>
-    <updated>2016-04-06T15:53:46.651Z</updated>
+    <updated>2016-04-07T16:31:18.886Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
-<h2 id="如何查看命令">如何查看命令</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\Code\Git&gt;adb shell</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # ls /system/bin</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="如何查看命令">如何查看命令</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\Code\Git&gt;adb shell</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # ls /system/bin</span><br><span class="line">aapt</span><br><span class="line">adb</span><br><span class="line">am</span><br><span class="line">app_process</span><br><span class="line">app_process32</span><br><span class="line">app_process64</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <h2 id="命令大全">命令大全</h2><h3 id="aapt">aapt</h3><p>Android Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将资源文件编译成二进制文件。</p>
-<h4 id="aapt_v">aapt v</h4><p>显示aapt版本号。</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># aapt v</span></span><br><span class="line"><span class="constant">Android Asset Packaging Tool,</span> v<span class="number">0</span>.<span class="number">2</span>-0ec622cc9f</span><br></pre></td></tr></table></figure>
-<h4 id="aapt_l[ist]_[-v]_[-a]_file-{zip,jar,apk}">aapt l[ist] [-v] [-a] file.{zip,jar,apk}</h4><p>列出归档文件内容。</p>
-<ol>
-<li>aapt l -v</li>
-</ol>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@shamu</span>:<span class="regexp">/ # aapt l /</span>data<span class="regexp">/app/</span>com.zhihu.android-<span class="number">2</span>/base.apk</span><br><span class="line">...</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_bk_red_rounded.xml</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_bk_yellow_rounded.xml</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_logo.png</span><br><span class="line">res<span class="regexp">/drawable/</span>instabug_text_box.xml</span><br><span class="line">res<span class="regexp">/drawable/</span>liukanshan_cake.gif</span><br><span class="line">res<span class="regexp">/drawable/</span>progress_view.xml</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>2.</p>
-<h3 id="#">#</h3><h3 id="adb">adb</h3><p>Android Debug Bridge，android调试桥。</p>
+<p>详情见<a href="/2016/04/08/aapt使用说明">aapt使用说明</a></p>
+<h3 id="adb">adb</h3><p>Android Debug Bridge，android调试桥。</p>
 <h3 id="am">am</h3><p>Activity Manager，activity管理器，可以启动activity、启动service、发送广播、停止进程等。</p>
 <h3 id="app_process">app_process</h3><h3 id="app_process32">app_process32</h3><h3 id="app_process64">app_process64</h3><h3 id="applypatch">applypatch</h3><h3 id="applypatch_static">applypatch_static</h3><h3 id="appops">appops</h3><h3 id="appwidget">appwidget</h3><h3 id="atrace">atrace</h3><h3 id="bcc">bcc</h3><h3 id="bdt">bdt</h3><h2 id="分享与支持">分享与支持</h2><ul>
 <li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
@@ -82,7 +147,9 @@
     
       <category term="adb shell" scheme="http://jiongbull.com/tags/adb-shell/"/>
     
-      <category term="Android Experience" scheme="http://jiongbull.com/categories/Android-Experience/"/>
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
+    
+      <category term="adb" scheme="http://jiongbull.com/categories/Android/adb/"/>
     
   </entry>
   
@@ -91,7 +158,7 @@
     <link href="http://jiongbull.com/2016/03/17/adb%E5%91%BD%E4%BB%A4/"/>
     <id>http://jiongbull.com/2016/03/17/adb命令/</id>
     <published>2016-03-17T15:39:22.000Z</published>
-    <updated>2016-04-05T13:58:39.051Z</updated>
+    <updated>2016-04-07T16:19:57.323Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
@@ -357,7 +424,9 @@
     
       <category term="adb" scheme="http://jiongbull.com/tags/adb/"/>
     
-      <category term="Android Experience" scheme="http://jiongbull.com/categories/Android-Experience/"/>
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
+    
+      <category term="adb" scheme="http://jiongbull.com/categories/Android/adb/"/>
     
   </entry>
   
@@ -683,7 +752,7 @@
     <link href="http://jiongbull.com/2015/07/13/Material-Design-Color/"/>
     <id>http://jiongbull.com/2015/07/13/Material-Design-Color/</id>
     <published>2015-07-13T14:31:44.000Z</published>
-    <updated>2016-04-02T11:28:49.973Z</updated>
+    <updated>2016-04-07T16:20:15.020Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
@@ -706,7 +775,7 @@
     
       <category term="Material Design" scheme="http://jiongbull.com/tags/Material-Design/"/>
     
-      <category term="Android Experience" scheme="http://jiongbull.com/categories/Android-Experience/"/>
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
     
   </entry>
   
@@ -715,7 +784,7 @@
     <link href="http://jiongbull.com/2015/05/11/Android%E5%B8%83%E5%B1%80%E8%A7%84%E8%8C%83/"/>
     <id>http://jiongbull.com/2015/05/11/Android布局规范/</id>
     <published>2015-05-11T06:52:36.000Z</published>
-    <updated>2016-04-02T11:28:32.872Z</updated>
+    <updated>2016-04-07T16:20:01.004Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
 </blockquote>
@@ -814,7 +883,7 @@
     
       <category term="布局规范" scheme="http://jiongbull.com/tags/%E5%B8%83%E5%B1%80%E8%A7%84%E8%8C%83/"/>
     
-      <category term="Android Experience" scheme="http://jiongbull.com/categories/Android-Experience/"/>
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
     
   </entry>
   
@@ -823,7 +892,7 @@
     <link href="http://jiongbull.com/2015/05/11/Android%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
     <id>http://jiongbull.com/2015/05/11/Android屏幕适配/</id>
     <published>2015-05-11T05:21:51.000Z</published>
-    <updated>2016-04-02T11:28:39.888Z</updated>
+    <updated>2016-04-07T16:20:08.853Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
@@ -1039,7 +1108,7 @@
     
       <category term="屏幕适配" scheme="http://jiongbull.com/tags/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
     
-      <category term="Android Experience" scheme="http://jiongbull.com/categories/Android-Experience/"/>
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
     
   </entry>
   
@@ -1048,7 +1117,7 @@
     <link href="http://jiongbull.com/2015/05/08/Android%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
     <id>http://jiongbull.com/2015/05/08/Android代码规范/</id>
     <published>2015-05-08T02:40:00.000Z</published>
-    <updated>2016-04-02T11:28:36.339Z</updated>
+    <updated>2016-04-07T16:20:05.279Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
@@ -1338,7 +1407,7 @@
     
       <category term="代码规范" scheme="http://jiongbull.com/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
     
-      <category term="Android Experience" scheme="http://jiongbull.com/categories/Android-Experience/"/>
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
     
   </entry>
   

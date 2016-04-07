@@ -1,0 +1,614 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>aapt使用说明 | JiongBull&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<meta name="baidu-site-verification" content="D2uzc1tiUm" />
+    
+    <meta name="author" content="JiongBull">
+    
+
+    
+    <meta name="description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
+
+Android Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将资源文件编译成二进制文件。
+aapt v显示aapt版本号。
+122|root@shamu:/ # aapt vAndroid Asset Packaging Too">
+<meta property="og:type" content="article">
+<meta property="og:title" content="aapt使用说明">
+<meta property="og:url" content="http://jiongbull.com/2016/04/08/aapt使用说明/index.html">
+<meta property="og:site_name" content="JiongBull's Blog">
+<meta property="og:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
+
+Android Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将资源文件编译成二进制文件。
+aapt v显示aapt版本号。
+122|root@shamu:/ # aapt vAndroid Asset Packaging Too">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="aapt使用说明">
+<meta name="twitter:description" content="来源：JiongBull’s Blog  微博：@JiongBull  GitHub：JiongBull
+
+Android Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将资源文件编译成二进制文件。
+aapt v显示aapt版本号。
+122|root@shamu:/ # aapt vAndroid Asset Packaging Too">
+
+    
+    <link rel="alternative" href="/atom.xml" title="JiongBull&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/apple.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="JiongBull&#39;s Blog" title="JiongBull&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="JiongBull&#39;s Blog">JiongBull&#39;s Blog</a></h1>
+				<h2 class="blog-motto">男人的浪漫是星辰大海</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/categories/Android">Android</a></li>
+					
+						<li><a href="/categories/Github">GitHub</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:jiongbull.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/08/aapt使用说明/" title="aapt使用说明" itemprop="url">aapt使用说明</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="JiongBull" target="_blank" itemprop="author">JiongBull</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-07T16:12:56.000Z" itemprop="datePublished"> 发表于 2016-04-08</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#aapt_v"><span class="toc-number">1.</span> <span class="toc-text">aapt v</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aapt_l[ist]_[-v]_[-a]_file-{zip,jar,apk}"><span class="toc-number">2.</span> <span class="toc-text">aapt l[ist] [-v] [-a] file.{zip,jar,apk}</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aapt_d[ump]_[—values]_[—include-meta-data]_WHAT_file-{apk}_[asset_[asset_…]]"><span class="toc-number">3.</span> <span class="toc-text">aapt d[ump] [—values] [—include-meta-data] WHAT file.{apk} [asset [asset …]]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享与支持"><span class="toc-number">4.</span> <span class="toc-text">分享与支持</span></a></li></ol>
+		
+		</div>
+		
+		<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
+<p>Android Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将资源文件编译成二进制文件。</p>
+<h2 id="aapt_v">aapt v</h2><p>显示aapt版本号。</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># aapt v</span></span><br><span class="line"><span class="constant">Android Asset Packaging Tool,</span> v<span class="number">0</span>.<span class="number">2</span>-0ec622cc9f</span><br></pre></td></tr></table></figure>
+<h2 id="aapt_l[ist]_[-v]_[-a]_file-{zip,jar,apk}">aapt l[ist] [-v] [-a] file.{zip,jar,apk}</h2><p>列出归档文件内容。</p>
+<ul>
+<li><code>-v</code> 以table形式显示</li>
+<li><code>-a</code> 额外显示<code>AndroidManifest.xml</code>内容</li>
+</ul>
+<ol>
+<li><p>aapt l /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@shamu</span>:<span class="regexp">/ # aapt l /</span>data<span class="regexp">/app/</span>com.zhihu.android-<span class="number">2</span>/base.apk</span><br><span class="line">AndroidManifest.xml</span><br><span class="line">assets/crashlytics-build.properties</span><br><span class="line">assets<span class="regexp">/drawable-hdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">assets<span class="regexp">/drawable-ldpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">assets<span class="regexp">/drawable-mdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">assets<span class="regexp">/drawable-xhdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">assets<span class="regexp">/drawable-xxhdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">assets<span class="regexp">/drawable/</span>weibosdk_dialog_bg.9.png</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>aapt l -v /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@shamu</span>:<span class="regexp">/ # aapt l -v /</span>data<span class="regexp">/app/</span>com.zhihu.android-<span class="number">2</span>/base.apk</span><br><span class="line"><span class="string">Archive:</span>  <span class="regexp">/data/</span>app<span class="regexp">/com.zhihu.android-2/</span>base.apk</span><br><span class="line"> Length   Method    Size  Ratio   Offset      Date  Time  CRC-<span class="number">32</span>    Name</span><br><span class="line">--------  ------  ------- -----  -------      ----  ----  ------    ----</span><br><span class="line">   <span class="number">15856</span>  Deflate    <span class="number">3343</span>  <span class="number">79</span>%         <span class="number">0</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">28</span>  <span class="number">9304</span>d664  AndroidManifest.xml</span><br><span class="line">     <span class="number">338</span>  Deflate     <span class="number">266</span>  <span class="number">21</span>%      <span class="number">3396</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">28</span>  <span class="number">416243</span>b9  assets/crashlytics-build.properties</span><br><span class="line">    <span class="number">2054</span>  Stored     <span class="number">2054</span>   <span class="number">0</span>%      <span class="number">3727</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  be9fc2e4  assets<span class="regexp">/drawable-hdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">     <span class="number">869</span>  Stored      <span class="number">869</span>   <span class="number">0</span>%      <span class="number">5865</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  fb4127df  assets<span class="regexp">/drawable-ldpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">    <span class="number">1387</span>  Stored     <span class="number">1387</span>   <span class="number">0</span>%      <span class="number">6816</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  <span class="number">055</span>b26ac  assets<span class="regexp">/drawable-mdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">    <span class="number">2971</span>  Stored     <span class="number">2971</span>   <span class="number">0</span>%      <span class="number">8286</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  fd14d699  assets<span class="regexp">/drawable-xhdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">    <span class="number">4162</span>  Stored     <span class="number">4162</span>   <span class="number">0</span>%     <span class="number">11342</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  <span class="number">65</span>f5bfc5  assets<span class="regexp">/drawable-xxhdpi/</span>ic_com_sina_weibo_sdk_close.png</span><br><span class="line">     <span class="number">495</span>  Stored      <span class="number">495</span>   <span class="number">0</span>%     <span class="number">15589</span>  <span class="number">03</span>-<span class="number">31</span>-<span class="number">16</span> <span class="number">19</span>:<span class="number">26</span>  <span class="number">0</span>dfdb02b  assets<span class="regexp">/drawable/</span>weibosdk_dialog_bg.9.png</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>aapt l -a /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">Android manifest:</span><br><span class="line">N: android=http:<span class="comment">//schemas.android.com/apk/res/android</span></span><br><span class="line">  E: manifest (line=<span class="number">15</span>)</span><br><span class="line">    A: android:<span class="function"><span class="title">versionCode</span><span class="params">(<span class="number">0</span>x0101021b)</span></span>=(type <span class="number">0</span>x10)<span class="number">0</span>x133</span><br><span class="line">    A: android:<span class="function"><span class="title">versionName</span><span class="params">(<span class="number">0</span>x0101021c)</span></span>=<span class="string">"3.2.0"</span> (Raw: <span class="string">"3.2.0"</span>)</span><br><span class="line">    A: package=<span class="string">"com.zhihu.android"</span> (Raw: <span class="string">"com.zhihu.android"</span>)</span><br><span class="line">    A: platformBuildVersionCode=(type <span class="number">0</span>x10)<span class="number">0</span>x17 (Raw: <span class="string">"23"</span>)</span><br><span class="line">    A: platformBuildVersionName=<span class="string">"6.0-2438415"</span> (Raw: <span class="string">"6.0-2438415"</span>)</span><br><span class="line">    E: uses-sdk (line=<span class="number">20</span>)</span><br><span class="line">      A: android:<span class="function"><span class="title">minSdkVersion</span><span class="params">(<span class="number">0</span>x0101020c)</span></span>=(type <span class="number">0</span>x10)<span class="number">0</span>xf</span><br><span class="line">      A: android:<span class="function"><span class="title">targetSdkVersion</span><span class="params">(<span class="number">0</span>x01010270)</span></span>=(type <span class="number">0</span>x10)<span class="number">0</span>x17</span><br><span class="line">    E: uses-permission (line=<span class="number">30</span>)</span><br><span class="line">      A: android:<span class="function"><span class="title">name</span><span class="params">(<span class="number">0</span>x01010003)</span></span>=<span class="string">"android.permission.READ_EXTERNAL_STORAGE"</span> (Raw: <span class="string">"android.permission.READ_EXTERNAL_STORAGE"</span>)</span><br><span class="line">    E: uses-permission (line=<span class="number">31</span>)</span><br><span class="line">      A: android:<span class="function"><span class="title">name</span><span class="params">(<span class="number">0</span>x01010003)</span></span>=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> (Raw: <span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="aapt_d[ump]_[—values]_[—include-meta-data]_WHAT_file-{apk}_[asset_[asset_…]]">aapt d[ump] [—values] [—include-meta-data] WHAT file.{apk} [asset [asset …]]</h2><p>输出APK内的一些信息。</p>
+<ul>
+<li><code>strings</code> 显示APK中资源表字符常量池里的内容</li>
+<li><code>badging</code> 显示APK中声明的应用的标签、图标和相关描述</li>
+<li><code>permissions</code> 显示APK的权限</li>
+<li><code>resources</code> 显示APK的资源表</li>
+<li><code>configurations</code> 显示APK的配置信息</li>
+<li><code>xmltree</code> 以树形结构显示指定资产中编译的XML资源</li>
+<li><code>xmlstrings</code> 显示指定的编译的XML文件里所有字符串</li>
+</ul>
+<ol>
+<li><p>aapt d strings /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root@shamu:/ <span class="preprocessor"># apt d strings /data/app/com.zhihu.android-2/base.apk</span></span><br><span class="line"><span class="built_in">String</span> pool <span class="keyword">of</span> <span class="number">6140</span> unique UTF-<span class="number">8</span> non-sorted strings, <span class="number">6140</span> entries <span class="keyword">and</span> <span class="number">1</span> styles <span class="keyword">using</span> <span class="number">313704</span> bytes:</span><br><span class="line"><span class="built_in">String</span> <span class="preprocessor">#0: Requested by %1$s</span></span><br><span class="line"><span class="built_in">String</span> <span class="preprocessor">#1: Requested by %1$s</span></span><br><span class="line"><span class="built_in">String</span> <span class="preprocessor">#2: Requested by %1$s</span></span><br><span class="line"><span class="built_in">String</span> <span class="preprocessor">#3: res/menu/question_edit.xml</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>aapt d badging /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root<span class="annotation">@shamu</span>:<span class="regexp">/ # aapt d badging /</span>data<span class="regexp">/app/</span>com.zhihu.android-<span class="number">2</span>/base.apk</span><br><span class="line"><span class="string">package:</span> name=<span class="string">'com.zhihu.android'</span> versionCode=<span class="string">'307'</span> versionName=<span class="string">'3.2.0'</span> platformBuildVersionName=<span class="string">'6.0-2438415'</span></span><br><span class="line"><span class="string">sdkVersion:</span><span class="string">'15'</span></span><br><span class="line"><span class="string">targetSdkVersion:</span><span class="string">'23'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.READ_EXTERNAL_STORAGE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.WRITE_EXTERNAL_STORAGE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.NFC'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.RECEIVE_BOOT_COMPLETED'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.DOWNLOAD_WITHOUT_NOTIFICATION'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.ACCESS_NETWORK_STATE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.INTERNET'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.ACCESS_WIFI_STATE'</span></span><br><span class="line">application-<span class="string">label:</span><span class="string">'知乎'</span></span><br><span class="line">...</span><br><span class="line">application-icon-<span class="number">120</span>:<span class="string">'res/mipmap-mdpi-v4/ic_launcher.png'</span></span><br><span class="line">application-icon-<span class="number">160</span>:<span class="string">'res/mipmap-mdpi-v4/ic_launcher.png'</span></span><br><span class="line">application-icon-<span class="number">213</span>:<span class="string">'res/mipmap-hdpi-v4/ic_launcher.png'</span></span><br><span class="line">application-icon-<span class="number">240</span>:<span class="string">'res/mipmap-hdpi-v4/ic_launcher.png'</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>aapt d permissions /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root<span class="annotation">@shamu</span>:<span class="regexp">/ # aapt d permissions /</span>data<span class="regexp">/app/</span>com.zhihu.android-<span class="number">2</span>/base.apk</span><br><span class="line"><span class="string">package:</span> com.zhihu.android</span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.READ_EXTERNAL_STORAGE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.WRITE_EXTERNAL_STORAGE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.NFC'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.RECEIVE_BOOT_COMPLETED'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.DOWNLOAD_WITHOUT_NOTIFICATION'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.ACCESS_NETWORK_STATE'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.INTERNET'</span></span><br><span class="line">uses-<span class="string">permission:</span> name=<span class="string">'android.permission.ACCESS_WIFI_STATE'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>aapt d resources /data/app/com.zhihu.android-2/base.apk</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>|root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># aapt d resources /data/app/com.zhihu.android-2/base.apk</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="分享与支持">分享与支持</h2><ul>
+<li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
+<li>更多支持，请点<a href="/about">这里</a></li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>►<a class="article-category-link" href="/categories/Android/adb/">adb</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/adb-shell/">adb shell</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://jiongbull.com/2016/04/08/aapt使用说明/" data-title="aapt使用说明 | JiongBull&#39;s Blog" data-tsina="1792183427" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/04/06/启用网络ADB调试/"  title="启用网络ADB调试">
+ <strong>下一篇：</strong><br/> 
+ <span>启用网络ADB调试
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/04/08/aapt使用说明/" data-title="aapt使用说明" data-url="http://jiongbull.com/2016/04/08/aapt使用说明/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#aapt_v"><span class="toc-number">1.</span> <span class="toc-text">aapt v</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aapt_l[ist]_[-v]_[-a]_file-{zip,jar,apk}"><span class="toc-number">2.</span> <span class="toc-text">aapt l[ist] [-v] [-a] file.{zip,jar,apk}</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aapt_d[ump]_[—values]_[—include-meta-data]_WHAT_file-{apk}_[asset_[asset_…]]"><span class="toc-number">3.</span> <span class="toc-text">aapt d[ump] [—values] [—include-meta-data] WHAT file.{apk} [asset [asset …]]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分享与支持"><span class="toc-number">4.</span> <span class="toc-text">分享与支持</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github 名片</p>
+<div class="github-card" data-github="JiongBull" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+  </div>
+
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1792183427&verifier=cabe8439&dpc=1"></iframe>
+</div>
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Android/" title="Android">Android<sup>8</sup></a></li>
+		  
+		
+		  
+		
+		  
+			<li><a href="/categories/Github/" title="Github">Github<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Android/adb/" title="adb">adb<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/《Android开发艺术探索》读书笔记/" title="《Android开发艺术探索》读书笔记">《Android开发艺术探索》读书笔记<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/adb-shell/" title="adb shell">adb shell<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Log/" title="Log">Log<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Github/" title="Github">Github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/生命周期/" title="生命周期">生命周期<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/启动模式/" title="启动模式">启动模式<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Activity/" title="Activity">Activity<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/多进程/" title="多进程">多进程<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/adb/" title="adb">adb<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/IPC/" title="IPC">IPC<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Material-Design/" title="Material Design">Material Design<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/布局规范/" title="布局规范">布局规范<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/屏幕适配/" title="屏幕适配">屏幕适配<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://developer.android.com" target="_blank" title="Android Developer">Android Developer</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 人生得意须尽欢，莫使金尊空对月 <br/>
+			天生我材必有用，千金散尽还复来</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/JiongBull" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/JiongBull" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:jiongbull717@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="JiongBull">JiongBull</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"JiongBull"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-72760362-1', 'jiongbull.com');  
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
