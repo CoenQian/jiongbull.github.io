@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-04-08T17:04:27.408Z</updated>
+  <updated>2016-04-10T14:51:48.969Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -13,6 +13,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[am使用说明]]></title>
+    <link href="http://jiongbull.com/2016/04/10/am%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <id>http://jiongbull.com/2016/04/10/am使用说明/</id>
+    <published>2016-04-10T11:34:56.000Z</published>
+    <updated>2016-04-10T14:51:48.969Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
+<p>Activity Manager，可以启动activity、启动service、发送广播、停止进程等。</p>
+<h2 id="am_start">am start</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">am</span> <span class="tag">start</span> <span class="attr_selector">[-D]</span> <span class="attr_selector">[-W]</span> <span class="attr_selector">[-P (FILE)]</span> <span class="attr_selector">[--start-profiler (FILE)]</span> <span class="attr_selector">[--sampling INTERVAL]</span> <span class="attr_selector">[-R COUNT]</span> <span class="attr_selector">[-S]</span> <span class="attr_selector">[--opengl-trace]</span> <span class="attr_selector">[--user (USER_ID) | current]</span> &lt;<span class="tag">INTENT</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>启动Activity。</p>
+<ul>
+<li><code>-D</code> 启用debug</li>
+<li><code>-W</code> 等待启动完成，输出启动耗时</li>
+<li><code>--start-profiler (FILE)</code> 启用分析器，并把结果保存到文件</li>
+<li><code>--sampling INTERVAL</code> 每隔<code>INTERVAL</code>指定的毫秒后取样分析，需要和<code>--start-profiler</code>一起使用</li>
+<li><code>-P (FILE)</code> 像上面一样，但是会在应用空闲时停止分析</li>
+<li><code>-R COUNT</code> Activity重复启动<code>COUNT</code>次，顶部的Activity会在每次重复启动前销毁</li>
+<li><code>-S</code> 启动Activity前强制停止目标app</li>
+<li><code>--opengl-trace</code> 启用追踪OpenGL方法</li>
+<li><code>--user (USER_ID) | current</code> 指定运行的用户，如果没有指定则以当前用户运行</li>
+</ul>
+<ol>
+<li><p>am start com.jiongbull.art.note/.chapter1.AActivity</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@generic</span><span class="string">_x86_64:</span><span class="regexp">/ # am start -n com.jiongbull.art.note/</span>.chapter1.AActivity</span><br><span class="line"><span class="string">Starting:</span> Intent &#123; cmp=com.jiongbull.art.note/.chapter1.AActivity &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am start -D com.jiongbull.art.note/.chapter1.AActivity<br><img src="http://7xize8.com1.z0.glb.clouddn.com/adb/am_debug.png" alt="am debug"></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@generic</span><span class="string">_x86_64:</span><span class="regexp">/ # am start -D -n com.jiongbull.art.note/</span>.chapter1.AActivity</span><br><span class="line"><span class="string">Starting:</span> Intent &#123; cmp=com.jiongbull.art.note/.chapter1.AActivity &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am start -W com.jiongbull.art.note/.chapter1.AActivity</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Starting</span>: <span class="string">Intent &#123; act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.jiongbull.art.note/.chapter1.AActivity &#125;</span></span><br><span class="line"><span class="attribute">Status</span>: <span class="string">ok</span></span><br><span class="line"><span class="attribute">Activity</span>: <span class="string">com.jiongbull.art.note/.chapter1.AActivity</span></span><br><span class="line"><span class="attribute">ThisTime</span>: <span class="string">2388</span></span><br><span class="line"><span class="attribute">TotalTime</span>: <span class="string">416566</span></span><br><span class="line"><span class="attribute">WaitTime</span>: <span class="string">2396</span></span><br><span class="line"><span class="attribute">Complete</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am start —start-profiler profiler.txt com.jiongbull.art.note/.chapter1.AActivity</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="am_startservice">am startservice</h2><p>启动Service。</p>
+<h2 id="分享与支持">分享与支持</h2><ul>
+<li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
+<li>更多支持，请点<a href="/about">这里</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="adb shell" scheme="http://jiongbull.com/tags/adb-shell/"/>
+    
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
+    
+      <category term="adb" scheme="http://jiongbull.com/categories/Android/adb/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[aapt使用说明]]></title>
@@ -184,7 +240,7 @@
     <link href="http://jiongbull.com/2016/03/17/adb%E5%91%BD%E4%BB%A4/"/>
     <id>http://jiongbull.com/2016/03/17/adb命令/</id>
     <published>2016-03-17T15:39:22.000Z</published>
-    <updated>2016-04-08T05:30:14.352Z</updated>
+    <updated>2016-04-10T14:04:06.733Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
@@ -376,7 +432,8 @@
 </ol>
 <h3 id="adb_bugreport">adb bugreport</h3><p>返回所有应该包含在错误报告中的设备信息。</p>
 <p>adb bugreport<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="command">\Code</span><span class="command">\Git</span>&gt;adb bugreport</span><br><span class="line">...</span><br><span class="line">太多了，谁用谁知道</span><br></pre></td></tr></table></figure></p>
-<h3 id="adb_backup_…">adb backup …</h3><p><code>adb backup [-f (file)] [-apk|-noapk] [-obb|-noobb] [-shared|-noshared] [-all] [-system|-nosystem] [(packages...)]</code>, 把设备的数据归档写入文件中</p>
+<h3 id="adb_backup_…">adb backup …</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">adb</span> <span class="tag">backup</span> <span class="attr_selector">[-f (file)]</span> <span class="attr_selector">[-apk|-noapk]</span> <span class="attr_selector">[-obb|-noobb]</span> <span class="attr_selector">[-shared|-noshared]</span> <span class="attr_selector">[-all]</span> <span class="attr_selector">[-system|-nosystem]</span> <span class="attr_selector">[(packages...)]</span></span><br></pre></td></tr></table></figure>
+<p>把设备的数据归档写入文件中</p>
 <ul>
 <li><code>-f</code> 如果没有这个标识，数据将会写入到当前目录中的<code>backup.ab</code>文件中</li>
 <li><code>-apk|-noapk</code> 启用|禁用备份.apk文件自己，默认是<code>noapk</code></li>

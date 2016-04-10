@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://jiongbull.com/2016/04/08/aapt%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
-    <lastmod>2016-04-08T17:04:27.408Z</lastmod>
+    <loc>http://jiongbull.com/2016/04/10/am%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2016-04-10T14:51:48.969Z</lastmod>
     <data>
         <display>
-        <title>aapt使用说明</title>
-        <pubTime>2016-04-07T16:12:56.000Z</pubTime>
+        <title>am使用说明</title>
+        <pubTime>2016-04-10T11:34:56.000Z</pubTime>
         
         <tag>adb shell</tag>
          
@@ -28,13 +28,36 @@
     
   <url>
     <loc>http://jiongbull.com/2016/03/17/adb%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2016-04-08T05:30:14.352Z</lastmod>
+    <lastmod>2016-04-10T14:04:06.733Z</lastmod>
     <data>
         <display>
         <title>adb命令</title>
         <pubTime>2016-03-17T15:39:22.000Z</pubTime>
         
         <tag>adb</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://jiongbull.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="adb" url="http://jiongbull.com/categories/Android/adb/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jiongbull.com/2016/04/08/aapt%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2016-04-08T17:04:27.408Z</lastmod>
+    <data>
+        <display>
+        <title>aapt使用说明</title>
+        <pubTime>2016-04-07T16:12:56.000Z</pubTime>
+        
+        <tag>adb shell</tag>
          
          
            
