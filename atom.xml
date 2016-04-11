@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-04-10T14:51:48.969Z</updated>
+  <updated>2016-04-11T04:59:45.715Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jiongbull.com/2016/04/10/am%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     <id>http://jiongbull.com/2016/04/10/am使用说明/</id>
     <published>2016-04-10T11:34:56.000Z</published>
-    <updated>2016-04-10T14:51:48.969Z</updated>
+    <updated>2016-04-11T04:59:45.715Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
@@ -39,16 +39,34 @@
 </ul>
 <ol>
 <li><p>am start com.jiongbull.art.note/.chapter1.AActivity</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@generic</span><span class="string">_x86_64:</span><span class="regexp">/ # am start -n com.jiongbull.art.note/</span>.chapter1.AActivity</span><br><span class="line"><span class="string">Starting:</span> Intent &#123; cmp=com.jiongbull.art.note/.chapter1.AActivity &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@generic</span><span class="string">_x86_64:</span><span class="regexp">/ # am start com.jiongbull.art.note/</span>.chapter1.AActivity</span><br><span class="line"><span class="string">Starting:</span> Intent &#123; cmp=com.jiongbull.art.note/.chapter1.AActivity &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>am start -D com.jiongbull.art.note/.chapter1.AActivity<br><img src="http://7xize8.com1.z0.glb.clouddn.com/adb/am_debug.png" alt="am debug"></p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@generic</span><span class="string">_x86_64:</span><span class="regexp">/ # am start -D -n com.jiongbull.art.note/</span>.chapter1.AActivity</span><br><span class="line"><span class="string">Starting:</span> Intent &#123; cmp=com.jiongbull.art.note/.chapter1.AActivity &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@generic</span><span class="string">_x86_64:</span><span class="regexp">/ # am start -D com.jiongbull.art.note/</span>.chapter1.AActivity</span><br><span class="line"><span class="string">Starting:</span> Intent &#123; cmp=com.jiongbull.art.note/.chapter1.AActivity &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>am start -W com.jiongbull.art.note/.chapter1.AActivity</p>
 <figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Starting</span>: <span class="string">Intent &#123; act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.jiongbull.art.note/.chapter1.AActivity &#125;</span></span><br><span class="line"><span class="attribute">Status</span>: <span class="string">ok</span></span><br><span class="line"><span class="attribute">Activity</span>: <span class="string">com.jiongbull.art.note/.chapter1.AActivity</span></span><br><span class="line"><span class="attribute">ThisTime</span>: <span class="string">2388</span></span><br><span class="line"><span class="attribute">TotalTime</span>: <span class="string">416566</span></span><br><span class="line"><span class="attribute">WaitTime</span>: <span class="string">2396</span></span><br><span class="line"><span class="attribute">Complete</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>am start —start-profiler profiler.txt com.jiongbull.art.note/.chapter1.AActivity</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<li><p>am start —start-profiler /data/local/tmp/profiler.txt com.jiongbull.art.note/.chapter1.AActivity</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ # am start --start-<span class="keyword">profiler</span> /data/<span class="keyword">local</span>/tmp/<span class="keyword">profiler</span>.txt com.jiongbull.art.<span class="keyword">note</span>/.chapter1.AActivity</span><br><span class="line">Starting: Intent &#123; act=android.intent.action.MAIN <span class="keyword">cat</span>=[android.intent.category.LAUNCHER] cmp=com.jiongbull.art.<span class="keyword">note</span>/.chapter1.AActivity &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am start —sampling 1000 —start-profiler /data/local/tmp/profiler.txt com.jiongbull.art.note/.chapter1.AActivity</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ # am start --sampling 1000 --start-<span class="keyword">profiler</span> /data/<span class="keyword">local</span>/tmp/<span class="keyword">profiler</span>.txt com.jiongbull.art.<span class="keyword">note</span>/.chapter1.AActivity</span><br><span class="line">Starting: Intent &#123; act=android.intent.action.MAIN <span class="keyword">cat</span>=[android.intent.category.LAUNCHER] cmp=com.jiongbull.art.<span class="keyword">note</span>/.chapter1.AActivity &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am start -P /data/local/tmp/profiler.txt com.jiongbull.art.note/.chapter1.AActivity</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ # am start -P /<span class="type">data</span>/local/tmp/profiler.txt com.jiongbull.art.note/.chapter1.AActivity</span><br><span class="line">Starting: <span class="type">Intent</span> &#123; act=android.<span class="type">intent</span>.<span class="keyword">action</span>.MAIN cat=[android.<span class="type">intent</span>.category.LAUNCHER] cmp=com.jiongbull.art.note/.chapter1.AActivity &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am start -R 3 com.jiongbull.art.note/.chapter1.AActivity</p>
+<figure class="highlight roboconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ <span class="comment"># am start -R 3 com.jiongbull.art.note/.chapter1.AActivity</span></span><br><span class="line"><span class="component">Starting: Intent &#123; act=android<span class="string">.intent.action.MAIN</span> cat=[android<span class="string">.intent.category.LAUNCHER]</span> cmp=com<span class="string">.jiongbull.art.note/.chapter1.AActivity</span> &#125;</span></span><br><span class="line"><span class="component">Starting: Intent &#123; act=android<span class="string">.intent.action.MAIN</span> cat=[android<span class="string">.intent.category.LAUNCHER]</span> flg=0x10000000 cmp=com<span class="string">.jiongbull.art.note/.chapter1.AActivity</span> &#125;</span></span><br><span class="line">Warning: Activity not started, its current task has been brought to the front</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am start -S com.jiongbull.art.note/.chapter1.AActivity</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ <span class="preprocessor"># am start -S com.jiongbull.art.note/.chapter1.AActivity</span></span><br><span class="line"><span class="label">Stopping:</span> <span class="keyword">com</span>.jiongbull.art.note</span><br><span class="line"><span class="label">Starting:</span> Intent &#123; act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=<span class="keyword">com</span>.jiongbull.art.note/.chapter1.AActivity &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am start —opengl-trace com.jiongbull.art.note/.chapter1.AActivity</p>
+<figure class="highlight roboconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ <span class="comment"># am start --opengl-trace com.jiongbull.art.note/.chapter1.AActivity</span></span><br><span class="line"><span class="component">Starting: Intent &#123; act=android<span class="string">.intent.action.MAIN</span> cat=[android<span class="string">.intent.category.LAUNCHER]</span> cmp=com<span class="string">.jiongbull.art.note/.chapter1.AActivity</span> &#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am start —user current com.jiongbull.art.note/.chapter1.AActivity</p>
+<figure class="highlight roboconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ <span class="comment"># am start --user current com.jiongbull.art.note/.chapter1.AActivity</span></span><br><span class="line"><span class="component">Starting: Intent &#123; act=android<span class="string">.intent.action.MAIN</span> cat=[android<span class="string">.intent.category.LAUNCHER]</span> cmp=com<span class="string">.jiongbull.art.note/.chapter1.AActivity</span> &#125;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="am_startservice">am startservice</h2><p>启动Service。</p>
