@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-04-12T01:54:48.005Z</updated>
+  <updated>2016-04-16T08:42:23.989Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -15,11 +15,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Lambda for Android Studio]]></title>
+    <link href="http://jiongbull.com/2016/04/16/Lambda%20for%20Android%20Studio/"/>
+    <id>http://jiongbull.com/2016/04/16/Lambda for Android Studio/</id>
+    <published>2016-04-16T08:12:18.000Z</published>
+    <updated>2016-04-16T08:42:23.989Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
+<h2 id="下载、安装、配置jdk8">下载、安装、配置jdk8</h2><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">下载地址</a></p>
+<h2 id="配置build-gradle">配置build.gradle</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">buildscript</span> &#123;</span><br><span class="line">    <span class="keyword">repositories</span> &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">dependencies</span> &#123;</span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">'com.android.tools.build:gradle:2.1.0-beta1'</span></span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">'me.tatarka:gradle-retrolambda:3.2.5'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">allprojects</span> &#123;</span><br><span class="line">    <span class="keyword">repositories</span> &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置app/build-gradle">配置app/build.gradle</h2><figure class="highlight roboconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: 'com.android.application'</span><br><span class="line">apply plugin: 'me.tatarka.retrolambda'</span><br><span class="line"></span><br><span class="line"><span class="component">android &#123;</span><br><span class="line"></span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  compileOptions &#123;</span><br><span class="line">      sourceCompatibility JavaVersion<span class="string">.VERSION_1_8</span></span><br><span class="line">      targetCompatibility JavaVersion<span class="string">.VERSION_1_8</span></span><br><span class="line">  &#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="component">retrolambda &#123;</span><br><span class="line">    javaVersion JavaVersion<span class="string">.VERSION_1_6</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="简化代码">简化代码</h2><ol>
+<li><p>配置完<code>retrolambda</code>后，打开Android Stuido会有提示<br><img src="http://7xize8.com1.z0.glb.clouddn.com/lambda_for_android_studio/support.png" alt=""></p>
+</li>
+<li><p>光标移动到代码处，点击<code>ALT + ENTER</code><br><img src="http://7xize8.com1.z0.glb.clouddn.com/lambda_for_android_studio/support_1.png" alt=""></p>
+</li>
+<li><p>选择<code>Replace with lambda</code>，即可使用lambda新特性<br><img src="http://7xize8.com1.z0.glb.clouddn.com/lambda_for_android_studio/support_2.png" alt=""></p>
+</li>
+</ol>
+<h2 id="参考资料">参考资料</h2><ul>
+<li><a href="http://chriszou.com/2015/03/17/lambda-and-android.html" target="_blank" rel="external">Java 8的Lambda及其在Android 开发中的应用</a></li>
+<li><a href="http://gold.xitu.io/entry/56f3e33a5bbb50004c956856" target="_blank" rel="external">Lambda for Android</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="lambda" scheme="http://jiongbull.com/tags/lambda/"/>
+    
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[am使用说明]]></title>
     <link href="http://jiongbull.com/2016/04/10/am%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     <id>http://jiongbull.com/2016/04/10/am使用说明/</id>
     <published>2016-04-10T11:34:56.000Z</published>
-    <updated>2016-04-12T01:54:48.005Z</updated>
+    <updated>2016-04-12T04:45:18.276Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
@@ -124,6 +160,16 @@
 </li>
 </ol>
 <h2 id="am_instrument">am instrument</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">am</span> <span class="tag">instrument</span> <span class="attr_selector">[-r]</span> <span class="attr_selector">[-e &lt;NAME&gt; &lt;VALUE&gt;]</span> <span class="attr_selector">[-p &lt;FILE&gt;]</span> <span class="attr_selector">[-w]</span></span><br><span class="line">        <span class="attr_selector">[--user &lt;USER_ID&gt; | current]</span></span><br><span class="line">        <span class="attr_selector">[--no-window-animation]</span> <span class="attr_selector">[--abi &lt;ABI&gt;]</span> &lt;<span class="tag">COMPONENT</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>启动Instrumentation，通常<code>COMPONENT</code>是<code>TEST_PACKAGE/RUNNER_CLASS</code>这种格式的。</p>
+<ul>
+<li><code>-r</code></li>
+<li><code>-e</code></li>
+<li><code>-p</code></li>
+<li><code>-w</code></li>
+<li><code>--user (USER_ID)</code></li>
+<li><code>--no-window-animation</code></li>
+<li><code>--abi (ABI)</code></li>
+</ul>
 <p>start an Instrumentation.  Typically this target <component><br>  is the form <test_package>/<runner_class>.  Options are:<br>    -r: print raw results (otherwise decode REPORT_KEY_STREAMRESULT).  Use with<br>        [-e perf true] to generate raw output for performance measurements.<br>    -e <name> <value>: set argument <name> to <value>.  For test runners a<br>        common form is [-e <testrunner_flag> <value>[,<value>…]].<br>    -p <file>: write profiling data to <file><br>    -w: wait for instrumentation to finish before returning.  Required for<br>        test runners.<br>    —user <user_id> | current: Specify user instrumentation runs in;<br>        current user if not specified.<br>    —no-window-animation: turn off window animations while running.<br>    —abi <abi>: Launch the instrumented process with the selected ABI.<br>        This assumes that the process supports the selected ABI.</abi></user_id></file></file></value></value></testrunner_flag></value></name></value></name></runner_class></test_package></component></p>
 <h2 id="分享与支持">分享与支持</h2><ul>
 <li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>

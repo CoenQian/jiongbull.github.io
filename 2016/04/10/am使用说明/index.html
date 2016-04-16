@@ -218,6 +218,16 @@ am start1am start [-D] [-W] [-P (FILE)] [--start-profiler (FILE)] [--sampling IN
 </li>
 </ol>
 <h2 id="am_instrument">am instrument</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">am</span> <span class="tag">instrument</span> <span class="attr_selector">[-r]</span> <span class="attr_selector">[-e &lt;NAME&gt; &lt;VALUE&gt;]</span> <span class="attr_selector">[-p &lt;FILE&gt;]</span> <span class="attr_selector">[-w]</span></span><br><span class="line">        <span class="attr_selector">[--user &lt;USER_ID&gt; | current]</span></span><br><span class="line">        <span class="attr_selector">[--no-window-animation]</span> <span class="attr_selector">[--abi &lt;ABI&gt;]</span> &lt;<span class="tag">COMPONENT</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>启动Instrumentation，通常<code>COMPONENT</code>是<code>TEST_PACKAGE/RUNNER_CLASS</code>这种格式的。</p>
+<ul>
+<li><code>-r</code></li>
+<li><code>-e</code></li>
+<li><code>-p</code></li>
+<li><code>-w</code></li>
+<li><code>--user (USER_ID)</code></li>
+<li><code>--no-window-animation</code></li>
+<li><code>--abi (ABI)</code></li>
+</ul>
 <p>start an Instrumentation.  Typically this target <component><br>  is the form <test_package>/<runner_class>.  Options are:<br>    -r: print raw results (otherwise decode REPORT_KEY_STREAMRESULT).  Use with<br>        [-e perf true] to generate raw output for performance measurements.<br>    -e <name> <value>: set argument <name> to <value>.  For test runners a<br>        common form is [-e <testrunner_flag> <value>[,<value>…]].<br>    -p <file>: write profiling data to <file><br>    -w: wait for instrumentation to finish before returning.  Required for<br>        test runners.<br>    —user <user_id> | current: Specify user instrumentation runs in;<br>        current user if not specified.<br>    —no-window-animation: turn off window animations while running.<br>    —abi <abi>: Launch the instrumented process with the selected ABI.<br>        This assumes that the process supports the selected ABI.</abi></user_id></file></file></value></value></testrunner_flag></value></name></value></name></runner_class></test_package></component></p>
 <h2 id="分享与支持">分享与支持</h2><ul>
 <li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
@@ -258,6 +268,14 @@ am start1am start [-D] [-W] [-P (FILE)] [--start-profiler (FILE)] [--sampling IN
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2016/04/16/Lambda for Android Studio/" title="Lambda for Android Studio">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Lambda for Android Studio</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2016/04/08/aapt使用说明/"  title="aapt使用说明">
@@ -311,7 +329,7 @@ am start1am start [-D] [-W] [-P (FILE)] [--start-profiler (FILE)] [--sampling IN
 		<ul>
 		
 		  
-			<li><a href="/categories/Android/" title="Android">Android<sup>9</sup></a></li>
+			<li><a href="/categories/Android/" title="Android">Android<sup>10</sup></a></li>
 		  
 		
 		  
@@ -352,11 +370,11 @@ am start1am start [-D] [-W] [-P (FILE)] [--start-profiler (FILE)] [--sampling IN
 			
 		
 			
-				<li><a href="/tags/Activity/" title="Activity">Activity<sup>1</sup></a></li>
+				<li><a href="/tags/adb/" title="adb">adb<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/生命周期/" title="生命周期">生命周期<sup>1</sup></a></li>
+				<li><a href="/tags/Activity/" title="Activity">Activity<sup>1</sup></a></li>
 			
 		
 			
@@ -372,7 +390,7 @@ am start1am start [-D] [-W] [-P (FILE)] [--start-profiler (FILE)] [--sampling IN
 			
 		
 			
-				<li><a href="/tags/adb/" title="adb">adb<sup>1</sup></a></li>
+				<li><a href="/tags/生命周期/" title="生命周期">生命周期<sup>1</sup></a></li>
 			
 		
 			
@@ -389,6 +407,10 @@ am start1am start [-D] [-W] [-P (FILE)] [--start-profiler (FILE)] [--sampling IN
 		
 			
 				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lambda/" title="lambda">lambda<sup>1</sup></a></li>
 			
 		
 		</ul>
