@@ -55,12 +55,12 @@
     <link href="http://jiongbull.com/2016/04/10/am%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     <id>http://jiongbull.com/2016/04/10/am使用说明/</id>
     <published>2016-04-10T11:34:56.000Z</published>
-    <updated>2016-04-12T04:45:18.276Z</updated>
+    <updated>2016-04-17T10:01:09.669Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
 <p>Activity Manager，可以启动activity、启动service、发送广播、停止进程等。</p>
-<h2 id="am_start">am start</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">am</span> <span class="tag">start</span> <span class="attr_selector">[-D]</span> <span class="attr_selector">[-W]</span> <span class="attr_selector">[-P (FILE)]</span> <span class="attr_selector">[--start-profiler (FILE)]</span> <span class="attr_selector">[--sampling INTERVAL]</span> <span class="attr_selector">[-R COUNT]</span> <span class="attr_selector">[-S]</span> <span class="attr_selector">[--opengl-trace]</span> <span class="attr_selector">[--user (USER_ID) | current]</span> &lt;<span class="tag">INTENT</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="am_start">am start</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">am</span> <span class="tag">start</span> <span class="attr_selector">[-D]</span> <span class="attr_selector">[-W]</span> <span class="attr_selector">[-P (FILE)]</span> <span class="attr_selector">[--start-profiler (FILE)]</span> <span class="attr_selector">[--sampling INTERVAL]</span> <span class="attr_selector">[-R COUNT]</span> <span class="attr_selector">[-S]</span> <span class="attr_selector">[--opengl-trace]</span> <span class="attr_selector">[--user (USER_ID) | current]</span> (<span class="tag">INTENT</span>)</span><br></pre></td></tr></table></figure>
 <p>启动Activity。</p>
 <ul>
 <li><code>-D</code> 启用debug</li>
@@ -105,7 +105,7 @@
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ <span class="preprocessor"># am start --user current -n com.jiongbull.art.note/.chapter1.AActivity</span></span><br><span class="line"><span class="label">Starting:</span> Intent &#123; cmp=<span class="keyword">com</span>.jiongbull.art.note/.chapter1.AActivity &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="am_startservice">am startservice</h2><p><code>am startservice [--user (USER_ID) | current] &lt;INTENT&gt;</code>，启动Service，<code>--user (USER_ID) | current</code>指定运行的用户，如果没有指定则以当前用户运行。</p>
+<h2 id="am_startservice">am startservice</h2><p><code>am startservice [--user (USER_ID) | current] (INTENT)</code>，启动Service，<code>--user (USER_ID) | current</code>指定运行的用户，如果没有指定则以当前用户运行。</p>
 <ol>
 <li><p>am startservice -n com.jiongbull.art.note/.chapter2.PayService</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am startservice -n com.jiongbull.art.note/.chapter2.PayService</span></span><br><span class="line"><span class="constant">Starting </span><span class="symbol">service:</span> <span class="constant">Intent </span>&#123; cmp=com.jiongbull.art.note/.chapter2.<span class="constant">PayService </span>&#125;</span><br></pre></td></tr></table></figure>
@@ -114,7 +114,7 @@
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am startservice --user current -n com.jiongbull.art.note/.chapter2.PayService</span></span><br><span class="line"><span class="constant">Starting </span><span class="symbol">service:</span> <span class="constant">Intent </span>&#123; cmp=com.jiongbull.art.note/.chapter2.<span class="constant">PayService </span>&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="am_stopservice">am stopservice</h2><p><code>am stopservice [--user (USER_ID) | current] &lt;INTENT&gt;</code>，停止Service，<code>--user (USER_ID) | current</code>指定运行的用户，如果没有指定则以当前用户运行。</p>
+<h2 id="am_stopservice">am stopservice</h2><p><code>am stopservice [--user (USER_ID) | current] (INTENT)</code>，停止Service，<code>--user (USER_ID) | current</code>指定运行的用户，如果没有指定则以当前用户运行。</p>
 <ol>
 <li><p>am stopservice -n com.jiongbull.art.note/.chapter2.PayService</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am stopservice -n com.jiongbull.art.note/.chapter2.PayService</span></span><br><span class="line"><span class="constant">Stopping </span><span class="symbol">service:</span> <span class="constant">Intent </span>&#123; cmp=com.jiongbull.art.note/.chapter2.<span class="constant">PayService </span>&#125;</span><br><span class="line"><span class="constant">Service </span>stopped</span><br></pre></td></tr></table></figure>
@@ -123,7 +123,7 @@
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am stopservice --user current -n com.jiongbull.art.note/.chapter2.PayService</span></span><br><span class="line"><span class="constant">Stopping </span><span class="symbol">service:</span> <span class="constant">Intent </span>&#123; cmp=com.jiongbull.art.note/.chapter2.<span class="constant">PayService </span>&#125;</span><br><span class="line"><span class="constant">Service </span>stopped</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="am_force-stop">am force-stop</h2><p><code>am force-stop [--user (USER_ID) | all | current] &lt;PACKAGE&gt;</code>，强制停止所有与包名相关的，<code>--user (USER_ID) | all | current</code>指定去强制停止的用户，如果没有指定则是所有用户。</p>
+<h2 id="am_force-stop">am force-stop</h2><p><code>am force-stop [--user (USER_ID) | all | current] (PACKAGE)</code>，强制停止所有与包名相关的，<code>--user (USER_ID) | all | current</code>指定去强制停止的用户，如果没有指定则是所有用户。</p>
 <ol>
 <li><p>am force-stop com.jiongbull.art.note</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am force-stop com.jiongbull.art.note</span></span><br></pre></td></tr></table></figure>
@@ -132,18 +132,18 @@
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am force-stop --user current com.jiongbull.art.note</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="am_kill">am kill</h2><p><code>am kill [--user (USER_ID) | all | current] &lt;PACKAGE&gt;</code>，杀死所有与包名相关的进程，仅杀死可以安全杀死的进程，也就是说不会对用户体验造成困扰，<code>--user (USER_ID) | all | current</code>指定哪个用户去杀死进程，如果没有指定则是所有用户。</p>
+<h2 id="am_kill">am kill</h2><p><code>am kill [--user (USER_ID) | all | current] (PACKAGE)</code>，杀死所有与包名相关的进程，仅杀死可以安全杀死的进程，也就是说不会对用户体验造成困扰，<code>--user (USER_ID) | all | current</code>指定哪个用户去杀死进程，如果没有指定则是所有用户。</p>
 <ol>
 <li><p>am kill com.jiongbull.art.note</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am kill com.jiongbull.art.note</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>am</p>
+<li><p>am kill —user current com.jiongbull.art.note</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am kill --user current com.jiongbull.art.note</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="am_kill-all">am kill-all</h2><p>杀死所有的后台进程。</p>
 <p>am kill-all<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am kill-all</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="am_broadcast">am broadcast</h2><p><code>am broadcast [--user (USER_ID) | all | current] &lt;INTENT&gt;</code>，发送广播。</p>
+<h2 id="am_broadcast">am broadcast</h2><p><code>am broadcast [--user (USER_ID) | all | current] (INTENT)</code>，发送广播。</p>
 <ul>
 <li><code>--user (USER_ID) | all | current</code> 指定广播发送给哪个用户，如果没有指定则发送给所有人</li>
 <li><code>--receiver-permission (PERMISSION)</code> 要求Receiver需要的权限</li>
@@ -159,18 +159,92 @@
 <figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ <span class="comment"># am broadcast --receiver-permission android.permission.RECEIVE_BOOT_COMPLETED -a android.intent.action.BOOT_COMPLETED</span></span><br><span class="line"><span class="type">Broadcasting</span>: <span class="type">Intent</span> &#123; act=android.intent.action.<span class="type">BOOT_COMPLETED</span> &#125;</span><br><span class="line"><span class="type">Broadcast</span> completed: <span class="literal">result</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="am_instrument">am instrument</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">am</span> <span class="tag">instrument</span> <span class="attr_selector">[-r]</span> <span class="attr_selector">[-e &lt;NAME&gt; &lt;VALUE&gt;]</span> <span class="attr_selector">[-p &lt;FILE&gt;]</span> <span class="attr_selector">[-w]</span></span><br><span class="line">        <span class="attr_selector">[--user &lt;USER_ID&gt; | current]</span></span><br><span class="line">        <span class="attr_selector">[--no-window-animation]</span> <span class="attr_selector">[--abi &lt;ABI&gt;]</span> &lt;<span class="tag">COMPONENT</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>启动Instrumentation，通常<code>COMPONENT</code>是<code>TEST_PACKAGE/RUNNER_CLASS</code>这种格式的。</p>
+<h2 id="am_instrument">am instrument</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">am</span> <span class="tag">instrument</span> <span class="attr_selector">[-r]</span> <span class="attr_selector">[-e (NAME) (VALUE)]</span> <span class="attr_selector">[-p (FILE)]</span> <span class="attr_selector">[-w]</span></span><br><span class="line">        <span class="attr_selector">[--user (USER_ID) | current]</span></span><br><span class="line">        <span class="attr_selector">[--no-window-animation]</span> <span class="attr_selector">[--abi (ABI)]</span> (<span class="tag">COMPONENT</span>)</span><br></pre></td></tr></table></figure>
+<p>启动Instrumentation，通常目标组件是”测试包/运行类”这种格式的。</p>
 <ul>
-<li><code>-r</code></li>
-<li><code>-e</code></li>
-<li><code>-p</code></li>
-<li><code>-w</code></li>
-<li><code>--user (USER_ID)</code></li>
-<li><code>--no-window-animation</code></li>
-<li><code>--abi (ABI)</code></li>
+<li><code>-r</code> 输出原始结果（否则加密<code>REPORT_KEY_STREAMRESULT</code>），同时使用<code>-e pref true</code>可以输出性能测试的原始结果</li>
+<li><code>-e (NAME) (VALUE)</code> 把参数<code>NAME</code>的值设置为<code>VALUE</code>，对于测试运行器来说，最常见的表单格式是<code>-e (testrunner_flag) (value)[,(value)...]</code></li>
+<li><code>-p</code> 配置数据输出到文件中</li>
+<li><code>-w</code> 等待instrumentation完成，需要测试运行器</li>
+<li><code>--user (USER_ID) | current</code> 指定哪个用户去运行instrumentation，如果没有指定则默认是当前用户</li>
+<li><code>--no-window-animation</code> 运行时关闭窗口动画</li>
+<li><code>--abi (ABI)</code> 使用指定的ABI启动instrumentation进程，这里假设进程指定指定的ABI</li>
 </ul>
-<p>start an Instrumentation.  Typically this target <component><br>  is the form <test_package>/<runner_class>.  Options are:<br>    -r: print raw results (otherwise decode REPORT_KEY_STREAMRESULT).  Use with<br>        [-e perf true] to generate raw output for performance measurements.<br>    -e <name> <value>: set argument <name> to <value>.  For test runners a<br>        common form is [-e <testrunner_flag> <value>[,<value>…]].<br>    -p <file>: write profiling data to <file><br>    -w: wait for instrumentation to finish before returning.  Required for<br>        test runners.<br>    —user <user_id> | current: Specify user instrumentation runs in;<br>        current user if not specified.<br>    —no-window-animation: turn off window animations while running.<br>    —abi <abi>: Launch the instrumented process with the selected ABI.<br>        This assumes that the process supports the selected ABI.</abi></user_id></file></file></value></value></testrunner_flag></value></name></value></name></runner_class></test_package></component></p>
+<ol>
+<li><p>am instrument -w com.jiongbull.art.note.test/android.support.test.runner.AndroidJUnitRunner</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ # am instrument -w com.jiongbull.art.<span class="keyword">note</span>.<span class="keyword">test</span>/android.support.<span class="keyword">test</span>.runner.AndroidJUnitRunner</span><br><span class="line">com.jiongbull.art.<span class="keyword">note</span>.FirstActivityTest:....</span><br><span class="line"></span><br><span class="line">Time: 1.815</span><br><span class="line"></span><br><span class="line">OK (4 tests)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am instrument -r -w com.jiongbull.art.note.test/android.support.test.runner.AndroidJUnitRunner</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ <span class="preprocessor"># am instrument -r -w com.jiongbull.art.note.test/android.support.test.runner.AndroidJUnitRunner</span></span><br><span class="line"><span class="label">INSTRUMENTATION_STATUS:</span> numtests=<span class="number">4</span></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="label">Time:</span> <span class="number">1.724</span></span><br><span class="line"></span><br><span class="line">OK (<span class="number">4</span> tests)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="label">INSTRUMENTATION_CODE:</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am instrument -e class com.jiongbull.art.note.FirstActivityTest -w com.jiongbull.art.note.test/android.support.test.runner.AndroidJUnitRunner</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ # am instrument -<span class="keyword">e</span> <span class="keyword">class</span> com.jiongbull.art.<span class="keyword">note</span>.FirstActivityTest -w com.jiongbull.art.<span class="keyword">note</span>.<span class="keyword">test</span>/android.support.<span class="keyword">test</span>.runner.AndroidJUnitRunner</span><br><span class="line">com.jiongbull.art.<span class="keyword">note</span>.FirstActivityTest:....</span><br><span class="line"></span><br><span class="line">Time: 1.662</span><br><span class="line"></span><br><span class="line">OK (4 tests)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">INSTRUMENTATION_CODE: -1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am instrument -r -e pref true -p /data/local/tmp/ins.trace -w com.jiongbull.art.note.test/android.support.test.runner.AndroidJUnitRunner</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ # am instrument -r -<span class="keyword">e</span> pref true -p /data/<span class="keyword">local</span>/tmp/<span class="keyword">ins</span>.trace -w com.jiongbull.art.<span class="keyword">note</span>.<span class="keyword">test</span>/android.support.<span class="keyword">test</span>.runner.AndroidJUnitRunner</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am instrument —user current -w com.jiongbull.art.note.test/android.support.test.runner.AndroidJUnitRunner</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ # am instrument --user current -w com.jiongbull.art.<span class="keyword">note</span>.<span class="keyword">test</span>/android.support.<span class="keyword">test</span>.runner.AndroidJUnitRunner</span><br><span class="line">com.jiongbull.art.<span class="keyword">note</span>.FirstActivityTest:....</span><br><span class="line"></span><br><span class="line">Time: 2.221</span><br><span class="line"></span><br><span class="line">OK (4 tests)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am instrument —no-window-animation -w com.jiongbull.art.note.test/android.support.test.runner.AndroidJUnitRunner</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ # am instrument --<span class="keyword">no</span>-<span class="keyword">window</span>-animation -w com.jiongbull.art.<span class="keyword">note</span>.<span class="keyword">test</span>/android.support.<span class="keyword">test</span>.runner.AndroidJUnitRunner</span><br><span class="line">com.jiongbull.art.<span class="keyword">note</span>.FirstActivityTest:....</span><br><span class="line"></span><br><span class="line">Time: 1.842</span><br><span class="line"></span><br><span class="line">OK (4 tests)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am instrument —abi armabi-v7 -w com.jiongbull.art.note.test/android.support.test.runner.AndroidJUnitRunner</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">不支持设置。</span><br><span class="line">android<span class="class">.util</span><span class="class">.AndroidException</span>: INSTRUMENTATION_FAILED: Unsupported instruction set armabi</span><br><span class="line">        at com<span class="class">.android</span><span class="class">.commands</span><span class="class">.am</span><span class="class">.Am</span><span class="class">.runInstrument</span>(Am<span class="class">.java</span>:<span class="number">1087</span>)</span><br><span class="line">        at com<span class="class">.android</span><span class="class">.commands</span><span class="class">.am</span><span class="class">.Am</span><span class="class">.onRun</span>(Am<span class="class">.java</span>:<span class="number">371</span>)</span><br><span class="line">        at com<span class="class">.android</span><span class="class">.internal</span><span class="class">.os</span><span class="class">.BaseCommand</span><span class="class">.run</span>(BaseCommand<span class="class">.java</span>:<span class="number">47</span>)</span><br><span class="line">        at com<span class="class">.android</span><span class="class">.commands</span><span class="class">.am</span><span class="class">.Am</span><span class="class">.main</span>(Am<span class="class">.java</span>:<span class="number">100</span>)</span><br><span class="line">        at com<span class="class">.android</span><span class="class">.internal</span><span class="class">.os</span><span class="class">.RuntimeInit</span><span class="class">.nativeFinishInit</span>(Native Method)</span><br><span class="line">        at com<span class="class">.android</span><span class="class">.internal</span><span class="class">.os</span><span class="class">.RuntimeInit</span><span class="class">.main</span>(RuntimeInit<span class="class">.java</span>:<span class="number">251</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="am_profile_start">am profile start</h2><p><code>am profile start [--user (USER_ID) | current] (PROCESS) (FILE)</code>，对进程开展分析，<code>PROCESS</code>可以是进程名或pid，当提供进程名称时，<code>--user (USER_ID) | current</code>用来指定哪个用户分析进程，如果没有指定则以是当前用户。</p>
+<ol>
+<li><p>am profile start com.tencent.mm /data/local/tmp/profile.txt</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell@shamu:/ $ am profile <span class="operator"><span class="keyword">start</span> com.tencent.mm /<span class="keyword">data</span>/<span class="keyword">local</span>/tmp/<span class="keyword">profile</span>.txt</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am profile start —user current com.tencent.mm /data/local/tmp/profile.txt</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="variable">$ </span>am profile start --user current com.tencent.mm /data/local/tmp/profile.txt</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="am_profile_stop">am profile stop</h2><p><code>am profile stop [--user (USER_ID) | current] (PROCESS)</code>，停止对进程的分析，参数同<code>am profile start</code>。</p>
+<ol>
+<li><p>am profile stop com.tencent.mm</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="variable">$ </span>am profile stop com.tencent.mm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am profile stop —user current com.tencent.mm</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="variable">$ </span>am profile stop --user current com.tencent.mm</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="am_dumpheap">am dumpheap</h2><p><code>am dumpheap [--user (USER_ID) current] [-n] (PROCESS) (FILE)</code>，把进程的堆内存信息输出到文件中，<code>PROCESS</code>可以是进程名或pid。</p>
+<ul>
+<li><code>-n</code> 输出本地堆而不是托管堆</li>
+<li><code>--user (USER_ID) | current</code>用来指定哪个用户输出进程信息，如果没有指定则以是当前用户。</li>
+</ul>
+<ol>
+<li><p>am dumpheap com.jiongbull.art.note /data/local/tmp/dump.txt</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am dumpheap com.jiongbull.art.note /data/local/tmp/dump.txt</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am dumpheap -n com.jiongbull.art.note /data/local/tmp/dump.txt</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am dumpheap -n com.jiongbull.art.note /data/local/tmp/dump.txt</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am dumpheap -user current com.jiongbull.art.note /data/local/tmp/dump.txt</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am dumpheap -user current com.jiongbull.art.note /data/local/tmp/dump.txt</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="am_set-debug-app">am set-debug-app</h2><p><code>am set-debug-app [-w] [--persistent] (PACKAGE)</code>，设置应用为调试状态。</p>
+<ul>
+<li><code>-w</code> 在应用启动后等待调试器</li>
+<li><code>-persistent</code> 保持调试状态</li>
+</ul>
+<ol>
+<li><p>am set-debug-app com.jiongbull.art.note</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">shell</span>@shamu:/ $ am <span class="keyword">set</span>-debug-<span class="keyword">app</span> com.jiongbull.art.<span class="keyword">note</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am set-debug-app -w com.jiongbull.art.note</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">shell</span>@shamu:/ $ am <span class="keyword">set</span>-debug-<span class="keyword">app</span> -w com.jiongbull.art.<span class="keyword">note</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>am set-debug-app —persistent com.jiongbull.art.note</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">shell</span>@shamu:/ $ am <span class="keyword">set</span>-debug-<span class="keyword">app</span> --persistent com.jiongbull.art.<span class="keyword">note</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="am_clear-debug-app">am clear-debug-app</h2><p><code>am clear-debug-app</code>清除先前设置的调试应用。</p>
+<p>am sclear-debug-app<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am clear-debug-app</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="分享与支持">分享与支持</h2><ul>
 <li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
 <li>更多支持，请点<a href="/about">这里</a></li>

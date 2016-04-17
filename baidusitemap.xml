@@ -4,28 +4,8 @@
 
     
   <url>
-    <loc>http://jiongbull.com/2016/04/16/Lambda%20for%20Android%20Studio/</loc>
-    <lastmod>2016-04-16T08:42:23.989Z</lastmod>
-    <data>
-        <display>
-        <title>Lambda for Android Studio</title>
-        <pubTime>2016-04-16T08:12:18.000Z</pubTime>
-        
-        <tag>lambda</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://jiongbull.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://jiongbull.com/2016/04/10/am%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
-    <lastmod>2016-04-12T04:45:18.276Z</lastmod>
+    <lastmod>2016-04-17T10:01:09.669Z</lastmod>
     <data>
         <display>
         <title>am使用说明</title>
@@ -40,6 +20,26 @@
           
              
               <breadCrumb title="adb" url="http://jiongbull.com/categories/Android/adb/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jiongbull.com/2016/04/16/Lambda%20for%20Android%20Studio/</loc>
+    <lastmod>2016-04-16T08:42:23.989Z</lastmod>
+    <data>
+        <display>
+        <title>Lambda for Android Studio</title>
+        <pubTime>2016-04-16T08:12:18.000Z</pubTime>
+        
+        <tag>lambda</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://jiongbull.com/categories/Android/"/>
           
         </display>
     </data>
