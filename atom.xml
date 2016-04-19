@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-04-16T08:42:23.989Z</updated>
+  <updated>2016-04-19T10:02:38.459Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[adb获取设备读写权限]]></title>
+    <link href="http://jiongbull.com/2016/04/19/adb%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E8%AF%BB%E5%86%99%E6%9D%83%E9%99%90/"/>
+    <id>http://jiongbull.com/2016/04/19/adb获取设备读写权限/</id>
+    <published>2016-04-19T09:41:12.000Z</published>
+    <updated>2016-04-19T10:02:38.459Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
+<p>向AVD中拷贝文件可能遇到<code>Read-only file system</code>的提示，可以通过以下命令解决。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\Code\Git&gt;adb shell</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # su</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # mount -o remount,rw /</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="adb" scheme="http://jiongbull.com/tags/adb/"/>
+    
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
+    
+      <category term="adb" scheme="http://jiongbull.com/categories/Android/adb/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Lambda for Android Studio]]></title>
