@@ -4,8 +4,54 @@
 
     
   <url>
+    <loc>http://jiongbull.com/2016/04/02/adb%20shell%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2016-04-19T15:02:40.052Z</lastmod>
+    <data>
+        <display>
+        <title>adb shell命令</title>
+        <pubTime>2016-04-02T14:32:11.000Z</pubTime>
+        
+        <tag>adb shell</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://jiongbull.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="adb" url="http://jiongbull.com/categories/Android/adb/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jiongbull.com/2016/04/19/appops%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2016-04-19T14:59:58.621Z</lastmod>
+    <data>
+        <display>
+        <title>appops使用说明</title>
+        <pubTime>2016-04-19T14:22:41.000Z</pubTime>
+        
+        <tag>adb shell</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://jiongbull.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="adb" url="http://jiongbull.com/categories/Android/adb/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://jiongbull.com/2016/04/19/adb%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E8%AF%BB%E5%86%99%E6%9D%83%E9%99%90/</loc>
-    <lastmod>2016-04-19T10:02:38.459Z</lastmod>
+    <lastmod>2016-04-19T14:59:53.107Z</lastmod>
     <data>
         <display>
         <title>adb获取设备读写权限</title>
@@ -28,7 +74,7 @@
     
   <url>
     <loc>http://jiongbull.com/2016/04/10/am%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
-    <lastmod>2016-04-18T15:31:10.350Z</lastmod>
+    <lastmod>2016-04-19T13:56:17.932Z</lastmod>
     <data>
         <display>
         <title>am使用说明</title>
@@ -99,29 +145,6 @@
         <display>
         <title>aapt使用说明</title>
         <pubTime>2016-04-07T16:12:56.000Z</pubTime>
-        
-        <tag>adb shell</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://jiongbull.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="adb" url="http://jiongbull.com/categories/Android/adb/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jiongbull.com/2016/04/02/adb%20shell%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2016-04-07T16:31:18.886Z</lastmod>
-    <data>
-        <display>
-        <title>adb shell命令</title>
-        <pubTime>2016-04-02T14:32:11.000Z</pubTime>
         
         <tag>adb shell</tag>
          

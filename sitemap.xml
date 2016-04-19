@@ -2,13 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jiongbull.com/2016/04/02/adb%20shell%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2016-04-19T15:02:40.052Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2016/04/19/appops%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2016-04-19T14:59:58.621Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://jiongbull.com/2016/04/19/adb%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E8%AF%BB%E5%86%99%E6%9D%83%E9%99%90/</loc>
-    <lastmod>2016-04-19T10:02:38.459Z</lastmod>
+    <lastmod>2016-04-19T14:59:53.107Z</lastmod>
   </url>
   
   <url>
     <loc>http://jiongbull.com/2016/04/10/am%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
-    <lastmod>2016-04-18T15:31:10.350Z</lastmod>
+    <lastmod>2016-04-19T13:56:17.932Z</lastmod>
   </url>
   
   <url>
@@ -24,11 +34,6 @@
   <url>
     <loc>http://jiongbull.com/2016/04/08/aapt%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
     <lastmod>2016-04-08T17:04:27.408Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2016/04/02/adb%20shell%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2016-04-07T16:31:18.886Z</lastmod>
   </url>
   
   <url>

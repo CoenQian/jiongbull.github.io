@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-04-19T10:02:38.459Z</updated>
+  <updated>2016-04-19T14:59:58.621Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -15,16 +15,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[appops使用说明]]></title>
+    <link href="http://jiongbull.com/2016/04/19/appops%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    <id>http://jiongbull.com/2016/04/19/appops使用说明/</id>
+    <published>2016-04-19T14:22:41.000Z</published>
+    <updated>2016-04-19T14:59:58.621Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
+</blockquote>
+<p>Application Operations，应用权限管理。</p>
+<ul>
+<li><code>PACKAGE</code> 应用包名</li>
+<li><code>OP</code> 操作权限</li>
+<li><code>MODE</code> allow（允许）、ignore（忽略）或default（默认）中的一种</li>
+<li><code>USER_ID</code> 应用安装在哪个用户之下，如果没有指定就假设是当前用户</li>
+</ul>
+<h2 id="appops_set">appops set</h2><p><code>appops set [--user (USER_ID)] (PACKAGE) (OP) (MODE)</code>，给应用设置权限。</p>
+<p>appops set com.jiongbull.art.note READ_SMS allow<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@generic_x86_64</span><span class="symbol">:/</span> <span class="comment"># appops set com.jiongbull.art.note READ_SMS allow</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="appops_get">appops get</h2><p><code>appops get [--user &lt;USER_ID&gt;] &lt;PACKAGE&gt; [&lt;OP&gt;]</code>，获取应用的权限。</p>
+<ol>
+<li><p>appops get com.android.phone</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root<span class="annotation">@generic</span><span class="string">_x86_64:</span>/ # appops get com.android.phone</span><br><span class="line"><span class="string">READ_CONTACTS:</span> allow; time=+<span class="number">20</span>m4s573ms ago</span><br><span class="line"><span class="string">READ_SMS:</span> allow; time=+<span class="number">20</span>m4s902ms ago</span><br><span class="line"><span class="string">WRITE_SMS:</span> allow</span><br><span class="line"><span class="string">WRITE_SETTINGS:</span> allow; time=+<span class="number">20</span>m1s757ms ago</span><br><span class="line"><span class="string">WAKE_LOCK:</span> allow; time=+<span class="number">20</span>m5s4ms ago; duration=+<span class="number">20</span>m5s11ms</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>appops get com.android.phone WRITE_SMS</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@generic_x86_64</span><span class="symbol">:/</span> <span class="comment"># appops get com.android.phone WRITE_SMS</span></span><br><span class="line"><span class="constant">WRITE_SMS:</span> allow</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="appops_reset">appops reset</h2><p><code>appops reset [--user &lt;USER_ID&gt;] [&lt;PACKAGE&gt;]</code>，重置应用权限。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@generic_x86_64:/ # appops <span class="operator"><span class="keyword">reset</span> com.jiongbull.art.note</span><br><span class="line"><span class="keyword">Reset</span> <span class="keyword">all</span> modes <span class="keyword">for</span>: <span class="keyword">user</span> <span class="number">0</span>, package com.jiongbull.art.note</span></span><br></pre></td></tr></table></figure>
+<h2 id="分享与支持">分享与支持</h2><ul>
+<li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
+<li>更多支持，请点<a href="/about">这里</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="adb shell" scheme="http://jiongbull.com/tags/adb-shell/"/>
+    
+      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
+    
+      <category term="adb" scheme="http://jiongbull.com/categories/Android/adb/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[adb获取设备读写权限]]></title>
     <link href="http://jiongbull.com/2016/04/19/adb%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E8%AF%BB%E5%86%99%E6%9D%83%E9%99%90/"/>
     <id>http://jiongbull.com/2016/04/19/adb获取设备读写权限/</id>
     <published>2016-04-19T09:41:12.000Z</published>
-    <updated>2016-04-19T10:02:38.459Z</updated>
+    <updated>2016-04-19T14:59:53.107Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
 <p>向AVD中拷贝文件可能遇到<code>Read-only file system</code>的提示，可以通过以下命令解决。</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\Code\Git&gt;adb shell</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # su</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # mount -o remount,rw /</span><br></pre></td></tr></table></figure>
+<h2 id="方式">方式</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\Code\Git&gt;adb shell</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # su</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # mount -o remount,rw /</span><br></pre></td></tr></table></figure>
+<h2 id="分享与支持">分享与支持</h2><ul>
+<li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
+<li>更多支持，请点<a href="/about">这里</a></li>
+</ul>
 ]]></content>
     <summary type="html">
     <![CDATA[<blockquote>
@@ -80,7 +131,7 @@
     <link href="http://jiongbull.com/2016/04/10/am%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     <id>http://jiongbull.com/2016/04/10/am使用说明/</id>
     <published>2016-04-10T11:34:56.000Z</published>
-    <updated>2016-04-18T15:31:10.350Z</updated>
+    <updated>2016-04-19T13:56:17.932Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
@@ -316,7 +367,7 @@
 <h2 id="am_stop-user">am stop-user</h2><p><code>am stop-user &lt;USER_ID&gt;</code>，停止指定标识的用户运行，不允许运行任何代码，除非显示启动它或切换到它。</p>
 <p>am stop-user<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@shamu</span><span class="symbol">:/</span> <span class="comment"># am stop-user 1</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="am_stack_start">am stack start</h2><p><code>am stack start &lt;DISPLAY_ID&gt; &lt;INTENT&gt;</code>，使用intent在指定屏幕上启动新的activity。</p>
-<p>am stack start 0 -n com.jiongbull.art.note/com.jiongbull.art.note.chapter1.AActivity<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@shamu:/ # am <span class="keyword">stack</span> start 0 -<span class="keyword">n</span> com.jiongbull.art.<span class="keyword">note</span>/com.jiongbull.art.<span class="keyword">note</span>.chapter1.AActivity</span><br><span class="line">出错了，提示 <span class="keyword">Error</span>: callback must not be null</span><br></pre></td></tr></table></figure></p>
+<p>am stack start 0 -n com.jiongbull.art.note/.chapter1.AActivity<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root<span class="property">@shamu</span>:/ <span class="comment"># am stack start 0 -n com.jiongbull.art.note/.chapter1.AActivity</span></span><br><span class="line">出错了，提示 <span class="attribute">Error</span>: callback must <span class="keyword">not</span> be <span class="literal">null</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="am_stack_movetask">am stack movetask</h2><p><code>am stack movetask &lt;TASK_ID&gt; &lt;STACK_ID&gt; [true|false]</code>，把指定activity栈中指定的任务移动到顶部（true）或底部（false）。</p>
 <p>am stack movetask 114 1 false<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">root@generic_x86_64:/ <span class="preprocessor"># am stack info 1</span></span><br><span class="line">Stack id=<span class="number">1</span> bounds=[<span class="number">0</span>,<span class="number">0</span>][<span class="number">1080</span>,<span class="number">1920</span>] displayId=<span class="number">0</span></span><br><span class="line">  taskId=<span class="number">111</span>: <span class="keyword">com</span>.android.settings/<span class="keyword">com</span>.android.settings.Settings</span><br><span class="line">  taskId=<span class="number">4</span>: <span class="keyword">com</span>.android.widgetpreview/<span class="keyword">com</span>.android.widgetpreview.WidgetPreviewActivity</span><br><span class="line">  taskId=<span class="number">10</span>: <span class="keyword">com</span>.android.providers.downloads.ui/<span class="keyword">com</span>.android.providers.downloads.ui.DownloadList</span><br><span class="line">  taskId=<span class="number">11</span>: <span class="keyword">com</span>.android.browser/<span class="keyword">com</span>.android.browser.BrowserActivity</span><br><span class="line">  taskId=<span class="number">13</span>: <span class="keyword">com</span>.android.settings/<span class="keyword">com</span>.android.settings.Settings$StorageUseActivity</span><br><span class="line">  taskId=<span class="number">17</span>: <span class="keyword">com</span>.android.camera/<span class="keyword">com</span>.android.camera.Camera</span><br><span class="line">  taskId=<span class="number">104</span>: <span class="keyword">com</span>.jiongbull.art.note/<span class="keyword">com</span>.jiongbull.art.note.app.UiTestActivity</span><br><span class="line">  taskId=<span class="number">110</span>: <span class="keyword">com</span>.google.android.gms/<span class="keyword">com</span>.google.android.gms.app.settings.GoogleSettingsActivity</span><br><span class="line">  taskId=<span class="number">114</span>: <span class="keyword">com</span>.jiongbull.art.note/<span class="keyword">com</span>.jiongbull.art.note.chapter1.AActivity</span><br><span class="line"></span><br><span class="line">root@generic_x86_64:/ <span class="preprocessor"># am stack movetask 114 1 false</span></span><br><span class="line">root@generic_x86_64:/ <span class="preprocessor"># am stack info 1</span></span><br><span class="line">Stack id=<span class="number">1</span> bounds=[<span class="number">0</span>,<span class="number">0</span>][<span class="number">1080</span>,<span class="number">1920</span>] displayId=<span class="number">0</span></span><br><span class="line">  taskId=<span class="number">114</span>: <span class="keyword">com</span>.jiongbull.art.note/<span class="keyword">com</span>.jiongbull.art.note.chapter1.AActivity</span><br><span class="line">  taskId=<span class="number">111</span>: <span class="keyword">com</span>.android.settings/<span class="keyword">com</span>.android.settings.Settings</span><br><span class="line">  taskId=<span class="number">4</span>: <span class="keyword">com</span>.android.widgetpreview/<span class="keyword">com</span>.android.widgetpreview.WidgetPreviewActivity</span><br><span class="line">  taskId=<span class="number">10</span>: <span class="keyword">com</span>.android.providers.downloads.ui/<span class="keyword">com</span>.android.providers.downloads.ui.DownloadList</span><br><span class="line">  taskId=<span class="number">11</span>: <span class="keyword">com</span>.android.browser/<span class="keyword">com</span>.android.browser.BrowserActivity</span><br><span class="line">  taskId=<span class="number">13</span>: <span class="keyword">com</span>.android.settings/<span class="keyword">com</span>.android.settings.Settings$StorageUseActivity</span><br><span class="line">  taskId=<span class="number">17</span>: <span class="keyword">com</span>.android.camera/<span class="keyword">com</span>.android.camera.Camera</span><br><span class="line">  taskId=<span class="number">104</span>: <span class="keyword">com</span>.jiongbull.art.note/<span class="keyword">com</span>.jiongbull.art.note.app.UiTestActivity</span><br><span class="line">  taskId=<span class="number">110</span>: <span class="keyword">com</span>.google.android.gms/<span class="keyword">com</span>.google.android.gms.app.settings.GoogleSettingsActivity</span><br></pre></td></tr></table></figure></p>
 <h2 id="am_stack_resize">am stack resize</h2><p><code>am stack resize &lt;STACK_ID&gt; &lt;LEFT,TOP,RIGHT,BOTTOM&gt;</code>，改变栈的大小并移动位置。</p>
@@ -489,16 +540,19 @@
     <link href="http://jiongbull.com/2016/04/02/adb%20shell%E5%91%BD%E4%BB%A4/"/>
     <id>http://jiongbull.com/2016/04/02/adb shell命令/</id>
     <published>2016-04-02T14:32:11.000Z</published>
-    <updated>2016-04-07T16:31:18.886Z</updated>
+    <updated>2016-04-19T15:02:40.052Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
 <h2 id="如何查看命令">如何查看命令</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\Code\Git&gt;adb shell</span><br><span class="line">root<span class="variable">@generic_x86_64</span>:/ # ls /system/bin</span><br><span class="line">aapt</span><br><span class="line">adb</span><br><span class="line">am</span><br><span class="line">app_process</span><br><span class="line">app_process32</span><br><span class="line">app_process64</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h2 id="命令大全">命令大全</h2><h3 id="aapt">aapt</h3><p>Android Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将资源文件编译成二进制文件。</p>
-<p>详情见<a href="/2016/04/08/aapt使用说明">aapt使用说明</a></p>
-<h3 id="adb">adb</h3><p>Android Debug Bridge，android调试桥。</p>
-<h3 id="am">am</h3><p>Activity Manager，activity管理器，可以启动activity、启动service、发送广播、停止进程等。</p>
-<h3 id="app_process">app_process</h3><h3 id="app_process32">app_process32</h3><h3 id="app_process64">app_process64</h3><h3 id="applypatch">applypatch</h3><h3 id="applypatch_static">applypatch_static</h3><h3 id="appops">appops</h3><h3 id="appwidget">appwidget</h3><h3 id="atrace">atrace</h3><h3 id="bcc">bcc</h3><h3 id="bdt">bdt</h3><h2 id="分享与支持">分享与支持</h2><ul>
+<h2 id="命令大全">命令大全</h2><h3 id="aapt">aapt</h3><p>Android Asset Packaging Tool，可以查看、创建、更新或删除归档文件（zip、jar或apk），可以将资源文件编译成二进制文件，详情见<a href="/2016/04/08/aapt使用说明">aapt使用说明</a></p>
+<h3 id="adb">adb</h3><p>Android Debug Bridge，android调试桥，详情见<a href="/2016/03/17/adb命令">adb命令</a></p>
+<h3 id="am">am</h3><p>Activity Manager，activity管理器，可以启动activity、启动service、发送广播、停止进程等，详情见<a href="/2016/04/10/am使用说明">am使用说明</a>。</p>
+<h3 id="app_process、app_process32、app_process64">app_process、app_process32、app_process64</h3><p>运行java程序，参考<code>am</code>的内部实现。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">base=/system</span><br><span class="line">export CLASSPATH=<span class="variable">$base</span>/framework/am<span class="class">.jar</span></span><br><span class="line">exec app_process <span class="variable">$base</span>/bin com<span class="class">.android</span><span class="class">.commands</span><span class="class">.am</span><span class="class">.Am</span> <span class="string">"$@"</span></span><br></pre></td></tr></table></figure>
+<h3 id="applypatch、applypatch_static">applypatch、applypatch_static</h3><p>增量升级相关。</p>
+<h3 id="appops">appops</h3><p>Application Operations，应用权限管理，详情见<a href="/2016/4/19/appops使用说明">appops使用说明</a></p>
+<h3 id="appwidget">appwidget</h3><h3 id="atrace">atrace</h3><h3 id="bcc">bcc</h3><h3 id="bdt">bdt</h3><h2 id="分享与支持">分享与支持</h2><ul>
 <li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
 <li>更多支持，请点<a href="/about">这里</a></li>
 </ul>
