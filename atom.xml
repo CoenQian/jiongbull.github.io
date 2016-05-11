@@ -857,7 +857,7 @@
     <link href="http://jiongbull.com/2016/02/29/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(2)/"/>
     <id>http://jiongbull.com/2016/02/29/《Android开发艺术探索》读书笔记(2)/</id>
     <published>2016-02-29T05:16:39.000Z</published>
-    <updated>2016-05-11T15:19:58.262Z</updated>
+    <updated>2016-05-11T15:46:06.893Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
 </blockquote>
@@ -931,6 +931,7 @@
 <h3 id="使用ContentProvider">使用ContentProvider</h3><ul>
 <li>继承ContentProvider后需要实现<code>onCreate()</code>、<code>getType()</code>、<code>insert()</code>、<code>update()</code>、<code>query()</code>、<code>delete()</code>6个方法，除了<code>onCreate()</code>由系统回调并运行在主线程中，其他5个方法均由外部回调并运行在Binder线程池中。</li>
 <li>要观察一个ContentProvider中数据变化，可以通过ContentResolver的<code>registerContentObserver()</code>方法注册观察者，通过<code>unregisterContentObserver()</code>卸载观察者，并在ContentProvider中会引起数据变化的<code>insert()</code>、<code>update()</code>和<code>delete()</code>中调用ContentResolver的<code>notifyChange()</code>通知观察者。</li>
+<li><a href="https://github.com/JiongBull/book-provider" target="_blank" rel="external">事例代码</a></li>
 </ul>
 <h3 id="使用Socket">使用Socket</h3><ul>
 <li>使用Socket通信需要声明以下权限：<ol>

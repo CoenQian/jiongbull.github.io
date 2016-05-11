@@ -189,6 +189,7 @@ Android中的多进程模式开启多进程模式
 <h3 id="使用ContentProvider">使用ContentProvider</h3><ul>
 <li>继承ContentProvider后需要实现<code>onCreate()</code>、<code>getType()</code>、<code>insert()</code>、<code>update()</code>、<code>query()</code>、<code>delete()</code>6个方法，除了<code>onCreate()</code>由系统回调并运行在主线程中，其他5个方法均由外部回调并运行在Binder线程池中。</li>
 <li>要观察一个ContentProvider中数据变化，可以通过ContentResolver的<code>registerContentObserver()</code>方法注册观察者，通过<code>unregisterContentObserver()</code>卸载观察者，并在ContentProvider中会引起数据变化的<code>insert()</code>、<code>update()</code>和<code>delete()</code>中调用ContentResolver的<code>notifyChange()</code>通知观察者。</li>
+<li><a href="https://github.com/JiongBull/book-provider" target="_blank" rel="external">事例代码</a></li>
 </ul>
 <h3 id="使用Socket">使用Socket</h3><ul>
 <li>使用Socket通信需要声明以下权限：<ol>
