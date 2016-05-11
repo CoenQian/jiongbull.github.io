@@ -2,83 +2,83 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://jiongbull.com/2016/04/02/adb%20shell%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2016-04-19T15:02:40.052Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2016/04/19/appops%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
-    <lastmod>2016-04-19T14:59:58.621Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2016/04/19/adb%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E8%AF%BB%E5%86%99%E6%9D%83%E9%99%90/</loc>
-    <lastmod>2016-04-19T14:59:53.107Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2016/04/10/am%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
-    <lastmod>2016-04-19T13:56:17.932Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2016/04/16/Lambda%20for%20Android%20Studio/</loc>
-    <lastmod>2016-04-16T08:42:23.989Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2016/03/17/adb%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2016-04-10T14:04:06.733Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2016/04/08/aapt%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
-    <lastmod>2016-04-08T17:04:27.408Z</lastmod>
+    <loc>http://jiongbull.com/2016/02/29/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(2)/</loc>
+    <lastmod>2016-05-11T15:19:58.262Z</lastmod>
   </url>
   
   <url>
     <loc>http://jiongbull.com/2016/04/06/%E5%90%AF%E7%94%A8%E7%BD%91%E7%BB%9CADB%E8%B0%83%E8%AF%95/</loc>
-    <lastmod>2016-04-07T16:20:20.251Z</lastmod>
+    <lastmod>2016-05-10T15:07:33.669Z</lastmod>
   </url>
   
   <url>
     <loc>http://jiongbull.com/2015/07/13/Material-Design-Color/</loc>
-    <lastmod>2016-04-07T16:20:15.020Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2015/05/11/Android%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/</loc>
-    <lastmod>2016-04-07T16:20:08.853Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2015/05/08/Android%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</loc>
-    <lastmod>2016-04-07T16:20:05.279Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2015/05/11/Android%E5%B8%83%E5%B1%80%E8%A7%84%E8%8C%83/</loc>
-    <lastmod>2016-04-07T16:20:01.004Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2016/02/29/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(2)/</loc>
-    <lastmod>2016-04-02T11:28:57.015Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jiongbull.com/2016/02/20/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(1)/</loc>
-    <lastmod>2016-04-02T11:28:53.414Z</lastmod>
+    <lastmod>2016-05-10T15:07:21.301Z</lastmod>
   </url>
   
   <url>
     <loc>http://jiongbull.com/2016/02/20/jlog-qiniu/</loc>
-    <lastmod>2016-04-02T11:28:46.052Z</lastmod>
+    <lastmod>2016-05-10T15:07:08.734Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2016/04/16/Lambda%20for%20Android%20Studio/</loc>
+    <lastmod>2016-05-10T15:07:03.989Z</lastmod>
   </url>
   
   <url>
     <loc>http://jiongbull.com/2016/01/21/jlog/</loc>
-    <lastmod>2016-04-02T11:28:43.057Z</lastmod>
+    <lastmod>2016-05-10T15:06:15.100Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2016/04/19/appops%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2016-05-10T15:05:27.216Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2015/05/11/Android%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/</loc>
+    <lastmod>2016-05-10T15:05:21.959Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2015/05/08/Android%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</loc>
+    <lastmod>2016-05-10T15:05:14.945Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2015/05/11/Android%E5%B8%83%E5%B1%80%E8%A7%84%E8%8C%83/</loc>
+    <lastmod>2016-05-10T15:05:08.763Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2016/04/10/am%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2016-05-10T15:04:59.056Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2016/03/17/adb%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2016-05-10T15:04:53.385Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2016/04/02/adb%20shell%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2016-05-10T15:04:40.179Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2016/04/08/aapt%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2016-05-10T15:04:29.514Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2016/04/19/adb%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E8%AF%BB%E5%86%99%E6%9D%83%E9%99%90/</loc>
+    <lastmod>2016-05-10T15:04:22.399Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jiongbull.com/2016/02/20/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(1)/</loc>
+    <lastmod>2016-05-10T15:01:30.170Z</lastmod>
   </url>
   
   <url>

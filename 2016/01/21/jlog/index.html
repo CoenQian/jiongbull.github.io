@@ -160,21 +160,21 @@ orhanobut的logger，ZhaoKaiQiang的KLog和JakeWharton的timber给了我灵感�
 <p>再结合一些工作上的经验，就撸出了这个库。</p>
 <p>希望你会喜欢它。( ^_^ )</p>
 <h2 id="特点">特点</h2><ul>
-<li>兼容android logcat，<code>VERBOSE</code>、<code>DEBUG</code>、<code>INFO</code>、<code>WARN</code>、<code>ERROR</code>和<code>WTF</code>全都有，一个都不能少</li>
-<li>在<code>JSON</code>模式下，jlog会把json内容格式化，便于理解</li>
-<li>jlog提供了调用者的类、方法和行号信息，甚至可以从控制台直接跳转到源文件</li>
-<li>简化了logcat，jlog使用调用者的类名作TAG（当然也支持自定义TAG）</li>
-<li>突破了logcat的4000字长度限制</li>
-<li>jlog可以把日志输出到指定的目录和文件中</li>
-<li>你可以决定哪些级别的日志写入文件中</li>
-<li>在日志文件的顶部，jlog提供了很多有用的运行环境相关的信息，比如<code>操作系统信息</code>、<code>设备信息</code>和<code>应用信息</code></li>
-<li>jlog针对写入文件的日志做了格式化，同时提供了足够的信息方便分析，例如<code>时间</code>、<code>日志等级</code>和<code>调用位置</code></li>
-<li>混淆后也能工作正常（获取调用位置）</li>
-<li>支持配置日志文件编码，例如<code>UTF-8</code>，<code>GBK</code></li>
-<li>支持设置日志文件的时间格式</li>
-<li>支持设置日志文件的时区（便于调试其他时区的设备）</li>
-<li>日志按照时间切片写入到不同的文件中，默认是24小时，文件名诸如<code>2016-01-19.log</code>，你也可以指定<code>前缀</code>和<code>时间切片</code>，比如<code>用户标识_2016-01-19_2021.log</code></li>
-<li><strong>如果你需要把日志同步上传到<a href="http://www.qiniu.com/" target="_blank" rel="external">七牛云存储</a>，可以考虑使用这个项目<a href="https://github.com/JiongBull/jlog-qiniu" target="_blank" rel="external">jlog-qiniu</a></strong></li>
+<li>兼容android logcat，<code>VERBOSE</code>、<code>DEBUG</code>、<code>INFO</code>、<code>WARN</code>、<code>ERROR</code>和<code>WTF</code>全都有，一个都不能少。</li>
+<li>在<code>JSON</code>模式下，jlog会把json内容格式化，便于理解。</li>
+<li>jlog提供了调用者的类、方法和行号信息，甚至可以从控制台直接跳转到源文件。</li>
+<li>简化了logcat，jlog使用调用者的类名作TAG（当然也支持自定义TAG）。</li>
+<li>突破了logcat的4000字长度限制。</li>
+<li>jlog可以把日志输出到指定的目录和文件中。</li>
+<li>你可以决定哪些级别的日志写入文件中。</li>
+<li>在日志文件的顶部，jlog提供了很多有用的运行环境相关的信息，比如<code>操作系统信息</code>、<code>设备信息</code>和<code>应用信息</code>。</li>
+<li>jlog针对写入文件的日志做了格式化，同时提供了足够的信息方便分析，例如<code>时间</code>、<code>日志等级</code>和<code>调用位置</code>。</li>
+<li>混淆后也能工作正常（获取调用位置）。</li>
+<li>支持配置日志文件编码，例如<code>UTF-8</code>，<code>GBK</code>。</li>
+<li>支持设置日志文件的时间格式。</li>
+<li>支持设置日志文件的时区（便于调试其他时区的设备）。</li>
+<li>日志按照时间切片写入到不同的文件中，默认是24小时，文件名诸如<code>2016-01-19.log</code>，你也可以指定<code>前缀</code>和<code>时间切片</code>，比如<code>用户标识_2016-01-19_2021.log</code>。</li>
+<li><strong>如果你需要把日志同步上传到<a href="http://www.qiniu.com/" target="_blank" rel="external">七牛云存储</a>，可以考虑使用这个项目<a href="https://github.com/JiongBull/jlog-qiniu" target="_blank" rel="external">jlog-qiniu</a></strong>。</li>
 </ul>
 <p><img src="http://7xize8.com1.z0.glb.clouddn.com/jlog_sample.gif" alt="jlog sample"></p>
 <h2 id="依赖">依赖</h2><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    compile <span class="string">'com.jiongbull:jlog:1.0.4'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -232,8 +232,8 @@ orhanobut的logger，ZhaoKaiQiang的KLog和JakeWharton的timber给了我灵感�
 <p><img src="http://7xize8.com1.z0.glb.clouddn.com/environment_zh.jpg" alt="environment info zh"></p>
 <h2 id="License">License</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Copyright JiongBull 2016</span><br><span class="line"></span><br><span class="line">Licensed under the Apache License, Version 2.0 (the "License");</span><br><span class="line">you may not <span class="operator"><span class="keyword">use</span> this file <span class="keyword">except</span> <span class="keyword">in</span> compliance <span class="keyword">with</span> the License.</span><br><span class="line">You may obtain a copy <span class="keyword">of</span> the License <span class="keyword">at</span></span><br><span class="line"></span><br><span class="line">    http://www.apache.org/licenses/LICENSE-<span class="number">2.0</span></span><br><span class="line"></span><br><span class="line">Unless required <span class="keyword">by</span> applicable law <span class="keyword">or</span> agreed <span class="keyword">to</span> <span class="keyword">in</span> writing, software</span><br><span class="line">distributed under the License <span class="keyword">is</span> distributed <span class="keyword">on</span> an <span class="string">"AS IS"</span> BASIS,</span><br><span class="line">WITHOUT WARRANTIES <span class="keyword">OR</span> CONDITIONS <span class="keyword">OF</span> <span class="keyword">ANY</span> KIND, either express <span class="keyword">or</span> implied.</span><br><span class="line">See the License <span class="keyword">for</span> the specific <span class="keyword">language</span> governing permissions <span class="keyword">and</span></span><br><span class="line">limitations under the License.</span></span><br></pre></td></tr></table></figure>
 <h2 id="分享与支持">分享与支持</h2><ul>
-<li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益  </li>
-<li>更多支持，请点<a href="/about">这里</a></li>
+<li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。</li>
+<li>更多支持，请点<a href="/about">这里</a>。</li>
 </ul>
   
 	</div>
