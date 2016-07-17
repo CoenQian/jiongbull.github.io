@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-05-16T11:32:42.386Z</updated>
+  <updated>2016-07-17T11:32:34.437Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -13,6 +13,121 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[2016年第29周阅读书单]]></title>
+    <link href="http://jiongbull.com/2016/07/17/2016%E5%B9%B4%E7%AC%AC29%E5%91%A8%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    <id>http://jiongbull.com/2016/07/17/2016年第29周阅读书单/</id>
+    <published>2016-07-17T11:14:44.000Z</published>
+    <updated>2016-07-17T11:32:34.437Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
+</blockquote>
+<h2 id="阅读书单">阅读书单</h2><blockquote>
+<p>希望通过阅读书单的形式让自己养成坚持阅读的习惯，获取更多的知识。</p>
+</blockquote>
+<ul>
+<li><a href="http://www.feeyan.cn/?p=241" target="_blank" rel="external">启动Activity的流程(Launcher中点击图标启动)</a></li>
+<li><a href="http://www.feeyan.cn/?p=123" target="_blank" rel="external">Android中AIDL详细分析</a></li>
+<li><a href="https://segmentfault.com/a/1190000003965158" target="_blank" rel="external">Android实战之你应该使用哪个网络库？</a></li>
+<li><a href="http://square.github.io/retrofit" target="_blank" rel="external">Retrofit</a></li>
+<li><a href="https://realm.io/cn/news/droidcon-jake-wharton-simple-http-retrofit-2/" target="_blank" rel="external">用 Retrofit 2 简化 HTTP 请求</a></li>
+<li><a href="https://inthecheesefactory.com/blog/retrofit-2.0/en" target="_blank" rel="external">Retrofit 2.0: The biggest update yet on the best HTTP Client Library for Android</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-upgrade-guide-from-1-9" target="_blank" rel="external">Retrofit 2 — Upgrade Guide from 1.9</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-getting-started-and-android-client" target="_blank" rel="external">Retrofit — Getting Started and Create an Android Client</a></li>
+<li><a href="http://fernandocejas.com/2014/09/03/architecting-android-the-clean-way/" target="_blank" rel="external">Architecting Android…The clean way?</a></li>
+<li><a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">给 Android 开发者的 RxJava 详解</a></li>
+<li><a href="http://blog.csdn.net/lzyzsd/article/details/41833541" target="_blank" rel="external">深入浅出RxJava（一：基础篇）</a></li>
+<li><a href="http://blog.csdn.net/lzyzsd/article/details/44094895" target="_blank" rel="external">深入浅出RxJava(二：操作符)</a></li>
+<li><a href="http://blog.csdn.net/lzyzsd/article/details/44891933" target="_blank" rel="external">深入浅出RxJava三—响应式的好处</a></li>
+<li><a href="http://blog.csdn.net/lzyzsd/article/details/45033611#comments" target="_blank" rel="external">深入浅出RxJava四-在Android中使用响应式编程</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="阅读书单" scheme="http://jiongbull.com/tags/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    
+      <category term="阅读书单" scheme="http://jiongbull.com/categories/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[2016年第28周阅读书单]]></title>
+    <link href="http://jiongbull.com/2016/07/10/2016%E5%B9%B4%E7%AC%AC28%E5%91%A8%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    <id>http://jiongbull.com/2016/07/10/2016年第28周阅读书单/</id>
+    <published>2016-07-10T10:20:27.000Z</published>
+    <updated>2016-07-17T11:36:54.425Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
+</blockquote>
+<h2 id="阅读书单">阅读书单</h2><blockquote>
+<p>希望通过阅读书单的形式让自己养成坚持阅读的习惯，获取更多的知识。</p>
+</blockquote>
+<ul>
+<li><a href="http://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="external">Android应用程序启动过程源代码分析</a></li>
+<li><a href="http://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="external">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a></li>
+<li><a href="http://www.jianshu.com/p/72059201b10a" target="_blank" rel="external">Android应用启动、退出分析</a></li>
+<li><a href="http://blog.csdn.net/luoshengyang/article/details/6747696" target="_blank" rel="external">Android应用程序进程启动过程的源代码分析</a></li>
+<li><a href="http://blog.csdn.net/luoshengyang/article/details/6768304" target="_blank" rel="external">Android系统进程Zygote启动过程的源代码分析</a></li>
+<li><a href="http://blog.csdn.net/luoshengyang/article/details/6767736" target="_blank" rel="external">Android系统默认Home应用程序（Launcher）的启动过程源代码分析</a></li>
+<li><a href="http://blog.csdn.net/jinzhuojun/article/details/37737439" target="_blank" rel="external">Android 4.4(KitKat)窗口管理子系统 - 体系框架</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="阅读书单" scheme="http://jiongbull.com/tags/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    
+      <category term="阅读书单" scheme="http://jiongbull.com/categories/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[2016年第27周阅读书单]]></title>
+    <link href="http://jiongbull.com/2016/07/03/2016%E5%B9%B4%E7%AC%AC27%E5%91%A8%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    <id>http://jiongbull.com/2016/07/03/2016年第27周阅读书单/</id>
+    <published>2016-07-03T07:30:07.000Z</published>
+    <updated>2016-07-17T11:46:50.922Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
+</blockquote>
+<h2 id="阅读书单">阅读书单</h2><blockquote>
+<p>希望通过阅读书单的形式让自己养成坚持阅读的习惯，获取更多的知识。</p>
+</blockquote>
+<ul>
+<li><a href="http://blog.csdn.net/yanbober/article/details/50419117" target="_blank" rel="external">Android应用坐标系统全面详解</a></li>
+<li><a href="http://blog.csdn.net/yanbober/article/details/49904715" target="_blank" rel="external">Android应用开发Scroller详解及源码浅析</a></li>
+<li><a href="http://blog.csdn.net/xiaanming/article/details/17483273" target="_blank" rel="external">Android 带你从源码的角度解析Scroller的滚动实现原理</a></li>
+<li><a href="http://blog.csdn.net/yanbober/article/details/45970721" target="_blank" rel="external">Android应用setContentView与LayoutInflater加载解析机制源码分析</a></li>
+<li><a href="http://blog.csdn.net/yanbober/article/details/45967639" target="_blank" rel="external">Android应用Context详解及源码解析</a></li>
+<li><a href="http://blog.csdn.net/yanbober/article/details/45936145" target="_blank" rel="external">Android异步消息处理机制详解及源码分析</a></li>
+<li><a href="http://blog.csdn.net/yanbober/article/details/46117397" target="_blank" rel="external">Android应用AsyncTask处理机制详解及源码分析</a></li>
+<li><a href="http://blog.csdn.net/yanbober/article/details/46128379" target="_blank" rel="external">Android应用层View绘制流程与源码分析</a></li>
+<li><a href="http://blog.csdn.net/qinjuning/article/details/8051811" target="_blank" rel="external">Android中measure过程、WRAP_CONTENT详解以及xml布局文件解析流程浅析(上)</a></li>
+<li><a href="http://blog.csdn.net/qinjuning/article/details/8074262" target="_blank" rel="external">Android中measure过程、WRAP_CONTENT详解以及xml布局文件解析流程浅析(下)</a></li>
+<li><a href="http://blog.csdn.net/a396901990/article/details/36475213" target="_blank" rel="external">ANDROID自定义视图——onMeasure，MeasureSpec源码 流程 思路详解</a></li>
+<li><a href="http://blog.csdn.net/a396901990/article/details/38129669" target="_blank" rel="external">ANDROID自定义视图——onLayout源码 流程 思路详解</a></li>
+<li><a href="http://blog.csdn.net/yanbober/article/details/46361191" target="_blank" rel="external">Android应用Activity、Dialog、PopWindow、Toast窗口添加机制及源码分析</a></li>
+<li><a href="http://blog.csdn.net/zhaokaiqiang1992/article/details/49681321" target="_blank" rel="external">Activity界面显示全解析</a></li>
+<li><a href="http://blog.csdn.net/zhaokaiqiang1992/article/details/49428287" target="_blank" rel="external">Activity启动过程全解析</a></li>
+<li><a href="http://blog.csdn.net/yangwen123/article/details/35987609" target="_blank" rel="external">Android应用程序窗口设计框架介绍</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="阅读书单" scheme="http://jiongbull.com/tags/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    
+      <category term="阅读书单" scheme="http://jiongbull.com/categories/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[《Android开发艺术探索》读书笔记(3) - View的事件体系]]></title>
