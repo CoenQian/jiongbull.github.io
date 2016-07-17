@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-05-10T15:05:27.216Z</updated>
+  <updated>2016-05-16T11:32:42.386Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -13,6 +13,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[《Android开发艺术探索》读书笔记(3) - View的事件体系]]></title>
+    <link href="http://jiongbull.com/2016/05/12/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(3)/"/>
+    <id>http://jiongbull.com/2016/05/12/《Android开发艺术探索》读书笔记(3)/</id>
+    <published>2016-05-12T08:03:47.000Z</published>
+    <updated>2016-05-16T11:32:42.386Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
+</blockquote>
+<h2 id="View基础知识">View基础知识</h2><h3 id="什么是View">什么是View</h3><ul>
+<li>View是Android中所有控件的基类，是一种界面层的控件的抽象。</li>
+<li>ViewGroup也继承View，这意味着View本身就可以是单个控件也可以是由多个控件组成的一组控件，通过这种关系就形成了View树的结果，和Web前端中的DOM树概念是相似的。</li>
+</ul>
+<h3 id="View的位置参数">View的位置参数</h3><ul>
+<li>View的位置主要由它的四个顶点来决定，分别对应于View的四个坐标属性：left、top、right和bottom，这些坐标都是相对于View的父容器来说的，因此它是一种相对坐标。</li>
+<li>可以得出View的宽高与坐标的关系：<ol>
+<li>width = right - left。</li>
+<li>height = bottom - top。</li>
+</ol>
+</li>
+<li>Android 3.0开始，View新增了几个参数: x、y、translationX和translationY，其中x和y是View的左上角坐标，而translationX和translationY是View左上角相对于父容器的偏移量，这几个参数也是相对于父容器的坐标，并且translationX和translationY的默认值是0，需要注意的是在平移的过程中，top和left表示的是原始左上角的位置信息，其值并不会发生改变，此时改变的是x、y、translationX和translationY四个参数。<ol>
+<li>x = left + translationX。</li>
+<li>y = top + translationY。</li>
+</ol>
+</li>
+</ul>
+<h3 id="MotionEvent和TouchSlop">MotionEvent和TouchSlop</h3><ul>
+<li>在手指接触屏幕后会产生一系列事件，它们被封装成MotionEvent，常用的事件类型有以下几种：<ol>
+<li>ACTION_DOWN 手指刚接触屏幕。</li>
+<li>ACTION_MOVE 手指在屏幕上移动。</li>
+<li>ACTION_UP 手指从屏幕上松开的一瞬间。</li>
+<li>ACTION_CANCEL 手指还没松开时被强制终止（例如锁频）。</li>
+</ol>
+</li>
+<li>正常情况下，一次手指触摸屏幕的行为会触发一系列点击事件，例如如下几种情况：<ol>
+<li>点击屏幕后松开，事件序列为：ACTION_DOWN -&gt; ACTION_UP。</li>
+<li>点击屏幕滑动一会再松开，事件序列为：ACTION_DOWN -&gt; ACTION_MOVE -&gt; ACTION_UP。</li>
+</ol>
+</li>
+<li>通过MotionEvent对象可以得到点击事件发生的x和y坐标，<code>getX()</code>和<code>getY()</code>返回相对于当前View左上角的x和y坐标，<code>getRawX()</code>和<code>getRawY()</code>返回的是相对于手机屏幕左上角的x和y坐标。</li>
+<li>TouchSlop是系统所能识别出的被认为是滑动的最小距离，也就是说，当手指在屏幕上滑动时，如果移动距离小于这个常量，那么系统就不认为是在进行滑动操作，和设备有关，在不同设备上的这个值可能是不同的，通过<code>ViewConfiguration.get(getContext).getScaledTouchSlop()</code>可以获得这个常量。</li>
+<li>VelocityTracker用于追踪手指在滑动过程中的速度，包括水平和垂直方向的速度。</li>
+<li><p>VelocityTracker的使用过程：</p>
+<ol>
+<li><p>首先，在View的<code>onTouchEvent()</code>方法中追踪当前事件的速度。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VelocityTracker velocityTracker = VelocityTracker.obtain();</span><br><span class="line">velocityTracker.add(event);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>计算当前的滑行速度，参数是时间间隔。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">velocityTracker.computeCurrentVelocity(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取水平和垂直方向的速度，即在时间间隔内移动的像素数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> xVelocity = (<span class="keyword">int</span>) velocityTracker.getXVelocity();</span><br><span class="line"><span class="keyword">int</span> yVelocity = (<span class="keyword">int</span>) velocityTracker.getYVelocity();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不需要的时候需要重置并回收内存。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">velocityTracker.clear(); <span class="comment">// 在ACTION_UP中执行</span></span><br><span class="line">velocityTracker.recycle(); <span class="comment">// 最好在onDetachedFromWindow中执行</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://gist.github.com/JiongBull/bfeefc595de11dfce8049662880bca2e" target="_blank" rel="external">完整代码</a></p>
+</li>
+</ol>
+</li>
+<li>速度的计算公式：速度 = (终点位置 - 起点位置) / 时间，根据速度公式和Android系统的坐标系可知，手指逆着坐标系的正方向滑动，所产生的速度就为负值，时间间隔的单位是毫秒，计算速度时得到的速度就是在时间间隔内手指在水平或垂直方向上滑动的像素数。</li>
+<li>GestureDetector用于辅助检测用户的单击、滑动、长按、双击等行为。</li>
+<li>GestureDetector的使用过程：<ol>
+<li>创建GestureDetector对象并实现OnGestureListener接口。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GestureDetector mGestureDetector = <span class="keyword">new</span> GestureDetector(context, <span class="keyword">this</span>);</span><br><span class="line">mGestureDetector.setIsLongpressEnabled(<span class="keyword">false</span>); <span class="comment">// 解决长按屏幕后无法拖动的现象</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="View" scheme="http://jiongbull.com/tags/View/"/>
+    
+      <category term="事件" scheme="http://jiongbull.com/tags/%E4%BA%8B%E4%BB%B6/"/>
+    
+      <category term="读书笔记" scheme="http://jiongbull.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="《Android开发艺术探索》读书笔记" scheme="http://jiongbull.com/categories/%E3%80%8AAndroid%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[appops使用说明]]></title>
@@ -1601,13 +1685,13 @@
     <link href="http://jiongbull.com/2015/05/08/Android%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
     <id>http://jiongbull.com/2015/05/08/Android代码规范/</id>
     <published>2015-05-08T02:40:00.000Z</published>
-    <updated>2016-05-10T15:05:14.945Z</updated>
+    <updated>2016-07-17T10:53:25.708Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
 </blockquote>
 <ul>
 <li>开始之前请详细阅读并遵守<a href="http://source.android.com/source/code-style.html" target="_blank" rel="external">Android Developer代码规范</a></li>
-<li>不要使用拼音命名</li>
+<li>不要使用拼音命名，除非英文也使用拼音拼写</li>
 <li>名称应简洁而富于描述，使用完整单词，避免使用缩写（除非该缩写被更广泛使用，例如URL、HTML）</li>
 <li>如果使用英文来注释，请遵循英文写作习惯，标点符号后空一格，避免句子紧凑</li>
 <li>颜色色值的字母必须全部大写</li>
@@ -1699,13 +1783,13 @@
 </tr>
 <tr>
 <td style="text-align:center">RelativeLayout</td>
-<td style="text-align:center">rlyt_name.xml</td>
-<td style="text-align:center">rlyt_login.xml</td>
+<td style="text-align:center">rl_name.xml</td>
+<td style="text-align:center">rl_login.xml</td>
 </tr>
 <tr>
 <td style="text-align:center">LinearLayout</td>
-<td style="text-align:center">llyt_name.xml</td>
-<td style="text-align:center">llyt_login.xml</td>
+<td style="text-align:center">ll_name.xml</td>
+<td style="text-align:center">ll_login.xml</td>
 </tr>
 </tbody>
 </table>
@@ -1741,8 +1825,8 @@
 </tr>
 <tr>
 <td style="text-align:center">CheckBox</td>
-<td style="text-align:center">Chk</td>
-<td style="text-align:center">chk</td>
+<td style="text-align:center">Cb</td>
+<td style="text-align:center">cb</td>
 </tr>
 <tr>
 <td style="text-align:center">TextView</td>
@@ -1766,33 +1850,33 @@
 </tr>
 <tr>
 <td style="text-align:center">ProgressBar</td>
-<td style="text-align:center">Pbar</td>
-<td style="text-align:center">pbar</td>
+<td style="text-align:center">Pb</td>
+<td style="text-align:center">pb</td>
 </tr>
 <tr>
 <td style="text-align:center">ScrollView</td>
-<td style="text-align:center">Sclv</td>
-<td style="text-align:center">sclv</td>
+<td style="text-align:center">Sv</td>
+<td style="text-align:center">sv</td>
 </tr>
 <tr>
 <td style="text-align:center">RelativeLayout</td>
-<td style="text-align:center">Rlyt</td>
-<td style="text-align:center">rlyt</td>
+<td style="text-align:center">Rl</td>
+<td style="text-align:center">rl</td>
 </tr>
 <tr>
 <td style="text-align:center">LinearLayout</td>
-<td style="text-align:center">Llyt</td>
-<td style="text-align:center">llyt</td>
+<td style="text-align:center">Ll</td>
+<td style="text-align:center">ll</td>
 </tr>
 <tr>
 <td style="text-align:center">TableLayout</td>
-<td style="text-align:center">Tlyt</td>
-<td style="text-align:center">tlyt</td>
+<td style="text-align:center">Tl</td>
+<td style="text-align:center">tl</td>
 </tr>
 <tr>
 <td style="text-align:center">FrameLayout</td>
-<td style="text-align:center">Flyt</td>
-<td style="text-align:center">flyt</td>
+<td style="text-align:center">Fl</td>
+<td style="text-align:center">fl</td>
 </tr>
 </tbody>
 </table>
@@ -1820,7 +1904,7 @@
 <tr>
 <td style="text-align:center">sl_</td>
 <td style="text-align:center">状态图片</td>
-<td style="text-align:center">sl_button.png</td>
+<td style="text-align:center">sl_button.xml</td>
 </tr>
 </tbody>
 </table>
