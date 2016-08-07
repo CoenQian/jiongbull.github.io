@@ -4,7 +4,7 @@
   <subtitle><![CDATA[男人的浪漫是星辰大海]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jiongbull.com/"/>
-  <updated>2016-07-26T13:54:54.531Z</updated>
+  <updated>2016-08-07T15:24:52.854Z</updated>
   <id>http://jiongbull.com/</id>
   
   <author>
@@ -13,6 +13,107 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[2016年第31周阅读书单]]></title>
+    <link href="http://jiongbull.com/2016/08/07/2016%E5%B9%B4%E7%AC%AC32%E5%91%A8%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    <id>http://jiongbull.com/2016/08/07/2016年第32周阅读书单/</id>
+    <published>2016-08-07T14:30:00.000Z</published>
+    <updated>2016-08-07T15:24:52.854Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
+</blockquote>
+<h2 id="阅读书单">阅读书单</h2><blockquote>
+<p>希望通过阅读书单的形式让自己养成坚持阅读的习惯，获取更多的知识。</p>
+</blockquote>
+<ul>
+<li><a href="http://blog.csdn.net/jdsjlzx/article/details/51882661" target="_blank" rel="external">Retrofit+RxJava 优雅的处理服务器返回异常、错误</a></li>
+<li><a href="http://www.jianshu.com/p/6b3daeda1eed" target="_blank" rel="external">当Rxjava遇到Retrofit</a></li>
+<li><a href="http://blog.csdn.net/lmj623565791/article/details/40481055" target="_blank" rel="external">Android Context 上下文 你必须知道的一切</a></li>
+<li><a href="http://blog.csdn.net/l173864930/article/details/46919457" target="_blank" rel="external">随手可得的Application对象</a></li>
+<li><a href="http://www.woaitqs.cc/android/2016/07/14/android-reflection.html" target="_blank" rel="external">Android 极简反射教程，及应用示例</a></li>
+<li><a href="https://github.com/tianzhijiexian/Android-Best-Practices/blob/master/2015.9/reflect/reflect.md" target="_blank" rel="external">Java反射最佳实践</a></li>
+<li><a href="http://blog.csdn.net/tiefeng0606/article/details/51700866" target="_blank" rel="external">反射技术在android中的应用</a></li>
+<li><a href="https://guides.codepath.com/android/Consuming-APIs-with-Retrofit#overview" target="_blank" rel="external">Consuming APIs with Retrofit</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="阅读书单" scheme="http://jiongbull.com/tags/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    
+      <category term="阅读书单" scheme="http://jiongbull.com/categories/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[2016年第31周阅读书单]]></title>
+    <link href="http://jiongbull.com/2016/07/31/2016%E5%B9%B4%E7%AC%AC31%E5%91%A8%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    <id>http://jiongbull.com/2016/07/31/2016年第31周阅读书单/</id>
+    <published>2016-07-31T14:30:00.000Z</published>
+    <updated>2016-08-07T14:42:37.088Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
+</blockquote>
+<h2 id="阅读书单">阅读书单</h2><blockquote>
+<p>希望通过阅读书单的形式让自己养成坚持阅读的习惯，获取更多的知识。</p>
+</blockquote>
+<ul>
+<li><a href="http://www.cnblogs.com/rayray/p/3729533.html" target="_blank" rel="external">HTTP协议详解</a></li>
+<li><a href="https://developers.google.com/protocol-buffers/docs/proto3" target="_blank" rel="external">Language Guide (proto3)</a></li>
+<li><a href="http://gank.io/post/56e80c2c677659311bed9841" target="_blank" rel="external">RxJava 与 Retrofit 结合的最佳实践</a></li>
+<li><a href="https://futurestud.io/blog/android-basic-authentication-with-retrofit" target="_blank" rel="external">Retrofit — Basic Authentication on Android</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-token-authentication-on-android" target="_blank" rel="external">Retrofit — Token Authentication on Android</a></li>
+<li><a href="https://futurestud.io/blog/oauth-2-on-android-with-retrofit" target="_blank" rel="external">Retrofit — OAuth on Android</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-multiple-query-parameters-of-same-name" target="_blank" rel="external">Retrofit — Multiple Query Parameters of Same Name</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-synchronous-and-asynchronous-requests" target="_blank" rel="external">Retrofit — Synchronous and Asynchronous Requests</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-send-objects-in-request-body" target="_blank" rel="external">Retrofit — Send Objects in Request Body</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-replace-the-integrated-json-converter" target="_blank" rel="external">Retrofit — Define a Custom Response Converter</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-add-custom-request-header" target="_blank" rel="external">Retrofit — Add Custom Request Header</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-optional-query-parameters" target="_blank" rel="external">Retrofit — Optional Query Parameters</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-how-to-integrate-xml-converter" target="_blank" rel="external">Retrofit — How to Integrate XML Converter</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-using-the-log-level-to-debug-requests" target="_blank" rel="external">Retrofit — Using the Log Level to Debug Requests</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-how-to-upload-files" target="_blank" rel="external">Retrofit — How to Upload Files to Server</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-series-round-up" target="_blank" rel="external">Retrofit — Series Round-Up</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-upgrade-guide-from-1-9" target="_blank" rel="external">Retrofit 2 — Upgrade Guide from 1.9</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-how-to-upload-files-to-server" target="_blank" rel="external">Retrofit 2 — How to Upload Files to Server</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-log-requests-and-responses" target="_blank" rel="external">Retrofit 2 — Log Requests and Responses</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-hawk-authentication-on-android" target="_blank" rel="external">Retrofit 2 — Hawk Authentication on Android</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-simple-error-handling" target="_blank" rel="external">Retrofit 2 — Simple Error Handling</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-how-to-use-okhttp-3-with-retrofit-1" target="_blank" rel="external">Retrofit — How to use OkHttp 3 with Retrofit 1</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-book-update-release-celebration" target="_blank" rel="external">Retrofit 2 — Book Update &amp; Release Celebration</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-send-data-form-urlencoded" target="_blank" rel="external">Retrofit — Send Data Form-Urlencoded</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-send-data-form-urlencoded-using-fieldmap" target="_blank" rel="external">Retrofit — Send Data Form-Urlencoded Using FieldMap</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-manage-request-headers-in-okhttp-interceptor" target="_blank" rel="external">Retrofit 2 — Manage Request Headers in OkHttp Interceptor</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-how-to-add-query-parameters-to-every-request" target="_blank" rel="external">Retrofit 2 — How to Add Query Parameters to Every Request</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-add-multiple-query-parameter-with-querymap" target="_blank" rel="external">Retrofit 2 — Add Multiple Query Parameter With QueryMap</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-how-to-use-dynamic-urls-for-requests" target="_blank" rel="external">Retrofit 2 — How to Use Dynamic Urls for Requests</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-url-handling-resolution-and-parsing" target="_blank" rel="external">Retrofit 2 — Url Handling, Resolution and Parsing</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-constant-default-and-logic-values-for-post-and-put-requests" target="_blank" rel="external">Retrofit 2 — Constant, Default and Logic Values for POST and PUT Requests</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-how-to-download-files-from-server" target="_blank" rel="external">Retrofit 2 — How to Download Files from Server</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-cancel-requests" target="_blank" rel="external">Retrofit 2 — Cancel Requests</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-reuse-and-analyze-requests-2" target="_blank" rel="external">Retrofit 2 — Reuse and Analyze Requests</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-how-to-change-api-base-url-at-runtime-2" target="_blank" rel="external">Retrofit 2 — How to Change API Base Url at Runtime</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-optional-path-parameters" target="_blank" rel="external">Retrofit — Optional Path Parameters</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-how-to-send-plain-text-request-body" target="_blank" rel="external">Retrofit 2 — How to Send Plain Text Request Body</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-introduction-to-multiple-converters" target="_blank" rel="external">Retrofit 2 — Introduction to (Multiple) Converters</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-how-to-upload-multiple-files-to-server" target="_blank" rel="external">Retrofit 2 — How to Upload Multiple Files to Server</a></li>
+<li><a href="https://futurestud.io/blog/retrofit-2-passing-multiple-parts-along-a-file-with-partmap" target="_blank" rel="external">Retrofit 2 — Passing Multiple Parts Along a File with @PartMap</a></li>
+<li><a href="http://bbs.utest.qq.com/747" target="_blank" rel="external">深入浅出Retrofit，这么牛逼的框架你们还不来看看？</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
+    </summary>
+    
+      <category term="阅读书单" scheme="http://jiongbull.com/tags/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    
+      <category term="阅读书单" scheme="http://jiongbull.com/categories/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[2016年第30周阅读书单]]></title>
@@ -1491,339 +1592,6 @@
     </summary>
     
       <category term="Material Design" scheme="http://jiongbull.com/tags/Material-Design/"/>
-    
-      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Android布局规范]]></title>
-    <link href="http://jiongbull.com/2015/05/11/Android%E5%B8%83%E5%B1%80%E8%A7%84%E8%8C%83/"/>
-    <id>http://jiongbull.com/2015/05/11/Android布局规范/</id>
-    <published>2015-05-11T06:52:36.000Z</published>
-    <updated>2016-05-10T15:05:08.763Z</updated>
-    <content type="html"><![CDATA[<blockquote>
-<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a>  </p>
-</blockquote>
-<h2 id="单位">单位</h2><h3 id="尺寸">尺寸</h3><p>为了更容易的适配不同尺寸和像素密度的屏幕，我们约定在布局文件中必须使用dp单位的尺寸（由于部分机型可以调整手机字体大小，为了避免影响到布局结构，字号的单位也要求使用dp单位的尺寸）。</p>
-<blockquote>
-<p>我们适配四种像素密度的屏幕（hdpi、xhdpi、xxhdpi、xxxhdpi），他们的比例系数为1.5 : 2 : 3 : 4，那么10dp在这四种屏幕上分别表示10 <em> 1.5 = 15px，10 </em> 2 = 20px，10 <em> 3 = 30px，10 </em> 4 = 40px。</p>
-</blockquote>
-<h3 id="色彩">色彩</h3><p>色彩使用ARGB模式，用32位表示，例如#AABBCCDD，其中AA表示透明度，BB表示红色，CC表示绿色，DD表示蓝色。</p>
-<blockquote>
-<p><strong>注意</strong>：遵从设计规范，色值需要全部为大写。</p>
-</blockquote>
-<h2 id="图片">图片</h2><h3 id="分辨率">分辨率</h3><p>需要四种规格尺寸的图片，比例系数为1.5 : 2 : 3 : 4</p>
-<p>例如logo的图片：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">像素密度</th>
-<th style="text-align:center">比例系数</th>
-<th style="text-align:center">logo分辨率</th>
-<th style="text-align:center">logo的尺寸</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">1.5</td>
-<td style="text-align:center">72px * 72px</td>
-<td style="text-align:center">48dp * 48dp</td>
-</tr>
-<tr>
-<td style="text-align:center">xhdpi</td>
-<td style="text-align:center">2.0</td>
-<td style="text-align:center">96px * 96px</td>
-<td style="text-align:center">48dp * 48dp</td>
-</tr>
-<tr>
-<td style="text-align:center">xxhdpi</td>
-<td style="text-align:center">3.0</td>
-<td style="text-align:center">144px * 144px</td>
-<td style="text-align:center">48dp * 48dp</td>
-</tr>
-<tr>
-<td style="text-align:center">xxxhdpi</td>
-<td style="text-align:center">4.0</td>
-<td style="text-align:center">192px * 192px</td>
-<td style="text-align:center">48dp * 48dp</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>注意</strong>：对于9-patch，也需要四种规格尺寸。</p>
-</blockquote>
-<h3 id="状态">状态</h3><p>有些图片是有状态的，例如按钮、单选框、复选框等，我们对有状态的图片进行命名时会在图片名称后面后缀对应的状态字符串。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">状态</th>
-<th style="text-align:center">后缀</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">默认</td>
-<td style="text-align:center">无后缀</td>
-</tr>
-<tr>
-<td style="text-align:center">按下</td>
-<td style="text-align:center">_p</td>
-</tr>
-<tr>
-<td style="text-align:center">选中</td>
-<td style="text-align:center">_c</td>
-</tr>
-<tr>
-<td style="text-align:center">不可用</td>
-<td style="text-align:center">_d</td>
-</tr>
-</tbody>
-</table>
-<h2 id="一些技巧">一些技巧</h2><h3 id="色值">色值</h3><p>应用中出现的色值不应过多，而且需要配置在xml中，这样应用才会显得简洁干净，风格统一。</p>
-<h3 id="字号">字号</h3><p>统一的字号标准可以使应用风格更加统一，在不同的设备上做到一致的用户体验。</p>
-<h3 id="尺寸-1">尺寸</h3><p>对于常用的尺寸可以抽取出来，方便快速开发。对于设计师来说，规范化的尺寸可以让设计看起来更加大气一体，开发前可以先与设计师沟通，共同抽取出一些预定义的尺寸。</p>
-<blockquote>
-<p>根据在<a href="/2015/05/11/Android屏幕适配">Android屏幕适配</a>一文中指出的，我们适配宽度为320dp和360dp的屏幕。可以先使用360dp的手机或者模拟器进行布局开发，待编译打包时，只需要把values-w360dp里dimens.xml新定义的尺寸拷贝到values-w320dp里，把数值乘以320/360，也就是8/9即可，这样它们占屏幕宽度的比例就一致了。</p>
-<p>例如，values-w360dp中定义了宽度为90dp的按钮，那么在values-w320dp中对应的尺寸就是80dp，90 / 360 = 25%且80 / 320 = 25%，它们在各自的屏幕中看起来占屏幕宽度的比例就是一致的了。</p>
-</blockquote>
-<h2 id="分享与支持">分享与支持</h2><ul>
-<li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。</li>
-<li>更多支持，请点<a href="/about">这里</a>。</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<blockquote>
-<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
-    </summary>
-    
-      <category term="布局规范" scheme="http://jiongbull.com/tags/%E5%B8%83%E5%B1%80%E8%A7%84%E8%8C%83/"/>
-    
-      <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Android屏幕适配]]></title>
-    <link href="http://jiongbull.com/2015/05/11/Android%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
-    <id>http://jiongbull.com/2015/05/11/Android屏幕适配/</id>
-    <published>2015-05-11T05:21:51.000Z</published>
-    <updated>2016-05-10T15:05:21.959Z</updated>
-    <content type="html"><![CDATA[<blockquote>
-<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jiongbull" target="_blank" rel="external">@JiongBull</a><br>  GitHub：<a href="https://github.com/JiongBull" target="_blank" rel="external">JiongBull</a></p>
-</blockquote>
-<h2 id="统计分析">统计分析</h2><h3 id="2014Q1活跃Android设备统计">2014Q1活跃Android设备统计</h3><p><img src="http://7xize8.com1.z0.glb.clouddn.com/2014Top20.png" alt="2014Q1活跃Android设备Top20"></p>
-<p>参数表格:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">机型</th>
-<th style="text-align:center">分辨率</th>
-<th style="text-align:center">像素密度</th>
-<th style="text-align:center">屏幕宽度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">三星Galaxy Note2</td>
-<td style="text-align:center">720 * 1280</td>
-<td style="text-align:center">xhdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-<tr>
-<td style="text-align:center">三星Galaxy S3</td>
-<td style="text-align:center">720 * 1280</td>
-<td style="text-align:center">xhdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-<tr>
-<td style="text-align:center">小米手机2S</td>
-<td style="text-align:center">720 * 1280</td>
-<td style="text-align:center">xhdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-<tr>
-<td style="text-align:center">三星Galaxy S4</td>
-<td style="text-align:center">1080 * 1920</td>
-<td style="text-align:center">xxhdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-<tr>
-<td style="text-align:center">三星Galaxy S2</td>
-<td style="text-align:center">480 * 800</td>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">320dp</td>
-</tr>
-<tr>
-<td style="text-align:center">三星Galaxy Note</td>
-<td style="text-align:center">800 * 1280</td>
-<td style="text-align:center">xhdpi</td>
-<td style="text-align:center">400dp</td>
-</tr>
-<tr>
-<td style="text-align:center">三星Galaxy Note3</td>
-<td style="text-align:center">1080 * 1920</td>
-<td style="text-align:center">xxhdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-<tr>
-<td style="text-align:center">红米手机</td>
-<td style="text-align:center">720 * 1280</td>
-<td style="text-align:center">xhdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-<tr>
-<td style="text-align:center">小米手机1S</td>
-<td style="text-align:center">720 * 1280</td>
-<td style="text-align:center">xhdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-<tr>
-<td style="text-align:center">三星Galaxy Ace</td>
-<td style="text-align:center">480 * 800</td>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">320dp</td>
-</tr>
-<tr>
-<td style="text-align:center">小米手机M2</td>
-<td style="text-align:center">720 * 1280</td>
-<td style="text-align:center">xhdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-<tr>
-<td style="text-align:center">小米手机M3</td>
-<td style="text-align:center">1080 * 1920</td>
-<td style="text-align:center">xxhdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-<tr>
-<td style="text-align:center">小米手机M1</td>
-<td style="text-align:center">480 * 854</td>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">320dp</td>
-</tr>
-<tr>
-<td style="text-align:center">小米手机2A</td>
-<td style="text-align:center">720 * 1280</td>
-<td style="text-align:center">xhdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-<tr>
-<td style="text-align:center">三星GT-S7568</td>
-<td style="text-align:center">480 * 800</td>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">320dp</td>
-</tr>
-<tr>
-<td style="text-align:center">华为G520</td>
-<td style="text-align:center">480 * 854</td>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">320dp</td>
-</tr>
-<tr>
-<td style="text-align:center">三星Galaxy Mega 5.8</td>
-<td style="text-align:center">540 * 960</td>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-<tr>
-<td style="text-align:center">三星GT-S7562</td>
-<td style="text-align:center">480 * 800</td>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">320dp</td>
-</tr>
-<tr>
-<td style="text-align:center">OPPO R821t</td>
-<td style="text-align:center">480 * 800</td>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">320dp</td>
-</tr>
-<tr>
-<td style="text-align:center">华为C8815</td>
-<td style="text-align:center">540 * 960</td>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">360dp</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>结论</strong>：绝大部分机型的屏幕宽度是320dp和360dp。</p>
-</blockquote>
-<h3 id="2014Android操作系统趋势">2014Android操作系统趋势</h3><p><img src="http://7xize8.com1.z0.glb.clouddn.com/android_trend.png" alt="2014Android操作系统趋势"></p>
-<blockquote>
-<p><strong>结论</strong>：4.0版本以上的操作系统占据了90%以上的市场份额。</p>
-</blockquote>
-<h2 id="方案">方案</h2><h3 id="声明客户端支持的最小操作系统版本">声明客户端支持的最小操作系统版本</h3><ul>
-<li>过滤掉老旧版本操作系统，帮助我们减少针对时机型适配带来的工作量</li>
-<li>可以使用Android 3.2（API等级13）版本提供的新特征利用屏幕的宽度对不同的屏幕做适配</li>
-</ul>
-<blockquote>
-<p><code>&lt;uses-sdk android:minSdkVersion=&quot;15&quot;/&gt;</code></p>
-</blockquote>
-<h3 id="声明屏幕方向为竖屏">声明屏幕方向为竖屏</h3><p>避免用户横屏时页面布局错乱。</p>
-<blockquote>
-<p><code>android:screenOrientation=&quot;portrait&quot;</code></p>
-</blockquote>
-<h3 id="布局">布局</h3><p>针对手机设备，使用一套布局资源，布局中里用到的尺寸、颜色、文本等资源使用引用值。</p>
-<blockquote>
-<p><code>res/layout/name.xml</code></p>
-</blockquote>
-<h3 id="尺寸">尺寸</h3><p>参考统计分析里的参数表格，values-w320dp目录内属性适配屏幕宽度为320dp的机型，values-w360dp目录内的属性适配屏幕宽度为360dp的机型。</p>
-<blockquote>
-<p><code>res/values-w320dp/dimens.xml</code><br><code>res/values-w360dp/dimens.xml</code></p>
-</blockquote>
-<h3 id="图片">图片</h3><ul>
-<li>如果可以避免使用位图那就不要使用位图，这样可以节省空间资源，提高应用的性能</li>
-<li>可以使用XML绘图代替位图，比如圆角矩形，使用XML绘制的色图比位图节省空间资源，而且可以自动适配</li>
-<li>使用9-patch，9-patch可以缩放，我们可以使用很小的9-patch填充很大的UI控件，节省空间资源，提高应用的性能</li>
-<li>尽量减少XML的布局层次，减少布局层次可以减少系统解析代码所做的工作，让界面的渲染速度变快</li>
-<li>可以使用merge的情形就不要使用include，使用merge可以达到减少布局层次的效果</li>
-<li>尽量使用RelativeLayout，使用RelativeLayout相比使用多个LinearLayout来说可以减少布局的层次</li>
-<li>每种切图都需要下面表格中的展示的四种规格</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">像素密度</th>
-<th style="text-align:center">系数</th>
-<th style="text-align:center">Logo分辨率</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">hdpi</td>
-<td style="text-align:center">1.5</td>
-<td style="text-align:center">72px * 72px</td>
-</tr>
-<tr>
-<td style="text-align:center">xhdpi</td>
-<td style="text-align:center">2.0</td>
-<td style="text-align:center">96px * 96px</td>
-</tr>
-<tr>
-<td style="text-align:center">xxhdpi</td>
-<td style="text-align:center">3.0</td>
-<td style="text-align:center">144px * 144px</td>
-</tr>
-<tr>
-<td style="text-align:center">xxxhdpi</td>
-<td style="text-align:center">4.0</td>
-<td style="text-align:center">192px * 192px</td>
-</tr>
-</tbody>
-</table>
-<h2 id="分享与支持">分享与支持</h2><ul>
-<li>如果这篇文章对你有帮助，请分享下面的链接让更多人受益。</li>
-<li>更多支持，请点<a href="/about">这里</a>。</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<blockquote>
-<p>来源：<a href="http://jiongbull.com" target="_blank" rel="external">JiongBull’s Blog</a><br>  微博：<a href="http://weibo.com/jion]]>
-    </summary>
-    
-      <category term="屏幕适配" scheme="http://jiongbull.com/tags/%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
     
       <category term="Android" scheme="http://jiongbull.com/categories/Android/"/>
     
